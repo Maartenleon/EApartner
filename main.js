@@ -281,10 +281,15 @@
     phaseBlocks.forEach(b => phaseObs.observe(b));
   }
 
-  /* ── Track card back-navigation anchor ───────────────── */
-  document.querySelectorAll('a.track-card[href]').forEach(card => {
-    card.addEventListener('click', () => {
-      history.replaceState(null, '', '#diensten');
+  /* ── Mobile "Show more" for track cards ────────────── */
+  document.querySelectorAll('.track-show-more').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const wrap = btn.closest('.track-body').querySelector('.track-expand-wrap');
+      const isOpen = wrap.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+      btn.textContent = isOpen ? 'Show less' : 'Show more';
     });
   });
 

@@ -40,19 +40,7 @@
 
           <a href="#waarde" data-section="waarde">Value</a>
 
-          <!-- ── Services dropdown ── -->
-          <div class="nav-item">
-            <a href="#diensten" data-section="diensten">
-              Services
-              <svg class="nav-chevron" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <div class="nav-dropdown" role="menu">
-              <a href="track-1.html" role="menuitem"><span class="dd-dot"></span>Architecture for Change</a>
-              <a href="track-2.html" role="menuitem"><span class="dd-dot"></span>Architecture as a Function</a>
-            </div>
-          </div>
+          <a href="#diensten" data-section="diensten">Services</a>
 
           <a href="#aanpak" data-section="aanpak">Approach</a>
 
@@ -94,93 +82,14 @@
     <!-- ── Value ── -->
     <section id="waarde">
       <div class="wrap">
-        <div class="section-3col">
-          <div class="section-label">
+        <div class="section-3col waarde-layout">
+          <div></div>
+          <div class="waarde-body">
             <p class="section-eyebrow">Why enterprise architecture</p>
-            <h2>Two kinds of alignment.<br>One discipline.</h2>
-            <p class="sub">Architecture creates the structure that lets organisations grow, transform, and automate — without losing coherence. It works on two axes at once.</p>
-          </div>
-
-          <div class="value-content">
-
-            <div class="alignment-diagram" aria-label="Enterprise Architecture alignment model: vertical layers from strategy to technology, horizontal coherence across domains">
-              <svg class="alignment-svg" viewBox="0 0 680 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g class="al-row" style="--row:0">
-                  <rect x="60" y="32" width="560" height="48" rx="6" fill="currentColor" fill-opacity=".03" stroke="currentColor" stroke-opacity=".10" stroke-width="1"/>
-                  <text x="90" y="61" font-size="11" fill="currentColor" fill-opacity=".50" font-family="ui-monospace, monospace" letter-spacing=".06em" text-transform="uppercase">Strategy</text>
-                </g>
-                <g class="al-row" style="--row:1">
-                  <rect x="60" y="96" width="560" height="48" rx="6" fill="currentColor" fill-opacity=".03" stroke="currentColor" stroke-opacity=".10" stroke-width="1"/>
-                  <text x="90" y="125" font-size="11" fill="currentColor" fill-opacity=".50" font-family="ui-monospace, monospace" letter-spacing=".06em">Capabilities</text>
-                </g>
-                <g class="al-row" style="--row:2">
-                  <rect x="60" y="160" width="560" height="48" rx="6" fill="currentColor" fill-opacity=".03" stroke="currentColor" stroke-opacity=".10" stroke-width="1"/>
-                  <text x="90" y="189" font-size="11" fill="currentColor" fill-opacity=".50" font-family="ui-monospace, monospace" letter-spacing=".06em">Data &amp; Information</text>
-                </g>
-                <g class="al-row" style="--row:3">
-                  <rect x="60" y="224" width="560" height="48" rx="6" fill="currentColor" fill-opacity=".03" stroke="currentColor" stroke-opacity=".10" stroke-width="1"/>
-                  <text x="90" y="253" font-size="11" fill="currentColor" fill-opacity=".50" font-family="ui-monospace, monospace" letter-spacing=".06em">Applications</text>
-                </g>
-                <g class="al-row" style="--row:4">
-                  <rect x="60" y="288" width="560" height="48" rx="6" fill="currentColor" fill-opacity=".03" stroke="currentColor" stroke-opacity=".10" stroke-width="1"/>
-                  <text x="90" y="317" font-size="11" fill="currentColor" fill-opacity=".50" font-family="ui-monospace, monospace" letter-spacing=".06em">Technology</text>
-                </g>
-
-                <line x1="40" y1="42" x2="40" y2="326" class="al-vert" stroke="currentColor" stroke-opacity=".18" stroke-width="1.2" stroke-dasharray="4 4"/>
-                <polygon points="40,330 36,320 44,320" fill="currentColor" fill-opacity=".18" class="al-vert"/>
-                <text x="26" y="190" font-size="9" fill="currentColor" fill-opacity=".32" font-family="ui-monospace, monospace" letter-spacing=".1em" transform="rotate(-90 26 190)" text-anchor="middle">VERTICAL</text>
-
-                <line x1="320" y1="32" x2="320" y2="336" class="al-col" stroke="currentColor" stroke-opacity=".06" stroke-width="1" stroke-dasharray="3 6"/>
-                <line x1="420" y1="32" x2="420" y2="336" class="al-col" stroke="currentColor" stroke-opacity=".06" stroke-width="1" stroke-dasharray="3 6"/>
-                <line x1="520" y1="32" x2="520" y2="336" class="al-col" stroke="currentColor" stroke-opacity=".06" stroke-width="1" stroke-dasharray="3 6"/>
-
-                <line x1="240" y1="358" x2="600" y2="358" class="al-horiz" stroke="currentColor" stroke-opacity=".18" stroke-width="1.2" stroke-dasharray="4 4"/>
-                <polygon points="604,358 594,354 594,362" fill="currentColor" fill-opacity=".18" class="al-horiz"/>
-                <text x="420" y="380" font-size="9" fill="currentColor" fill-opacity=".32" font-family="ui-monospace, monospace" letter-spacing=".1em" text-anchor="middle">HORIZONTAL</text>
-
-                <text x="370" y="22" font-size="9" fill="currentColor" fill-opacity=".35" font-family="ui-monospace, monospace" text-anchor="middle">Domain A</text>
-                <text x="470" y="22" font-size="9" fill="currentColor" fill-opacity=".35" font-family="ui-monospace, monospace" text-anchor="middle">Domain B</text>
-                <text x="570" y="22" font-size="9" fill="currentColor" fill-opacity=".35" font-family="ui-monospace, monospace" text-anchor="middle">Domain C</text>
-
-                <circle cx="370" cy="56"  r="3.5" class="al-dot" style="--di:0"  fill="currentColor" fill-opacity=".25"/>
-                <circle cx="470" cy="56"  r="3.5" class="al-dot" style="--di:1"  fill="currentColor" fill-opacity=".25"/>
-                <circle cx="570" cy="56"  r="3.5" class="al-dot" style="--di:2"  fill="currentColor" fill-opacity=".25"/>
-                <circle cx="370" cy="120" r="3.5" class="al-dot" style="--di:3"  fill="currentColor" fill-opacity=".30"/>
-                <circle cx="470" cy="120" r="3.5" class="al-dot" style="--di:4"  fill="currentColor" fill-opacity=".30"/>
-                <circle cx="570" cy="120" r="3.5" class="al-dot" style="--di:5"  fill="currentColor" fill-opacity=".30"/>
-                <circle cx="370" cy="184" r="3.5" class="al-dot" style="--di:6"  fill="currentColor" fill-opacity=".38"/>
-                <circle cx="470" cy="184" r="3.5" class="al-dot" style="--di:7"  fill="currentColor" fill-opacity=".38"/>
-                <circle cx="570" cy="184" r="3.5" class="al-dot" style="--di:8"  fill="currentColor" fill-opacity=".38"/>
-                <circle cx="370" cy="248" r="3.5" class="al-dot" style="--di:9"  fill="currentColor" fill-opacity=".48"/>
-                <circle cx="470" cy="248" r="3.5" class="al-dot" style="--di:10" fill="currentColor" fill-opacity=".48"/>
-                <circle cx="570" cy="248" r="3.5" class="al-dot" style="--di:11" fill="currentColor" fill-opacity=".48"/>
-                <circle cx="370" cy="312" r="3.5" class="al-dot" style="--di:12" fill="currentColor" fill-opacity=".58"/>
-                <circle cx="470" cy="312" r="3.5" class="al-dot" style="--di:13" fill="currentColor" fill-opacity=".58"/>
-                <circle cx="570" cy="312" r="3.5" class="al-dot" style="--di:14" fill="currentColor" fill-opacity=".58"/>
-              </svg>
-            </div>
-
-            <div class="value-text-col">
-
-              <div class="value-pair">
-                <div class="value-block">
-                  <p class="value-block-label">Vertical alignment</p>
-                  <h3 class="value-block-title">From strategy to technology</h3>
-                  <p class="value-block-body">Every strategic choice should trace a clear line down through capabilities, data, applications, and technology. When these layers are connected, decisions at the top become executable at the bottom — and constraints at the bottom feed back up before they become surprises.</p>
-                </div>
-                <div class="value-block">
-                  <p class="value-block-label">Horizontal alignment</p>
-                  <h3 class="value-block-title">Across domains</h3>
-                  <p class="value-block-body">Most complexity isn't inside a domain — it lives in the seams between them. Shared capabilities, data ownership, integration patterns, reusable platforms. Architecture creates the coherence across domains that prevents every team from solving the same problem differently.</p>
-                </div>
-              </div>
-
-              
-              <p class="value-outcome-text">The result: an organisation that controls complexity instead of being controlled by it — while staying ready for growth, transformation, and an increasingly automated future.</p>
-              
-
-            </div>
-
+            <h2 class="waarde-heading">Enterprise architecture creates the structure that lets organisations grow, transform, and automate — without losing coherence. It works on two axes at once.</h2>
+            <p class="waarde-text">Every strategic choice should trace a clear line down through capabilities, data, applications, and technology. When these layers are connected, decisions at the top become executable at the bottom — and constraints at the bottom feed back up before they become surprises.</p>
+            <p class="waarde-text">Most complexity isn't inside a domain — it lives in the seams between them. Shared capabilities, data ownership, integration patterns, reusable platforms. Architecture creates the coherence across domains that prevents every team from solving the same problem differently.</p>
+            <p class="waarde-text">The result: an organisation that controls complexity instead of being controlled by it — while staying ready for growth, transformation, and an increasingly automated future.</p>
           </div>
         </div>
       </div>
@@ -199,9 +108,9 @@
           <div class="two">
 
             <!-- Track 1 -->
-            <a class="track-card reveal" href="track-1.html">
+            <div class="track-card reveal">
               <div class="track-svg">
-                <svg width="100%" height="160" viewBox="0 0 680 260" preserveAspectRatio="xMidYMid slice">
+                <svg viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg">
                   <polygon points="387,103 340,76 293,103 293,157 340,184 387,157"
                     fill="none" stroke="currentColor" stroke-opacity=".1" stroke-width="1"
                     class="ld-ring" style="animation-delay:2.8s; stroke-dasharray:324; stroke-dashoffset:324"/>
@@ -211,21 +120,24 @@
                   <line x1="340" y1="130" x2="293" y2="157" class="ld" style="animation-delay:1.3s" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none"/>
                   <line x1="340" y1="130" x2="340" y2="184" class="ld" style="animation-delay:1.7s" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none"/>
                   <line x1="340" y1="130" x2="387" y2="157" class="ld" style="animation-delay:2.1s" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none"/>
-                  <circle cx="387" cy="103" r="4" class="da" style="animation-delay:.65s"  fill="currentColor" fill-opacity=".45"/>
-                  <circle cx="340" cy="76"  r="4" class="da" style="animation-delay:1.05s" fill="currentColor" fill-opacity=".45"/>
-                  <circle cx="293" cy="103" r="4" class="da" style="animation-delay:1.45s" fill="currentColor" fill-opacity=".45"/>
-                  <circle cx="293" cy="157" r="4" class="da" style="animation-delay:1.85s" fill="currentColor" fill-opacity=".45"/>
-                  <circle cx="340" cy="184" r="4" class="da" style="animation-delay:2.25s" fill="currentColor" fill-opacity=".45"/>
-                  <circle cx="387" cy="157" r="4" class="da" style="animation-delay:2.65s" fill="currentColor" fill-opacity=".45"/>
-                  <circle cx="340" cy="130" r="4" class="da" style="animation-delay:3.0s"  fill="currentColor" fill-opacity=".8"/>
+                  <circle cx="387" cy="103" r="3" class="da" style="animation-delay:.65s"  fill="currentColor" fill-opacity=".45"/>
+                  <circle cx="340" cy="76"  r="3" class="da" style="animation-delay:1.05s" fill="currentColor" fill-opacity=".45"/>
+                  <circle cx="293" cy="103" r="3" class="da" style="animation-delay:1.45s" fill="currentColor" fill-opacity=".45"/>
+                  <circle cx="293" cy="157" r="3" class="da" style="animation-delay:1.85s" fill="currentColor" fill-opacity=".45"/>
+                  <circle cx="340" cy="184" r="3" class="da" style="animation-delay:2.25s" fill="currentColor" fill-opacity=".45"/>
+                  <circle cx="387" cy="157" r="3" class="da" style="animation-delay:2.65s" fill="currentColor" fill-opacity=".45"/>
+                  <circle cx="340" cy="130" r="3" class="da" style="animation-delay:3.0s"  fill="currentColor" fill-opacity=".8"/>
                 </svg>
               </div>
               <div class="track-body">
-                <p class="track-label">Track 1</p>
-                <h3>Architecture for Change</h3>
-                <p>Your transformation needs a spine — from strategy through capabilities, data, applications, and technology. Architecture that connects layers and enables decisions, not just documents.</p>
-                <div class="track-expand">
-                  <div class="track-expand-inner">
+                <div class="track-main">
+                  <p class="track-label">Track 1</p>
+                  <h3>Architecture for Change</h3>
+                  <p>Your transformation needs a spine — from strategy through capabilities, data, applications, and technology. Architecture that connects layers and enables decisions, not just documents.</p>
+                  <button class="track-show-more" aria-expanded="false">Show more</button>
+                </div>
+                <div class="track-expand-wrap">
+                  <div class="track-expand">
                     <ul class="track-deliver">
                       <li><span class="bullet" aria-hidden="true"></span><span><strong>EA QuickScan</strong> — 4-week diagnosis: where complexity sits, what is blocking, which decisions are urgent</span></li>
                       <li><span class="bullet" aria-hidden="true"></span><span><strong>Target Architecture</strong> — layered model from strategy to technology, built to last and executable</span></li>
@@ -236,39 +148,39 @@
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
 
             <!-- Track 2 -->
-            <a class="track-card reveal" href="track-2.html">
+            <div class="track-card reveal">
               <div class="track-svg">
-                <svg width="100%" height="160" viewBox="0 0 680 260" preserveAspectRatio="xMidYMid slice">
+                <svg viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg">
                   <g class="t2r" style="animation-delay:.3s">
-                    <circle cx="268" cy="184" r="4" fill="currentColor" fill-opacity=".3"/>
-                    <circle cx="304" cy="184" r="4" fill="currentColor" fill-opacity=".3"/>
-                    <circle cx="340" cy="184" r="4" fill="currentColor" fill-opacity=".3"/>
-                    <circle cx="376" cy="184" r="4" fill="currentColor" fill-opacity=".3"/>
-                    <circle cx="412" cy="184" r="4" fill="currentColor" fill-opacity=".3"/>
+                    <circle cx="268" cy="184" r="3" fill="currentColor" fill-opacity=".3"/>
+                    <circle cx="304" cy="184" r="3" fill="currentColor" fill-opacity=".3"/>
+                    <circle cx="340" cy="184" r="3" fill="currentColor" fill-opacity=".3"/>
+                    <circle cx="376" cy="184" r="3" fill="currentColor" fill-opacity=".3"/>
+                    <circle cx="412" cy="184" r="3" fill="currentColor" fill-opacity=".3"/>
                   </g>
                   <g class="t2r" style="animation-delay:.9s">
-                    <circle cx="268" cy="148" r="4" fill="currentColor" fill-opacity=".45"/>
-                    <circle cx="304" cy="148" r="4" fill="currentColor" fill-opacity=".45"/>
-                    <circle cx="340" cy="148" r="4" fill="currentColor" fill-opacity=".45"/>
-                    <circle cx="376" cy="148" r="4" fill="currentColor" fill-opacity=".45"/>
-                    <circle cx="412" cy="148" r="4" fill="currentColor" fill-opacity=".45"/>
+                    <circle cx="268" cy="148" r="3" fill="currentColor" fill-opacity=".45"/>
+                    <circle cx="304" cy="148" r="3" fill="currentColor" fill-opacity=".45"/>
+                    <circle cx="340" cy="148" r="3" fill="currentColor" fill-opacity=".45"/>
+                    <circle cx="376" cy="148" r="3" fill="currentColor" fill-opacity=".45"/>
+                    <circle cx="412" cy="148" r="3" fill="currentColor" fill-opacity=".45"/>
                   </g>
                   <g class="t2r" style="animation-delay:1.5s">
-                    <circle cx="268" cy="112" r="4" fill="currentColor" fill-opacity=".62"/>
-                    <circle cx="304" cy="112" r="4" fill="currentColor" fill-opacity=".62"/>
-                    <circle cx="340" cy="112" r="4" fill="currentColor" fill-opacity=".62"/>
-                    <circle cx="376" cy="112" r="4" fill="currentColor" fill-opacity=".62"/>
-                    <circle cx="412" cy="112" r="4" fill="currentColor" fill-opacity=".62"/>
+                    <circle cx="268" cy="112" r="3" fill="currentColor" fill-opacity=".62"/>
+                    <circle cx="304" cy="112" r="3" fill="currentColor" fill-opacity=".62"/>
+                    <circle cx="340" cy="112" r="3" fill="currentColor" fill-opacity=".62"/>
+                    <circle cx="376" cy="112" r="3" fill="currentColor" fill-opacity=".62"/>
+                    <circle cx="412" cy="112" r="3" fill="currentColor" fill-opacity=".62"/>
                   </g>
                   <g class="t2r" style="animation-delay:2.1s">
-                    <circle cx="268" cy="76"  r="4" fill="currentColor" fill-opacity=".8"/>
-                    <circle cx="304" cy="76"  r="4" fill="currentColor" fill-opacity=".8"/>
-                    <circle cx="340" cy="76"  r="4" fill="currentColor" fill-opacity=".8"/>
-                    <circle cx="376" cy="76"  r="4" fill="currentColor" fill-opacity=".8"/>
-                    <circle cx="412" cy="76"  r="4" fill="currentColor" fill-opacity=".8"/>
+                    <circle cx="268" cy="76"  r="3" fill="currentColor" fill-opacity=".8"/>
+                    <circle cx="304" cy="76"  r="3" fill="currentColor" fill-opacity=".8"/>
+                    <circle cx="340" cy="76"  r="3" fill="currentColor" fill-opacity=".8"/>
+                    <circle cx="376" cy="76"  r="3" fill="currentColor" fill-opacity=".8"/>
+                    <circle cx="412" cy="76"  r="3" fill="currentColor" fill-opacity=".8"/>
                   </g>
                   <line x1="340" y1="184" x2="412" y2="184" class="gh" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none" style="animation-delay:2.8s"/>
                   <line x1="340" y1="184" x2="268" y2="184" class="gh" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none" style="animation-delay:2.8s"/>
@@ -286,11 +198,14 @@
                 </svg>
               </div>
               <div class="track-body">
-                <p class="track-label">Track 2</p>
-                <h3>Architecture as a Function</h3>
-                <p>Your EA function exists but doesn't deliver influence, decisions, or value. Six capabilities. One focused audit. A concrete plan to make architecture stick.</p>
-                <div class="track-expand">
-                  <div class="track-expand-inner">
+                <div class="track-main">
+                  <p class="track-label">Track 2</p>
+                  <h3>Architecture as a Function</h3>
+                  <p>Your EA function exists but doesn't deliver influence, decisions, or value. Six capabilities. One focused audit. A concrete plan to make architecture stick.</p>
+                  <button class="track-show-more" aria-expanded="false">Show more</button>
+                </div>
+                <div class="track-expand-wrap">
+                  <div class="track-expand">
                     <ul class="track-deliver">
                       <li><span class="bullet" aria-hidden="true"></span><span><strong>Maturity Audit</strong> — honest baseline across all six EA capabilities, scored and compared</span></li>
                       <li><span class="bullet" aria-hidden="true"></span><span><strong>Gap Analysis</strong> — where the function loses influence and why. Named, not softened</span></li>
@@ -301,8 +216,8 @@
                   </div>
                 </div>
               </div>
-            </a>
-          </div>        
+            </div>
+          </div>
         </div>
       </div>
     </section>

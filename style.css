@@ -721,12 +721,9 @@ footer {
 .track-card {
   flex: 1;
   min-width: 0;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   color: inherit;
-  text-decoration: none;
-  cursor: pointer;
   background: var(--bg);
   border: 1px solid var(--line-mid);
   border-radius: var(--radius);
@@ -740,42 +737,136 @@ footer {
 #diensten .two:has(.track-card:hover) .track-card:not(:hover) { flex: 0.45; }
 
 .track-svg {
-  width: 100%;
-  max-height: 160px;
+  position: relative;
+  height: 160px;
   overflow: hidden;
   background: none;
   border-bottom: 1px solid rgb(var(--base-rgb) / .07);
   flex-shrink: 0;
 }
-.track-svg svg { display: block; }
+.track-svg svg {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 680px;
+  height: 260px;
+  transform: translate(-50%, -50%);
+}
 
+/* ── Mobile-first track body layout ─────── */
 .track-body {
-  padding: 28px 32px 32px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-width: 0;
+}
+
+.track-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }
 
-/* ── Expand content (shown on hover) ─────── */
-.track-expand {
+/* Expand wrap — mobile: grid reveal, collapsed by default */
+.track-expand-wrap {
   display: grid;
   grid-template-rows: 0fr;
-  opacity: 0;
-  transition: grid-template-rows 0.44s cubic-bezier(.4, 0, .2, 1) 0.08s,
-              opacity 0.26s ease 0.16s;
-  margin-top: 4px;
+  transition: grid-template-rows 380ms ease;
 }
-.track-expand-inner { overflow: hidden; }
-.track-card:hover .track-expand {
-  grid-template-rows: 1fr;
+.track-expand-wrap.open { grid-template-rows: 1fr; }
+
+.track-expand {
+  overflow: hidden;
   opacity: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0 0 0;
+}
+
+/* Show more button — visible on mobile */
+.track-show-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 12px 0 0;
+}
+.track-show-more::after {
+  content: '↓';
+  font-size: 11px;
+  transition: transform 300ms ease;
+}
+.track-show-more[aria-expanded="true"]::after { transform: rotate(180deg); }
+.track-show-more[aria-expanded="true"] { color: var(--text); }
+
+/* ── Desktop overrides (≥ 901px) ─────────── */
+@media (min-width: 901px) {
+  .track-card {
+    height: 520px;
+    overflow: hidden;
+  }
+
+  .track-body {
+    position: relative;
+    padding: 28px 0 32px;
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  /* Left column — fills card naturally; expand overlay covers right half on hover */
+  .track-main {
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 0 24px 0 32px;
+  }
+
+  /* Expand wrap — absolutely positioned, never affects card height */
+  .track-expand-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    display: block;
+    grid-template-rows: unset;
+    pointer-events: none;
+    transition: none;
+  }
+  .track-card:hover .track-expand-wrap { pointer-events: auto; }
+
+  /* Expand content — fades in on hover, no divider */
+  .track-expand {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 28px 32px 32px 24px;
+    background: var(--bg);
+    opacity: 0;
+    overflow: visible;
+    transition: opacity 380ms ease;
+  }
+  .track-card:hover .track-expand { opacity: 1; }
+
+  .track-show-more { display: none; }
 }
 
 .track-deliver {
   list-style: none;
   padding: 0;
-  margin: 16px 0 20px;
+  margin: 0 0 20px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 11px;
@@ -799,7 +890,7 @@ footer {
   color: rgb(var(--base-rgb) / .35);
   margin: 0;
   padding-top: 16px;
-  border-top: 1px solid var(--line-soft);
+  
 }
 
 .track-entry {
@@ -815,8 +906,6 @@ footer {
     flex-direction: column;
     gap: 16px;
   }
-  #diensten .two:has(.track-card:hover) .track-card:hover     { flex: 1; }
-  #diensten .two:has(.track-card:hover) .track-card:not(:hover) { flex: 1; }
 }
 
 /* ── Track animations (paused until in-view) ─ */
@@ -850,121 +939,33 @@ footer {
 /* ============================================================
    VALUE OF EA SECTION
    ============================================================ */
-.value-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
+/* waarde section: exact 1/3 empty + 2/3 content */
+.waarde-layout {
+  grid-template-columns: 1fr 2fr;
 }
 
-@media (max-width: 900px) {
-  .value-content { grid-template-columns: 1fr; }
-}
-
-.value-text-col {
+.waarde-body {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 }
 
-.alignment-diagram {
-  border: 1px solid var(--line-mid);
-  background: var(--bg);
-  border-radius: var(--radius);
-  padding: 32px 24px 20px;
-  overflow: hidden;
-}
-
-.alignment-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  color: var(--text);
-}
-
-.al-row {
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transition-delay: calc(var(--row) * 0.12s);
-}
-
-.al-dot {
-  opacity: 0;
-  transform: scale(0);
-  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(.2,.9,.2,1);
-  transition-delay: calc(0.6s + var(--di) * 0.06s);
-  transform-origin: center;
-  transform-box: fill-box;
-}
-
-.al-vert, .al-horiz {
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  transition-delay: 1.2s;
-}
-
-#waarde.in-view .al-row  { opacity: 1; transform: translateY(0); }
-#waarde.in-view .al-dot  { opacity: 1; transform: scale(1); }
-#waarde.in-view .al-vert,
-#waarde.in-view .al-horiz { opacity: 1; }
-
-.value-pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-@media (max-width: 720px) {
-  .value-pair { grid-template-columns: 1fr; }
-}
-
-.value-block {
-  border: 1px solid var(--line-mid);
-  background: var(--bg);
-  border-radius: var(--radius);
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.value-block-label {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 0 0 8px;
-}
-
-.value-block-title {
-  font-size: 15px;
-  font-weight: 620;
-  letter-spacing: -0.01em;
-  margin: 0 0 10px;
-  line-height: 1.2;
+.waarde-heading {
+  font-family: "Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 3vw, 46px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   color: var(--brand);
-}
-
-.value-block-body {
-  font-size: 0.8125rem;
-  line-height: 1.7;
-  color: var(--muted);
   margin: 0;
 }
 
-.value-outcome {
-  border-top: 1px solid var(--line-soft);
-  padding-top: 24px;
-}
-
-.value-outcome-text {
-  font-size: 0.8125rem;
-  line-height: 1.7;
+.waarde-text {
+  font-size: 0.9rem;
+  line-height: 1.75;
   color: var(--muted);
   margin: 0;
-  max-width: 80ch;
+  max-width: 72ch;
 }
 
 /* ── Contact section ────────────────────────────────────── */
