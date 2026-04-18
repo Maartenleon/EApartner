@@ -227,21 +227,25 @@
   sections.forEach(s => obs.observe(s));
 
   /* ── Scroll reveal ───────────────────────────────────── */
-  const revealEls = document.querySelectorAll('.panel, .card, .track-card, .section-head, .section-label');
-  revealEls.forEach(el => {
+  // Auto-add reveal to generic components that don't have it in markup
+  document.querySelectorAll('.panel, .card, .section-head').forEach(el => {
     if (!el.classList.contains('reveal')) el.classList.add('reveal');
   });
 
+  // Observe every .reveal element — stagger driven by --reveal-delay via JS setTimeout
+  // so sequencing is guaranteed regardless of when the observer fires
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(en => {
       if (en.isIntersecting) {
-        en.target.classList.add('in');
+        const raw = getComputedStyle(en.target).getPropertyValue('--reveal-delay').trim();
+        const delay = prefersReducedMotion ? 0 : (parseInt(raw) || 0);
+        setTimeout(() => en.target.classList.add('in'), delay);
         revealObs.unobserve(en.target);
       }
     });
   }, { threshold: 0.08 });
 
-  revealEls.forEach(el => revealObs.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
   /* ── SVG scroll-trigger for #diensten ────────────────── */
   const dienstenSection = document.getElementById('diensten');
