@@ -21,7 +21,7 @@
       'value-text2':         'Architecture earns its place close enough to strategy to shape decisions, and close enough to delivery to govern what actually gets built. That means two things need to work: <br><strong>transformations need solid architecture</strong> to steer them, and <strong>the architecture function itself needs to deliver.</strong> How that looks depends on where you are.',
       'services-eyebrow':    'What I offer',
       'services-h2':         'Services',
-      'services-sub':        'Two tracks. One for organisations with complex transformations. One for organisations who want to improve their architecture function. <br> <br> We are good at enterprise and business architecture. let us help you become good at it too.',
+      'services-sub':        'Two tracks. One for organisations with complex transformations. One for organisations who want to improve their architecture function.<br><br>I\'m good at enterprise and business architecture. Track 1 puts that to work inside your transformation. Track 2 builds it into your organisation.<br><br>Both tracks are built for the agentic era: architectures that absorb change instead of resisting it, close to where decisions actually get made.',
       'track1-h3':           'Architecture for Transformation',
       'track1-p':            'Your transformation needs a spine: from strategy through capabilities, data, applications, and technology. Architecture that connects layers and enables decisions.',
       'track-showmore':      'Show more',
@@ -31,6 +31,7 @@
       'track1-li2':          'A layered target architecture that\'s built to last and executable',
       'track1-li3':          'A sequenced roadmap where every step traces to a decision, not a deadline',
       'track1-li4':          'Embedded guidance until the path forward stays obvious without me',
+      'track1-entry':        'Entry point — QuickScan. 2–4 weeks. Fixed scope, fixed fee.',
       'track2-h3':           'Architecture as a Function',
       'track2-p':            'Your EA function exists but doesn\'t deliver influence, governance, decisions, or value. A concrete plan to make architecture stick by enhancing six capabilities.',
       'track2-fitline':      'Best for: Organisations with an EA function that exists but doesn\'t deliver strategic value',
@@ -38,21 +39,30 @@
       'track2-li2':          'A named diagnosis of where the function loses influence and why',
       'track2-li3':          'A concrete, sequenced improvement plan anchored to impact',
       'track2-li4':          'Coaching support for leads and teams during the build-out',
+      'track2-entry':        'Entry point — EA Function Audit. 2–4 weeks. Fixed scope, fixed fee.',
+      'cap-eyebrow':         'The six capabilities.',
+      'cap1':                'Architecture & Strategy',
+      'cap2':                'Target State Architecture',
+      'cap3':                'Architecture Governance',
+      'cap4':                'Standards & Patterns',
+      'cap5':                'Engagement & Advisory',
+      'cap6':                'Portfolio Intelligence',
+      'divider-motif':       'Decisions over documents.',
       'approach-eyebrow':    'How I work',
       'approach-h2':         'Approach',
       'approach-sub':        'Every engagement follows the same rhythm: a sharp diagnostic, a clear architecture, then close involvement during delivery. The content differs by track. The discipline doesn\'t.',
       'phase1-title':        'Diagnose — 4 weeks',
       'phase1-subtitle':     'QuickScan · Maturity Audit',
-      'phase1-body':         'No assumptions, no predefined answers. For transformation programmes: what is the goal, where does complexity sit, what is blocking progress, which architectural decisions are urgent? For EA functions: what is the current maturity? The output is a prioritised map of what needs to happen.',
+      'phase1-body':         '<strong>No assumptions, no predefined answers.</strong> For transformation programmes: what is the goal, where does complexity sit, what is blocking progress, which architectural decisions are urgent? For EA functions: what is the current maturity? The output is a prioritised map of what needs to happen.',
       'phase2-title':        'Architect — 4 weeks',
       'phase2-subtitle':     'Target State · Roadmap · Decisions',
-      'phase2-body':         'Translate the diagnosis into a clear architecture and executable strategy. Trade-offs get made, options get documented, a roadmap gets set, with guardrails not just milestones. Every artefact earns its place because it changes what someone does next. Decisions over documents.',
+      'phase2-body':         '<strong>Translate the diagnosis into a clear architecture and executable strategy.</strong> Trade-offs get made, options get documented, a roadmap gets set, with guardrails not just milestones. Every artefact earns its place because it changes what someone does next. Decisions over documents.',
       'phase3-title':        'Steer — ongoing',
       'phase3-subtitle':     'Embedded Partner · Delivery Support',
-      'phase3-body':         'Architecture doesn\'t survive first contact with delivery unchanged. Steer is the embedded partner phase: guardrails, course corrections when the landscape shifts, and a thinking partner close enough to the work to catch drift before it becomes debt. Until the path forward stays obvious without me in the room.',
+      'phase3-body':         '<strong>Architecture doesn\'t survive first contact with delivery unchanged.</strong> Steer is the embedded partner phase: guardrails, course corrections when the landscape shifts, and a thinking partner close enough to the work to catch drift before it becomes debt. Until the path forward stays obvious without me in the room.',
       'about-eyebrow':       'Who I am',
       'about-h2':            'About',
-      'about-sub':           'A sharp and great collaborator. Good listener, effective communicator.',
+      'about-sub':           'Close to strategy. Close to delivery. Short feedback loops, long-lived decisions.',
       'about-role':          'Enterprise Architect',
       'about-bio':           'Most architecture work produces documents that inform, but don\'t decide. I work the other way: artefacts need to be useful at the moment a decision has to be made. Clear output. Fast cycles. No model for its own sake. Keep things minimal, keep the pace up, and stay close enough to business, product, data, and engineering to connect them when it matters, until the path forward is obvious.<br><br>TOGAF and ArchiMate certified. MSc in Enterprise IT Architecture. Academic rigour in service of practical reality.',
       'about-fitlabel':      'Where I typically work',
@@ -77,7 +87,7 @@
       'ph-message':          'What\'s on your mind?',
       'form-submit':         'Send message',
       'form-sending':        'Sending…',
-      'form-success':        'Message sent. I\'ll be in touch within a day.',
+      'form-success':        'Got it. I\'ll reply within a day.',
       'form-error':          'Something went wrong — try calling or emailing directly.',
       'contact-call-title':  'Call',
       'contact-avail':       'Available Monday – Friday, 09:00 – 18:00 CET',
@@ -98,7 +108,7 @@
       'value-text2':         'Architectuur verdient haar plek dicht genoeg bij de strategie om beslissingen te vormen, en dicht genoeg bij de uitvoering om te sturen wat er daadwerkelijk wordt gebouwd. Dat betekent dat twee dingen moeten werken: <br><strong>transformaties hebben solide architectuur nodig</strong> om ze te sturen, en <strong>de architectuurfunctie zelf moet leveren.</strong> Hoe dat eruitziet hangt af van waar u staat.',
       'services-eyebrow':    'Wat ik aanbied',
       'services-h2':         'Diensten',
-      'services-sub':        'Twee tracks. Eén voor organisaties met complexe transformaties. Eén voor organisaties die hun architectuurfunctie willen verbeteren. <br> <br> Wij zijn goed in enterprise- en bedrijfsarchitectuur. Laat ons u helpen er ook goed in te worden.',
+      'services-sub':        'Twee tracks. Eén voor organisaties met complexe transformaties. Eén voor organisaties die hun architectuurfunctie willen verbeteren.<br><br>Ik ben goed in enterprise- en bedrijfsarchitectuur. Track 1 zet dat in voor uw transformatie. Track 2 bouwt het in uw organisatie.<br><br>Beide tracks zijn gebouwd voor het agentische tijdperk: architecturen die verandering absorberen in plaats van weerstand bieden, dicht bij waar beslissingen daadwerkelijk worden genomen.',
       'track1-h3':           'Architectuur voor Transformatie',
       'track1-p':            'Uw transformatie heeft een ruggengraat nodig: van strategie via capabilities, data, applicaties en technologie. Architectuur die lagen verbindt en beslissingen mogelijk maakt.',
       'track-showmore':      'Meer tonen',
@@ -108,6 +118,7 @@
       'track1-li2':          'Een gelaagde doelarchitectuur die duurzaam en uitvoerbaar is',
       'track1-li3':          'Een gesequenced roadmap waarbij elke stap terugleidt naar een beslissing, niet een deadline',
       'track1-li4':          'Ingebedde begeleiding totdat de weg vooruit vanzelfsprekend is zonder mij',
+      'track1-entry':        'Instappunt — QuickScan. 2–4 weken. Vaste scope, vaste prijs.',
       'track2-h3':           'Architectuur als Functie',
       'track2-p':            'Uw EA-functie bestaat maar levert geen invloed, governance, beslissingen of waarde. Een concreet plan om architectuur te laten beklijven door zes capabilities te versterken.',
       'track2-fitline':      'Geschikt voor: Organisaties met een EA-functie die bestaat maar geen strategische waarde levert',
@@ -115,21 +126,30 @@
       'track2-li2':          'Een benoemde diagnose van waar de functie invloed verliest en waarom',
       'track2-li3':          'Een concreet, gesequenced verbeterplan verankerd aan impact',
       'track2-li4':          'Coachingondersteuning voor leads en teams tijdens de opbouw',
+      'track2-entry':        'Instappunt — EA Functie Audit. 2–4 weken. Vaste scope, vaste prijs.',
+      'cap-eyebrow':         'De zes capabilities.',
+      'cap1':                'Architectuur & Strategie',
+      'cap2':                'Doelstaat Architectuur',
+      'cap3':                'Architectuur Governance',
+      'cap4':                'Standaarden & Patronen',
+      'cap5':                'Betrokkenheid & Advies',
+      'cap6':                'Portfolio Intelligence',
+      'divider-motif':       'Beslissingen boven documenten.',
       'approach-eyebrow':    'Hoe ik werk',
       'approach-h2':         'Aanpak',
       'approach-sub':        'Elke opdracht volgt hetzelfde ritme: een scherpe diagnose, een heldere architectuur, dan nauwe betrokkenheid tijdens de uitvoering. De inhoud verschilt per track. De discipline niet.',
       'phase1-title':        'Diagnose — 4 weken',
       'phase1-subtitle':     'QuickScan · Volwassenheidsaudit',
-      'phase1-body':         'Geen aannames, geen vooraf bepaalde antwoorden. Voor transformatieprogramma\'s: wat is het doel, waar zit de complexiteit, wat blokkeert de voortgang, welke architectuurbeslissingen zijn urgent? Voor EA-functies: wat is de huidige volwassenheid? De uitkomst is een geprioriteerde kaart van wat er moet gebeuren.',
+      'phase1-body':         '<strong>Geen aannames, geen vooraf bepaalde antwoorden.</strong> Voor transformatieprogramma\'s: wat is het doel, waar zit de complexiteit, wat blokkeert de voortgang, welke architectuurbeslissingen zijn urgent? Voor EA-functies: wat is de huidige volwassenheid? De uitkomst is een geprioriteerde kaart van wat er moet gebeuren.',
       'phase2-title':        'Architectuur — 4 weken',
       'phase2-subtitle':     'Doelstaat · Roadmap · Beslissingen',
-      'phase2-body':         'Vertaal de diagnose naar een heldere architectuur en uitvoerbare strategie. Afwegingen worden gemaakt, opties gedocumenteerd, een roadmap wordt vastgesteld, met vangrails en niet alleen mijlpalen. Elk artefact verdient zijn plek omdat het verandert wat iemand als volgende doet. Beslissingen boven documenten.',
+      'phase2-body':         '<strong>Vertaal de diagnose naar een heldere architectuur en uitvoerbare strategie.</strong> Afwegingen worden gemaakt, opties gedocumenteerd, een roadmap wordt vastgesteld, met vangrails en niet alleen mijlpalen. Elk artefact verdient zijn plek omdat het verandert wat iemand als volgende doet. Beslissingen boven documenten.',
       'phase3-title':        'Sturen — doorlopend',
       'phase3-subtitle':     'Ingebed Partner · Delivery Ondersteuning',
-      'phase3-body':         'Architectuur overleeft het eerste contact met de uitvoering niet onveranderd. Sturen is de ingebedde partnerfase: vangrails, bijsturing wanneer het landschap verschuift, en een denkpartner dichtbij genoeg bij het werk om afdrijven te signaleren voordat het schuld wordt. Totdat de weg vooruit vanzelfsprekend blijft zonder mij in de kamer.',
+      'phase3-body':         '<strong>Architectuur overleeft het eerste contact met de uitvoering niet onveranderd.</strong> Sturen is de ingebedde partnerfase: vangrails, bijsturing wanneer het landschap verschuift, en een denkpartner dichtbij genoeg bij het werk om afdrijven te signaleren voordat het schuld wordt. Totdat de weg vooruit vanzelfsprekend blijft zonder mij in de kamer.',
       'about-eyebrow':       'Wie ik ben',
       'about-h2':            'Over',
-      'about-sub':           'Scherp en een fijne samenwerkingspartner. Goede luisteraar, effectieve communicator.',
+      'about-sub':           'Dicht bij de strategie. Dicht bij de uitvoering. Korte feedbacklussen, langdurige beslissingen.',
       'about-role':          'Enterprise Architect',
       'about-bio':           'De meeste architectuurwerkzaamheden produceren documenten die informeren, maar niet beslissen. Ik werk andersom: artefacten moeten nuttig zijn op het moment dat een beslissing genomen moet worden. Heldere output. Snelle cycli. Geen model om het model. Houdt het minimaal, houdt het tempo hoog, en blijf dicht genoeg bij business, product, data en engineering om ze te verbinden wanneer het ertoe doet, totdat de weg vooruit vanzelfsprekend is.<br><br>TOGAF en ArchiMate gecertificeerd. MSc in Enterprise IT Architecture. Academische strengheid in dienst van praktische realiteit.',
       'about-fitlabel':      'Waar ik doorgaans werk',
@@ -154,7 +174,7 @@
       'ph-message':          'Wat speelt er?',
       'form-submit':         'Verstuur bericht',
       'form-sending':        'Verzenden…',
-      'form-success':        'Bericht verzonden. Ik neem binnen een dag contact op.',
+      'form-success':        'Ontvangen. Ik reageer binnen een dag.',
       'form-error':          'Er is iets misgegaan — probeer te bellen of direct te mailen.',
       'contact-call-title':  'Bellen',
       'contact-avail':       'Bereikbaar maandag – vrijdag, 09:00 – 18:00 CET',
@@ -351,19 +371,22 @@
           }),
         });
         if (!res.ok) throw new Error();
-        contactForm.reset();
-        if (formStatus) {
-          formStatus.textContent = t('form-success');
-          formStatus.className   = 'form-status success';
-        }
+        // Replace the form inline — no toast, no modal
+        const successLine = document.createElement('p');
+        successLine.textContent = t('form-success');
+        successLine.style.cssText = 'margin:0; color:var(--text); font-size:0.8125rem; line-height:1.5;';
+        contactForm.replaceWith(successLine);
+        return;
       } catch {
         if (formStatus) {
           formStatus.textContent = t('form-error');
           formStatus.className   = 'form-status error';
         }
       } finally {
-        formSubmitBtn.disabled = false;
-        textSpan.textContent   = t('form-submit');
+        if (formSubmitBtn.isConnected) {
+          formSubmitBtn.disabled = false;
+          textSpan.textContent   = t('form-submit');
+        }
       }
     });
   }
