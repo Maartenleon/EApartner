@@ -60,7 +60,9 @@ body {
   line-height: 1.5;
   letter-spacing: -0.01em;
   cursor: none;
+  transition: opacity 180ms ease;
 }
+body.lang-fade { opacity: 0; }
 a { color: inherit; text-decoration: none; }
 ::selection { background: rgb(var(--accent-rgb) / .16); }
 
@@ -83,6 +85,9 @@ a { color: inherit; text-decoration: none; }
 .topbar.scrolled {
   background: rgb(var(--bg-rgb) / .78);
   border-bottom: 1px solid var(--line);
+}
+body:has(.mobile-overlay.open) .topbar.scrolled {
+  border-bottom-color: transparent;
 }
 .topbar-inner {
   display: flex;
@@ -324,13 +329,20 @@ header.hero::before {
     transparent    85%
   );
   filter: blur(28px);
-  animation: hero-focus 2.4s cubic-bezier(.4, 0, .2, 1) forwards;
+  animation:
+    hero-focus 2.4s cubic-bezier(.4, 0, .2, 1) forwards,
+    hero-pulse 5s ease-in-out 2.4s infinite;
   z-index: 0;
 }
 
 @keyframes hero-focus {
   from { filter: blur(70px); opacity: 0.4; }
   to   { filter: blur(28px); opacity: 1; }
+}
+
+@keyframes hero-pulse {
+  0%, 100% { filter: blur(28px); opacity: 1; }
+  50%       { filter: blur(18px); opacity: 0.82; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -594,6 +606,71 @@ footer {
 .mono { font-family: var(--mono); }
 
 /* ============================================================
+   LANGUAGE TOGGLE
+   ============================================================ */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang-btn {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  transition: color .15s ease;
+  line-height: 1;
+}
+
+.lang-btn:hover { color: var(--text); }
+
+.lang-btn.active {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.lang-sep {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--line-strong);
+  user-select: none;
+}
+
+/* Desktop: in footer, styled slightly larger */
+.lang-toggle--desktop .lang-btn {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+/* Mobile: positioned at bottom-left of overlay */
+.lang-toggle--mobile {
+  display: none; /* shown only inside mobile overlay */
+  position: absolute;
+  bottom: 28px;
+  left: 36px;
+}
+
+.lang-toggle--mobile .lang-btn {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+.lang-toggle--mobile .lang-sep {
+  font-size: 13px;
+}
+
+@media (max-width: 720px) {
+  .lang-toggle--mobile { display: flex; }
+  .lang-toggle--desktop { display: none; }
+}
+
+/* ============================================================
    CUSTOM CURSOR
    ============================================================ */
 .cursor {
@@ -609,6 +686,7 @@ footer {
   transition: opacity .15s ease, transform .08s ease, background .2s ease;
 }
 .cursor.clicking { transform: translate(-50%, -50%) scale(0.9); }
+@media (pointer: coarse) { .cursor { display: none; } }
 
 /* ============================================================
    RIPPLE
@@ -862,7 +940,7 @@ footer {
 /* ── Desktop overrides (≥ 901px) ─────────── */
 @media (min-width: 901px) {
   .track-card {
-    height: 420px;
+    height: 440px;
     overflow: hidden;
   }
 
@@ -929,6 +1007,12 @@ footer {
   flex-direction: column;
   gap: 16px;
 }
+@media (max-width: 900px) {
+  .track-deliver {
+    gap: 16px;
+    margin-bottom: 0;
+  }
+}
 .track-deliver li {
   display: flex;
   gap: 10px;
@@ -958,10 +1042,20 @@ footer {
   }
 }
 
-/* Fade in on hover — delayed until card is fully open */
-.track-card:hover .track-fit-line {
-  opacity: 1;
-  transition: opacity 300ms ease 520ms;
+/* Mobile: reveal when expand wrap is open */
+@media (max-width: 900px) {
+  .track-body:has(.track-expand-wrap.open) .track-fit-line {
+    opacity: 1;
+    transition: opacity 300ms ease;
+  }
+}
+
+/* Desktop: fade in on hover, delayed until card is fully open */
+@media (min-width: 901px) {
+  .track-card:hover .track-fit-line {
+    opacity: 1;
+    transition: opacity 300ms ease 520ms;
+  }
 }
 
 .track-entry {
@@ -977,6 +1071,26 @@ footer {
     flex-direction: column;
     gap: 16px;
   }
+
+  /*
+   * Mobile track card spacing — 8px grid hierarchy
+   * Replace the uniform gap: 12px with explicit spacing per element
+   * so semantically related items sit closer than unrelated ones.
+   *
+   *  label → h3          :  4px  (same semantic unit)
+   *  h3 → description    : 16px  (section break)
+   *  description → button: 24px  (before interactive element)
+   *  button → fit-line   : 32px  (secondary info, after action)
+   *  fit-line → bullets  : 20px  (transition to list)
+   *  between bullets     : 16px  (consistent with body rhythm)
+   *  last bullet → edge  : 24px  (= card padding)
+   */
+  .track-main                                               { gap: 0; }
+  .track-main h3                                            { margin-top: 4px; }
+  .track-main > p:not(.track-label):not(.track-fit-line)   { margin-top: 16px; }
+  .track-show-more                                          { padding-top: 0; margin-top: 24px; }
+  .track-main .track-fit-line                               { margin-top: 32px; }
+  .track-expand                                             { padding-top: 20px; }
 }
 
 /* ── Track SVG animations (paused until in-view) ─────── */
@@ -1070,15 +1184,176 @@ footer {
 #contact-content .btn {
   padding: 13px 22px;
 }
-#contact-calendly {
+/* ── Contact options (post-CTA) ─────────────────────── */
+#contact-options {
   width: 100%;
   opacity: 0;
   display: none;
   transition: opacity .4s ease;
 }
+
+
+
+/* Two choice cards */
+.contact-choice-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 0;
+}
+
+.contact-choice {
+  background: var(--bg);
+  border: 1px solid var(--line-mid);
+  border-radius: var(--radius);
+  padding: 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: border-color 220ms ease, background 220ms ease;
+}
+
+/* Header — always visible, contains title + description */
+.contact-choice-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-choice-title {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 620;
+  letter-spacing: -0.01em;
+  color: var(--brand);
+  display: block;
+}
+
+.contact-choice-desc {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  line-height: 1.5;
+  display: block;
+}
+
+
+/* Call panel layout inside card */
+.contact-call-panel { display: contents; }
+
+.contact-panel-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+
+.contact-phone {
+  font-family: "Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 300;
+  color: var(--brand);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  display: block;
+  margin-top: 16px;
+  transition: color 200ms ease;
+}
+.contact-phone:hover { color: var(--accent); }
+
+/* Static cards — no expand, no hover interaction */
+.contact-choice--static { cursor: default; }
+.contact-choice--static:hover { border-color: var(--line-mid); }
+
+/* Inline form inside message card */
+.contact-form-inline { margin-top: 20px; }
+
+.contact-availability {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin: 8px 0 0;
+}
+
+/* Message form */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.form-field input,
+.form-field textarea {
+  background: var(--bg);
+  border: 1px solid var(--line-mid);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text);
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 200ms ease;
+}
+.form-field textarea {
+  resize: vertical;
+  line-height: 1.55;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: var(--muted); opacity: 0.55; }
+.form-field input:focus,
+.form-field textarea:focus         { border-color: var(--line-strong); }
+
+.form-submit-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.form-status {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  flex: 1;
+}
+.form-status.success { color: var(--brand); }
+.form-status.error   { color: var(--accent); }
+
+/* Schedule panel */
 .panel.calendly-panel {
   padding: 0;
   overflow: hidden;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .contact-choice-row { grid-template-columns: 1fr; }
+  .form-row            { grid-template-columns: 1fr; }
 }
 
 /* ── About redesign ─────────────────────────────────────── */
@@ -1107,7 +1382,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 0;
-  padding-top: 4px;
+  padding: 28px 24px 32px 32px;
 }
 
 .about-name {
@@ -1188,6 +1463,9 @@ footer {
   .about-photo {
     aspect-ratio: 4 / 3;
     max-height: 360px;
+  }
+  .about-text-col {
+    padding: 0;
   }
 }
 

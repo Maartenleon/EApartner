@@ -37,15 +37,11 @@
 
         <nav aria-label="Primary navigation" id="mainnav">
           <div class="nav-indicator" id="navIndicator" aria-hidden="true"></div>
-
-          <a href="#waarde" data-section="waarde">Value</a>
-
-          <a href="#diensten" data-section="diensten">Services</a>
-
-          <a href="#aanpak" data-section="aanpak">Approach</a>
-
-<a href="#over" data-section="over">About</a>
-          <a href="#contact" data-section="contact">Contact</a>
+          <a href="#waarde"  data-section="waarde"   data-i18n="nav-value">Value</a>
+          <a href="#diensten" data-section="diensten" data-i18n="nav-services">Services</a>
+          <a href="#aanpak"  data-section="aanpak"   data-i18n="nav-approach">Approach</a>
+          <a href="#over"    data-section="over"      data-i18n="nav-about">About</a>
+          <a href="#contact" data-section="contact"   data-i18n="nav-contact">Contact</a>
         </nav>
       </div>
     </div>
@@ -53,11 +49,16 @@
 
   <!-- Mobile full-screen overlay -->
   <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
-    <a href="#waarde">Value</a>
-    <a href="#diensten">Services</a>
-    <a href="#aanpak">Approach</a>
-    <a href="#over">About</a>
-    <a href="#contact">Contact</a>
+    <a href="#waarde"   data-i18n="nav-value">Value</a>
+    <a href="#diensten" data-i18n="nav-services">Services</a>
+    <a href="#aanpak"   data-i18n="nav-approach">Approach</a>
+    <a href="#over"     data-i18n="nav-about">About</a>
+    <a href="#contact"  data-i18n="nav-contact">Contact</a>
+    <div class="lang-toggle lang-toggle--mobile">
+      <button class="lang-btn active" data-lang-btn="en">EN</button>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <button class="lang-btn" data-lang-btn="nl">NL</button>
+    </div>
   </div>
 
   <main id="top">
@@ -67,10 +68,11 @@
       <div class="wrap">
         <div class="hero-grid">
           <div class="hero-left">
-            <h1 class="reveal" style="--reveal-delay: 0ms">The enterprise of tomorrow<br>is intelligent, agentic,<br>and built to change.</h1>
-            <p class="lede reveal" style="--reveal-delay: 120ms">Enterprise Architecture is how you get there,<br>in alignment with your strategy, while controlling complexity.</p>            <div class="cta-row reveal" style="--reveal-delay: 240ms">
+            <h1 class="reveal" style="--reveal-delay: 0ms" data-i18n="hero-h1">The enterprise of tomorrow<br>is intelligent, agentic,<br>and built to change.</h1>
+            <p class="lede reveal" style="--reveal-delay: 120ms" data-i18n="hero-lede">Enterprise Architecture is how you get there,<br>in alignment with your strategy, while controlling complexity.</p>
+            <div class="cta-row reveal" style="--reveal-delay: 240ms">
               <a class="btn" href="#diensten">
-                <span>View services</span>
+                <span data-i18n="hero-cta">View services</span>
                 <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -85,10 +87,10 @@
         <div class="section-3col waarde-layout">
           <div></div>
           <div class="waarde-body">
-            <p class="section-eyebrow reveal" style="--reveal-delay: 0ms">Why enterprise architecture</p>
-            <h2 class="waarde-heading reveal" style="--reveal-delay: 120ms">Every satisfying organisational experience (a product that works, a platform that scales, a decision that sticks) is held together by architecture most people never see.</h2>
-            <p class="waarde-text reveal" style="--reveal-delay: 240ms">The pattern is familiar: too many initiatives, too little focus. An IT landscape that tangles as the organisation grows. Strategic direction that doesn't reach delivery. Delivery that drifts without strategic direction. The need isn't more technology. It's coherence across the whole.</p>
-            <p class="waarde-text reveal" style="--reveal-delay: 360ms">Architecture earns its place close enough to strategy to shape decisions, and close enough to delivery to govern what actually gets built. That means two things need to work: <br><strong>transformations need solid architecture</strong> to steer them, and <strong>the architecture function itself needs to deliver.</strong> How that looks depends on where you are.</p>
+            <p class="section-eyebrow reveal" style="--reveal-delay: 0ms" data-i18n="value-eyebrow">Why enterprise architecture</p>
+            <h2 class="waarde-heading reveal" style="--reveal-delay: 120ms" data-i18n="value-h2">Every satisfying organisational experience (a product that works, a platform that scales, a decision that sticks) is held together by architecture most people never see.</h2>
+            <p class="waarde-text reveal" style="--reveal-delay: 240ms" data-i18n="value-text1">The pattern is familiar: too many initiatives, too little focus. An IT landscape that tangles as the organisation grows. Strategic direction that doesn't reach delivery. Delivery that drifts without strategic direction. The need isn't more technology. It's coherence across the whole.</p>
+            <p class="waarde-text reveal" style="--reveal-delay: 360ms" data-i18n="value-text2">Architecture earns its place close enough to strategy to shape decisions, and close enough to delivery to govern what actually gets built. That means two things need to work: <br><strong>transformations need solid architecture</strong> to steer them, and <strong>the architecture function itself needs to deliver.</strong> How that looks depends on where you are.</p>
           </div>
         </div>
       </div>
@@ -99,9 +101,9 @@
       <div class="wrap">
         <div class="section-3col">
           <div class="section-label reveal" style="--reveal-delay: 0ms">
-            <p class="section-eyebrow">What I offer</p>
-            <h2>Services</h2>
-            <p class="sub">Two tracks. One for organisations with complex transformations. One for organisations who want to improve their architecture function. <br> <br> We are good at enterprise and business architecture. let us help you become good at it too.</p>
+            <p class="section-eyebrow" data-i18n="services-eyebrow">What I offer</p>
+            <h2 data-i18n="services-h2">Services</h2>
+            <p class="sub" data-i18n="services-sub">Two tracks. One for organisations with complex transformations. One for organisations who want to improve their architecture function. <br> <br> We are good at enterprise and business architecture. let us help you become good at it too.</p>
           </div>
 
           <div class="two">
@@ -131,18 +133,18 @@
               <div class="track-body">
                 <div class="track-main">
                   <p class="track-label">Track 1</p>
-                  <h3>Architecture for Change</h3>
-                  <p>Your transformation needs a spine: from strategy through capabilities, data, applications, and technology. Architecture that connects layers and enables decisions.</p>
-                  <p class="track-fit-line">Best for: Organisations mid-transformation where decisions are stuck, unclear, or drifting</p>
-                  <button class="track-show-more" aria-expanded="false">Show more</button>
+                  <h3 data-i18n="track1-h3">Architecture for Transformation</h3>
+                  <p data-i18n="track1-p">Your transformation needs a spine: from strategy through capabilities, data, applications, and technology. Architecture that connects layers and enables decisions.</p>
+                  <button class="track-show-more" aria-expanded="false" data-i18n="track-showmore">Show more</button>
+                  <p class="track-fit-line" data-i18n="track1-fitline">Best for: Organisations mid-transformation where decisions are stuck, unclear, or drifting</p>
                 </div>
                 <div class="track-expand-wrap">
                   <div class="track-expand">
                     <ul class="track-deliver">
-                      <li><span class="bullet" aria-hidden="true"></span><span>A clear map of where complexity sits and which decisions are urgent</span></li>
-                      <li><span class="bullet" aria-hidden="true"></span><span>A layered target architecture that's built to last and executable</span></li>
-                      <li><span class="bullet" aria-hidden="true"></span><span>A sequenced roadmap where every step traces to a decision, not a deadline</span></li>
-                      <li><span class="bullet" aria-hidden="true"></span><span>Embedded guidance until the path forward stays obvious without me</span></li>
+                      <li><span class="bullet" aria-hidden="true"></span><span data-i18n="track1-li1">A clear map of where complexity sits and which decisions are urgent</span></li>
+                      <li><span class="bullet" aria-hidden="true"></span><span data-i18n="track1-li2">A layered target architecture that's built to last and executable</span></li>
+                      <li><span class="bullet" aria-hidden="true"></span><span data-i18n="track1-li3">A sequenced roadmap where every step traces to a decision, not a deadline</span></li>
+                      <li><span class="bullet" aria-hidden="true"></span><span data-i18n="track1-li4">Embedded guidance until the path forward stays obvious without me</span></li>
                     </ul>
                   </div>
                 </div>
@@ -199,18 +201,18 @@
               <div class="track-body">
                 <div class="track-main">
                   <p class="track-label">Track 2</p>
-                  <h3>Architecture as a Function</h3>
-                  <p>Your EA function exists but doesn't deliver influence, decisions, or value. Six capabilities. One focused audit. A concrete plan to make architecture stick.</p>
-                  <p class="track-fit-line">Best for: Organisations with an EA function that exists but doesn't deliver strategic value</p>
-                  <button class="track-show-more" aria-expanded="false">Show more</button>
+                  <h3 data-i18n="track2-h3">Architecture as a Function</h3>
+                  <p data-i18n="track2-p">Your EA function exists but doesn't deliver influence, governance, decisions, or value. A concrete plan to make architecture stick by enhancing six capabilities.</p>
+                  <button class="track-show-more" aria-expanded="false" data-i18n="track-showmore">Show more</button>
+                  <p class="track-fit-line" data-i18n="track2-fitline">Best for: Organisations with an EA function that exists but doesn't deliver strategic value</p>
                 </div>
                 <div class="track-expand-wrap">
                   <div class="track-expand">
                     <ul class="track-deliver">
-                      <li><span class="bullet" aria-hidden="true"></span><span>An honest baseline across all six EA capabilities, scored and compared</span></li>
-                      <li><span class="bullet" aria-hidden="true"></span><span>A named diagnosis of where the function loses influence and why</span></li>
-                      <li><span class="bullet" aria-hidden="true"></span><span>A concrete, sequenced improvement plan anchored to impact</span></li>
-                      <li><span class="bullet" aria-hidden="true"></span><span>Coaching support for leads and teams during the build-out</span></li>
+                      <li><span class="bullet" aria-hidden="true"></span><span data-i18n="track2-li1">An honest baseline across all six EA capabilities, scored and compared</span></li>
+                      <li><span class="bullet" aria-hidden="true"></span><span data-i18n="track2-li2">A named diagnosis of where the function loses influence and why</span></li>
+                      <li><span class="bullet" aria-hidden="true"></span><span data-i18n="track2-li3">A concrete, sequenced improvement plan anchored to impact</span></li>
+                      <li><span class="bullet" aria-hidden="true"></span><span data-i18n="track2-li4">Coaching support for leads and teams during the build-out</span></li>
                     </ul>
                   </div>
                 </div>
@@ -227,9 +229,9 @@
         <div class="section-3col">
 
           <div class="section-label">
-            <p class="section-eyebrow">How I work</p>
-            <h2>Approach</h2>
-            <p class="sub">Every engagement follows the same rhythm: a sharp diagnostic, a clear architecture, then close involvement during delivery. The content differs by track. The discipline doesn't.</p>
+            <p class="section-eyebrow" data-i18n="approach-eyebrow">How I work</p>
+            <h2 data-i18n="approach-h2">Approach</h2>
+            <p class="sub" data-i18n="approach-sub">Every engagement follows the same rhythm: a sharp diagnostic, a clear architecture, then close involvement during delivery. The content differs by track. The discipline doesn't.</p>
           </div>
 
           <div class="phases-row">
@@ -237,25 +239,25 @@
             <!-- Phase 01 -->
             <div class="phase-block reveal" data-phase-num="01">
               <p class="phase-label">01</p>
-              <h3 class="phase-title">Diagnose, 4 weeks</h3>
-              <p class="phase-subtitle">QuickScan · Maturity Audit</p>
-              <p class="phase-body">No assumptions, no predefined answers. For transformation programmes: where does complexity sit, what is blocking progress, which architectural decisions are urgent? For EA functions: where are the six capability gaps? The output is a prioritised map of what needs to happen, not a thick report.</p>
+              <h3 class="phase-title" data-i18n="phase1-title">Diagnose — 4 weeks</h3>
+              <p class="phase-subtitle" data-i18n="phase1-subtitle">QuickScan · Maturity Audit</p>
+              <p class="phase-body" data-i18n="phase1-body">No assumptions, no predefined answers. For transformation programmes: what is the goal, where does complexity sit, what is blocking progress, which architectural decisions are urgent? For EA functions: what is the current maturity? The output is a prioritised map of what needs to happen.</p>
             </div>
 
             <!-- Phase 02 -->
             <div class="phase-block reveal" data-phase-num="02">
               <p class="phase-label">02</p>
-              <h3 class="phase-title">Architect, 4 weeks</h3>
-              <p class="phase-subtitle">Target State · Roadmap · Decisions</p>
-              <p class="phase-body">Translate the diagnosis into a clear architecture. Trade-offs get made, options get documented, a roadmap gets set, with guardrails not just milestones. Every artefact earns its place because it changes what someone does next. Decisions over documents.</p>
+              <h3 class="phase-title" data-i18n="phase2-title">Architect — 4 weeks</h3>
+              <p class="phase-subtitle" data-i18n="phase2-subtitle">Target State · Roadmap · Decisions</p>
+              <p class="phase-body" data-i18n="phase2-body">Translate the diagnosis into a clear architecture and executable strategy. Trade-offs get made, options get documented, a roadmap gets set, with guardrails not just milestones. Every artefact earns its place because it changes what someone does next. Decisions over documents.</p>
             </div>
 
             <!-- Phase 03 -->
             <div class="phase-block reveal" data-phase-num="03">
               <p class="phase-label">03</p>
-              <h3 class="phase-title">Steer, ongoing</h3>
-              <p class="phase-subtitle">Embedded Partner · Delivery Support</p>
-              <p class="phase-body">Architecture doesn't survive first contact with delivery unchanged. Steer is the embedded partner phase: guardrails, course corrections when the landscape shifts, and a thinking partner close enough to the work to catch drift before it becomes debt. Until the path forward stays obvious without me in the room.</p>
+              <h3 class="phase-title" data-i18n="phase3-title">Steer — ongoing</h3>
+              <p class="phase-subtitle" data-i18n="phase3-subtitle">Embedded Partner · Delivery Support</p>
+              <p class="phase-body" data-i18n="phase3-body">Architecture doesn't survive first contact with delivery unchanged. Steer is the embedded partner phase: guardrails, course corrections when the landscape shifts, and a thinking partner close enough to the work to catch drift before it becomes debt. Until the path forward stays obvious without me in the room.</p>
             </div>
 
           </div>
@@ -264,15 +266,14 @@
       </div>
     </section>
 
-    <!-- ── Cases ── -->
     <!-- ── About ── -->
     <section id="over">
       <div class="wrap">
         <div class="section-3col">
           <div class="section-label reveal" style="--reveal-delay: 0ms">
-            <p class="section-eyebrow">Who I am</p>
-            <h2>About</h2>
-            <p class="sub">A sharp and great collaborator. Good listener, effective communicator.</p>
+            <p class="section-eyebrow" data-i18n="about-eyebrow">Who I am</p>
+            <h2 data-i18n="about-h2">About</h2>
+            <p class="sub" data-i18n="about-sub">A sharp and great collaborator. Good listener, effective communicator.</p>
           </div>
 
           <div class="about-layout">
@@ -285,15 +286,15 @@
             <!-- Text column -->
             <div class="about-text-col reveal" style="--reveal-delay: 240ms">
               <h3 class="about-name">Maarten Stienstra</h3>
-              <p class="about-role">Enterprise Architect</p>
-              <p class="about-bio-p">Most architecture work produces documents that inform, but don't decide. I work the other way: artefacts need to be useful at the moment a decision has to be made. Clear output. Fast cycles. No model for its own sake. Keep things minimal, keep the pace up, and stay close enough to business, product, data, and engineering to connect them when it matters, until the path forward is obvious.</p>
+              <p class="about-role" data-i18n="about-role">Enterprise Architect</p>
+              <p class="about-bio-p" data-i18n="about-bio">Most architecture work produces documents that inform, but don't decide. I work the other way: artefacts need to be useful at the moment a decision has to be made. Clear output. Fast cycles. No model for its own sake. Keep things minimal, keep the pace up, and stay close enough to business, product, data, and engineering to connect them when it matters, until the path forward is obvious.</p>
               <div class="about-fit">
-                <p class="about-fit-label">Where I typically work</p>
+                <p class="about-fit-label" data-i18n="about-fitlabel">Where I typically work</p>
                 <div class="about-fit-grid">
-                  <span>Mid-to-large organisations in active transformation</span>
-                  <span>Organisations starting or resetting an EA practice</span>
-                  <span>Programme teams that need architecture to move with delivery</span>
-                  <span>CIOs and heads of architecture who need a thinking partner</span>
+                  <span data-i18n="about-fit1">Mid-to-large organisations in active transformation</span>
+                  <span data-i18n="about-fit2">Organisations starting or resetting an EA practice</span>
+                  <span data-i18n="about-fit3">Programme teams that need architecture to move with delivery</span>
+                  <span data-i18n="about-fit4">CIOs and heads of architecture who need a thinking partner</span>
                 </div>
               </div>
               <a class="linkedin-link" href="https://www.linkedin.com/in/maarten-stienstra-81b10467/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
@@ -312,40 +313,72 @@
     <section id="contact" style="display:flex; align-items:center;">
       <div class="wrap">
         <div id="contact-content">
-          <h2 class="reveal" style="--reveal-delay: 0ms">
+          <h2 class="reveal" style="--reveal-delay: 0ms" data-i18n="contact-h2">
             Complex landscape.<br>Decisions that move.<br>Architecture that lasts.
           </h2>
-          <p class="sub reveal" style="--reveal-delay: 120ms">
+          <p class="sub reveal" style="--reveal-delay: 120ms" data-i18n="contact-sub">
             One sharp conversation is often enough to cut through months of uncertainty. No preparation needed.
           </p>
           <button class="btn reveal" id="lets-talk-btn" style="--reveal-delay: 240ms">
-            <span>Let's talk</span>
+            <span data-i18n="contact-cta">Let's talk</span>
             <span aria-hidden="true">→</span>
           </button>
         </div>
 
-        <div id="contact-calendly">
+        <div id="contact-options">
           <div class="section-3col">
             <div class="section-label">
-              <h2>Schedule a call</h2>
-              <p class="sub">Book a 30 min meeting to explore if we can help you.</p>
+              <p class="section-eyebrow" data-i18n="contact-opts-eyebrow">Get in touch</p>
+              <h2 data-i18n="contact-opts-h2">Contact</h2>
+              <p class="sub" data-i18n="contact-opts-sub">No preparation needed. Pick what works best for you.</p>
             </div>
-            <div class="two">
-              <div class="panel">
-                <h3>Why a call first?</h3>
-                <p>Every situation is different. A short conversation helps me understand your context before we decide if and how I can help.</p>
-                <ul class="list">
-                  <li><span class="bullet" aria-hidden="true"></span><span>30 minutes, no preparation needed</span></li>
-                  <li><span class="bullet" aria-hidden="true"></span><span>Sharp questions, honest answers</span></li>
-                  <li><span class="bullet" aria-hidden="true"></span><span>You leave with at least one useful insight</span></li>
-                </ul>
+
+            <div class="contact-choice-row">
+              <!-- Message -->
+              <div class="contact-choice contact-choice--static" data-choice="message">
+                <div class="contact-choice-header">
+                  <span class="contact-choice-title" data-i18n="contact-msg-title">Message</span>
+                  <span class="contact-choice-desc" data-i18n="contact-msg-desc">Write it down, I'll reply within a day</span>
+                </div>
+                <form id="contact-form" novalidate class="contact-form-inline">
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label for="f-name" data-i18n="form-namelabel">Name</label>
+                      <input type="text" id="f-name" name="name" placeholder="Your name" autocomplete="name" required data-i18n-ph="ph-name">
+                    </div>
+                    <div class="form-field">
+                      <label for="f-email" data-i18n="form-emaillabel">Email</label>
+                      <input type="email" id="f-email" name="email" placeholder="your@email.com" autocomplete="email" required>
+                    </div>
+                  </div>
+                  <div class="form-field">
+                    <label for="f-company" data-i18n="form-companylabel">Company</label>
+                    <input type="text" id="f-company" name="company" placeholder="Your organisation" autocomplete="organization" data-i18n-ph="ph-company">
+                  </div>
+                  <div class="form-field">
+                    <label for="f-message" data-i18n="form-msglabel">Message</label>
+                    <textarea id="f-message" name="message" rows="4" placeholder="What's on your mind?" required data-i18n-ph="ph-message"></textarea>
+                  </div>
+                  <div class="form-submit-row">
+                    <button type="submit" class="btn" id="form-submit-btn">
+                      <span data-i18n="form-submit">Send message</span><span aria-hidden="true">→</span>
+                    </button>
+                    <span class="form-status" id="form-status" aria-live="polite"></span>
+                  </div>
+                </form>
               </div>
-              <div class="panel calendly-panel">
-                <div class="calendly-inline-widget" data-url="https://calendly.com/d/cyqb-f6t-g84?primary_color=f7f7f7" style="width:100%; height:650px;"></div>
+
+              <!-- Call -->
+              <div class="contact-choice contact-choice--static" data-choice="call">
+                <div class="contact-choice-header">
+                  <span class="contact-choice-title" data-i18n="contact-call-title">Call</span>
+                </div>
+                <a href="tel:+31646281246" class="contact-phone">+31 (0)6 46281246</a>
+                <p class="contact-availability" data-i18n="contact-avail">Available Monday – Friday, 09:00 – 18:00 CET</p>
               </div>
             </div>
 
-          </div>
+          </div><!-- /.section-3col -->
         </div>
       </div>
     </section>
@@ -357,6 +390,11 @@
       <div class="footer-row">
         <div class="brand">
           <span class="mono">© <span id="year"></span> EA Partner</span>
+        </div>
+        <div class="lang-toggle lang-toggle--desktop">
+          <button class="lang-btn active" data-lang-btn="en">English</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button class="lang-btn" data-lang-btn="nl">Nederlands</button>
         </div>
       </div>
     </div>
