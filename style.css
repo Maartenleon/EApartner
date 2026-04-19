@@ -303,8 +303,7 @@ header.hero {
 }
 
 /* Glow ring: starts blurred, focuses in over 2.4s */
-header.hero::before {
-  content: '';
+.hero-glow {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -333,6 +332,8 @@ header.hero::before {
     hero-focus 2.4s cubic-bezier(.4, 0, .2, 1) forwards,
     hero-pulse 5s ease-in-out 2.4s infinite;
   z-index: 0;
+  will-change: transform;
+  pointer-events: none;
 }
 
 @keyframes hero-focus {
@@ -346,7 +347,7 @@ header.hero::before {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  header.hero::before { animation: none; }
+  .hero-glow { animation: none; }
 }
 
 header.hero .wrap {
@@ -432,7 +433,7 @@ section {
   border-top: 1px solid var(--line-soft);
 }
 @media (max-width: 900px) {
-  section { padding: 80px 0; }
+  section { padding: 80px 0; min-height: 100dvh; }
   .wrap { padding: 0 18px; }
 }
 @media (max-width: 720px) {
@@ -883,7 +884,7 @@ footer {
 
 /* ── Mobile-first track body layout ─────── */
 .track-body {
-  padding: 24px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
   flex: 1;

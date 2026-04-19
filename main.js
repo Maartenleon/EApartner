@@ -227,11 +227,23 @@
   };
 
   /* ── Shadow + hero inversion on scroll ───────────────── */
-  const hasHero = !!document.querySelector('header.hero');
+  const hasHero      = !!document.querySelector('header.hero');
+  const heroGlow     = document.querySelector('.hero-glow');
+  const themeColorEl = document.getElementById('theme-color-meta');
+  const heroEl       = document.querySelector('header.hero');
   const onScroll = () => {
     const y = window.scrollY;
     topbar.classList.toggle('scrolled', y > 6);
     if (hasHero) topbar.classList.toggle('over-hero', y < 6);
+    // Sync browser chrome (status bar) colour with visible section
+    if (themeColorEl && heroEl) {
+      const overHero = y < heroEl.offsetHeight - 40;
+      themeColorEl.content = overHero ? '#8b1a0a' : '#FAF8F6';
+    }
+    // Parallax: glow drifts down at 40% of scroll speed (appears to scroll up slower)
+    if (heroGlow && !prefersReducedMotion) {
+      heroGlow.style.transform = `translate(-50%, calc(-50% + ${y * 0.4}px))`;
+    }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
