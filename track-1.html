@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Architecture for Change — EA Partner</title>
+  <meta name="description" content="Architecture that gives complex change a spine. How strategy connects to capabilities, data, applications, and technology — with AI as a cross-cutting concern." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Topbar: always white on this page ─────────── */
+    .topbar { background: #ffffff; border-bottom: 1px solid var(--line); }
+
+    /* ── Page intro ────────────────────────────────── */
+    .page-intro {
+      padding: calc(var(--topbar-h) + 80px) 0 72px;
+      border-bottom: 1px solid rgba(0,0,0,.08);
+      background: linear-gradient(180deg, rgba(139,26,10,.03) 0%, transparent 100%);
+    }
+    .page-intro h1 { margin: 10px 0 18px; }
+    .page-back {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 28px;
+    }
+    .page-back:hover { color: var(--text); }
+
+    /* ── Architecture visualization ────────────────── */
+    .viz-section { padding: 72px 0; border-bottom: 1px solid rgba(0,0,0,.08); }
+    .viz-intro { margin-bottom: 48px; }
+    .layer-viz { width: 100%; display: block; overflow: visible; }
+    .layer-viz text {
+      font-family: var(--mono), monospace;
+      fill: rgba(0,0,0,.32);
+      font-size: 9px;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    /* Run animations immediately (no scroll trigger needed — above the fold) */
+    .layer-viz .da { animation-play-state: running; }
+
+    /* AI nodes */
+    .ai-node {
+      transform-box: fill-box;
+      transform-origin: center;
+      fill: var(--accent);
+      opacity: 0;
+    }
+    .ai-node-1 { animation: ai-in .3s ease 4.4s forwards, ai-pulse 3.2s ease-in-out 4.7s infinite; }
+    .ai-node-2 { animation: ai-in .3s ease 4.6s forwards, ai-pulse 3.2s ease-in-out 4.9s infinite; }
+    .ai-node-3 { animation: ai-in .3s ease 4.8s forwards, ai-pulse 3.2s ease-in-out 5.1s infinite; }
+    .ai-node-4 { animation: ai-in .3s ease 5.0s forwards, ai-pulse 3.2s ease-in-out 5.3s infinite; }
+    .ai-node-5 { animation: ai-in .3s ease 5.2s forwards, ai-pulse 3.2s ease-in-out 5.5s infinite; }
+    @keyframes ai-in  { to { opacity: 1; } }
+    @keyframes ai-pulse {
+      0%, 100% { transform: scale(1);   opacity: 1; }
+      50%      { transform: scale(1.9); opacity: .35; }
+    }
+
+    /* ── AI callout panel ──────────────────────────── */
+    .ai-callout {
+      background: rgb(var(--accent-rgb) / .025);
+      border: 1px solid rgb(var(--accent-rgb) / .14);
+      border-left: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      height: 100%;
+    }
+    .ai-callout p { margin: 0; }
+    .ai-callout p + p { margin-top: 14px; }
+    .ai-callout-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 10px;
+    }
+
+    /* ── Layer digit decoration ────────────────────── */
+    .layer-digit {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .06em;
+      color: rgba(0,0,0,.22);
+      margin: 0 0 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <div class="topbar" id="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <a class="logo" href="index.html" aria-label="EA Partner">
+          <svg class="logo__icon" viewBox="0 0 28 28" width="28" height="28" fill="none" aria-hidden="true" overflow="visible">
+            <line x1="14" y1="14" x2="14" y2="4"  stroke="currentColor" stroke-opacity=".3" stroke-width="1.2"/>
+            <line x1="14" y1="14" x2="24" y2="14" stroke="currentColor" stroke-opacity=".3" stroke-width="1.2"/>
+            <line x1="14" y1="14" x2="14" y2="24" stroke="currentColor" stroke-opacity=".3" stroke-width="1.2"/>
+            <line x1="14" y1="14" x2="4"  y2="14" stroke="currentColor" stroke-opacity=".3" stroke-width="1.2"/>
+            <circle cx="14" cy="4"  r="3" fill="currentColor" fill-opacity=".3"/>
+            <circle cx="24" cy="14" r="3" fill="currentColor" fill-opacity=".3"/>
+            <circle cx="14" cy="24" r="3" fill="currentColor" fill-opacity=".3"/>
+            <circle cx="4"  cy="14" r="3" fill="currentColor" fill-opacity=".3"/>
+            <circle cx="14" cy="14" r="3" fill="currentColor"/>
+          </svg>
+          <span class="logo__wordmark">EA Partner</span>
+        </a>
+
+        <nav aria-label="Primary navigation" id="mainnav">
+          <div class="nav-item">
+            <a href="index.html#diensten">
+              Services
+              <svg class="nav-chevron" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="nav-dropdown" role="menu">
+              <a href="track-1.html" role="menuitem" aria-current="page"><span class="dd-dot"></span>Architecture for Change</a>
+              <a href="track-2.html" role="menuitem"><span class="dd-dot"></span>Architecture as a Function</a>
+            </div>
+          </div>
+          <a href="index.html#aanpak">Approach</a>
+          <a href="index.html#cases">Cases</a>
+          <a href="index.html#over">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ── Page intro ── -->
+    <div class="page-intro">
+      <div class="wrap">
+        <a class="page-back" href="index.html#diensten">← Back to services</a>
+        <p class="section-eyebrow">Track 1</p>
+        <h1>Architecture<br>for Change</h1>
+        <p class="lede">Architecture that gives complex change a spine — from an integrative long-term target to the first executable step. Built for an intelligent, agentic future.</p>
+      </div>
+    </div>
+
+    <!-- ── Architecture layers diagram ── -->
+    <div class="viz-section">
+      <div class="wrap">
+        <div class="section-3col viz-intro">
+          <div class="section-label">
+            <p class="section-eyebrow">The model</p>
+            <h2>Five layers,<br>one coherent whole</h2>
+          </div>
+          <div>
+            <p class="sub" style="max-width:60ch;">Enterprise Architecture works across five interconnected layers — from business intent at the top, to the technology foundations below. Each layer informs the next. AI and autonomous agents cut across all of them.</p>
+          </div>
+        </div>
+
+        <!-- Architecture diagram SVG -->
+        <svg class="layer-viz" viewBox="0 0 680 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Enterprise Architecture layer diagram" role="img">
+
+          <!-- Layer background bands (very subtle) -->
+          <rect x="130" y="28"  width="510" height="44" rx="6" fill="currentColor" fill-opacity=".013"/>
+          <rect x="130" y="108" width="510" height="44" rx="6" fill="currentColor" fill-opacity=".013"/>
+          <rect x="130" y="188" width="510" height="44" rx="6" fill="currentColor" fill-opacity=".013"/>
+          <rect x="130" y="268" width="510" height="44" rx="6" fill="currentColor" fill-opacity=".013"/>
+          <rect x="130" y="348" width="510" height="44" rx="6" fill="currentColor" fill-opacity=".013"/>
+
+          <!-- Layer labels -->
+          <text x="8" y="54"  class="viz-layer-label">Strategy</text>
+          <text x="8" y="134" class="viz-layer-label">Capabilities</text>
+          <text x="8" y="214" class="viz-layer-label">Data</text>
+          <text x="8" y="294" class="viz-layer-label">Applications</text>
+          <text x="8" y="374" class="viz-layer-label">Technology</text>
+          <text x="635" y="20" class="viz-layer-label" text-anchor="middle" fill="rgba(255,59,0,.55)">AI / Agents</text>
+
+          <!-- ── Strategy horizontal line ── -->
+          <line x1="200" y1="50" x2="460" y2="50"
+            stroke="currentColor" stroke-opacity=".18" stroke-width="1"
+            style="stroke-dasharray:260; stroke-dashoffset:260; animation: anim-draw .8s ease forwards .1s"/>
+
+          <!-- Strategy nodes -->
+          <circle cx="200" cy="50" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:.15s"/>
+          <circle cx="330" cy="50" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:.45s"/>
+          <circle cx="460" cy="50" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:.75s"/>
+
+          <!-- ── Strategy → Capabilities ── -->
+          <line x1="200" y1="50"  x2="165" y2="130" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:90;  stroke-dashoffset:90;  animation: anim-draw .4s ease forwards .7s"/>
+          <line x1="330" y1="50"  x2="260" y2="130" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:110; stroke-dashoffset:110; animation: anim-draw .4s ease forwards .75s"/>
+          <line x1="330" y1="50"  x2="355" y2="130" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:85;  stroke-dashoffset:85;  animation: anim-draw .4s ease forwards .8s"/>
+          <line x1="460" y1="50"  x2="450" y2="130" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:82;  stroke-dashoffset:82;  animation: anim-draw .4s ease forwards .85s"/>
+          <line x1="460" y1="50"  x2="545" y2="130" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:118; stroke-dashoffset:118; animation: anim-draw .4s ease forwards .9s"/>
+
+          <!-- ── Capabilities horizontal line ── -->
+          <line x1="165" y1="130" x2="545" y2="130"
+            stroke="currentColor" stroke-opacity=".18" stroke-width="1"
+            style="stroke-dasharray:380; stroke-dashoffset:380; animation: anim-draw 1.0s ease forwards .9s"/>
+
+          <!-- Capabilities nodes -->
+          <circle cx="165" cy="130" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:.95s"/>
+          <circle cx="260" cy="130" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:1.15s"/>
+          <circle cx="355" cy="130" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:1.35s"/>
+          <circle cx="450" cy="130" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:1.55s"/>
+          <circle cx="545" cy="130" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:1.75s"/>
+
+          <!-- ── Capabilities → Data ── -->
+          <line x1="165" y1="130" x2="180" y2="210" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:82;  stroke-dashoffset:82;  animation: anim-draw .4s ease forwards 1.6s"/>
+          <line x1="260" y1="130" x2="295" y2="210" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:88;  stroke-dashoffset:88;  animation: anim-draw .4s ease forwards 1.65s"/>
+          <line x1="355" y1="130" x2="295" y2="210" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:100; stroke-dashoffset:100; animation: anim-draw .4s ease forwards 1.7s"/>
+          <line x1="450" y1="130" x2="410" y2="210" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:90;  stroke-dashoffset:90;  animation: anim-draw .4s ease forwards 1.75s"/>
+          <line x1="545" y1="130" x2="525" y2="210" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:83;  stroke-dashoffset:83;  animation: anim-draw .4s ease forwards 1.8s"/>
+
+          <!-- ── Data horizontal line ── -->
+          <line x1="180" y1="210" x2="525" y2="210"
+            stroke="currentColor" stroke-opacity=".18" stroke-width="1"
+            style="stroke-dasharray:345; stroke-dashoffset:345; animation: anim-draw .9s ease forwards 1.8s"/>
+
+          <!-- Data nodes -->
+          <circle cx="180" cy="210" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:1.85s"/>
+          <circle cx="295" cy="210" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:2.05s"/>
+          <circle cx="410" cy="210" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:2.25s"/>
+          <circle cx="525" cy="210" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:2.45s"/>
+
+          <!-- ── Data → Applications ── -->
+          <line x1="180" y1="210" x2="165" y2="290" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:82;  stroke-dashoffset:82;  animation: anim-draw .4s ease forwards 2.5s"/>
+          <line x1="295" y1="210" x2="270" y2="290" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:85;  stroke-dashoffset:85;  animation: anim-draw .4s ease forwards 2.55s"/>
+          <line x1="410" y1="210" x2="375" y2="290" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:88;  stroke-dashoffset:88;  animation: anim-draw .4s ease forwards 2.6s"/>
+          <line x1="410" y1="210" x2="480" y2="290" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:106; stroke-dashoffset:106; animation: anim-draw .4s ease forwards 2.65s"/>
+          <line x1="525" y1="210" x2="575" y2="290" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:95;  stroke-dashoffset:95;  animation: anim-draw .4s ease forwards 2.7s"/>
+
+          <!-- ── Applications horizontal line ── -->
+          <line x1="165" y1="290" x2="575" y2="290"
+            stroke="currentColor" stroke-opacity=".18" stroke-width="1"
+            style="stroke-dasharray:410; stroke-dashoffset:410; animation: anim-draw 1.0s ease forwards 2.7s"/>
+
+          <!-- Applications nodes -->
+          <circle cx="165" cy="290" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:2.75s"/>
+          <circle cx="270" cy="290" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:2.95s"/>
+          <circle cx="375" cy="290" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:3.15s"/>
+          <circle cx="480" cy="290" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:3.35s"/>
+          <circle cx="575" cy="290" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:3.55s"/>
+
+          <!-- ── Applications → Technology ── -->
+          <line x1="165" y1="290" x2="200" y2="370" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:88;  stroke-dashoffset:88;  animation: anim-draw .4s ease forwards 3.4s"/>
+          <line x1="270" y1="290" x2="200" y2="370" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:106; stroke-dashoffset:106; animation: anim-draw .4s ease forwards 3.45s"/>
+          <line x1="375" y1="290" x2="360" y2="370" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:81;  stroke-dashoffset:81;  animation: anim-draw .4s ease forwards 3.5s"/>
+          <line x1="480" y1="290" x2="520" y2="370" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:90;  stroke-dashoffset:90;  animation: anim-draw .4s ease forwards 3.55s"/>
+          <line x1="575" y1="290" x2="520" y2="370" stroke="currentColor" stroke-opacity=".12" stroke-width="1" style="stroke-dasharray:97;  stroke-dashoffset:97;  animation: anim-draw .4s ease forwards 3.6s"/>
+
+          <!-- ── Technology horizontal line ── -->
+          <line x1="200" y1="370" x2="520" y2="370"
+            stroke="currentColor" stroke-opacity=".18" stroke-width="1"
+            style="stroke-dasharray:320; stroke-dashoffset:320; animation: anim-draw .9s ease forwards 3.6s"/>
+
+          <!-- Technology nodes -->
+          <circle cx="200" cy="370" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:3.65s"/>
+          <circle cx="360" cy="370" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:3.85s"/>
+          <circle cx="520" cy="370" r="3.5" class="da" fill="currentColor" fill-opacity=".45" style="animation-delay:4.05s"/>
+
+          <!-- ── AI / Agents vertical axis ── -->
+          <line x1="635" y1="50" x2="635" y2="370"
+            stroke="rgba(255,59,0,.35)" stroke-width="1"
+            style="stroke-dasharray:320; stroke-dashoffset:320; animation: anim-draw 1.0s ease forwards 4.2s"/>
+
+          <!-- AI horizontal connectors to each layer -->
+          <line x1="460" y1="50"  x2="630" y2="50"  stroke="rgba(255,59,0,.18)" stroke-width="1" stroke-dasharray="3 4" style="opacity:0; animation: anim-fi .3s ease forwards 4.5s"/>
+          <line x1="545" y1="130" x2="630" y2="130" stroke="rgba(255,59,0,.18)" stroke-width="1" stroke-dasharray="3 4" style="opacity:0; animation: anim-fi .3s ease forwards 4.6s"/>
+          <line x1="525" y1="210" x2="630" y2="210" stroke="rgba(255,59,0,.18)" stroke-width="1" stroke-dasharray="3 4" style="opacity:0; animation: anim-fi .3s ease forwards 4.7s"/>
+          <line x1="575" y1="290" x2="630" y2="290" stroke="rgba(255,59,0,.18)" stroke-width="1" stroke-dasharray="3 4" style="opacity:0; animation: anim-fi .3s ease forwards 4.8s"/>
+          <line x1="520" y1="370" x2="630" y2="370" stroke="rgba(255,59,0,.18)" stroke-width="1" stroke-dasharray="3 4" style="opacity:0; animation: anim-fi .3s ease forwards 4.9s"/>
+
+          <!-- AI nodes (accent, pulsing) -->
+          <circle cx="635" cy="50"  r="4" class="ai-node ai-node-1"/>
+          <circle cx="635" cy="130" r="4" class="ai-node ai-node-2"/>
+          <circle cx="635" cy="210" r="4" class="ai-node ai-node-3"/>
+          <circle cx="635" cy="290" r="4" class="ai-node ai-node-4"/>
+          <circle cx="635" cy="370" r="4" class="ai-node ai-node-5"/>
+
+        </svg>
+      </div>
+    </div>
+
+    <!-- ── Layer 1: Strategy ── -->
+    <section>
+      <div class="wrap">
+        <div class="section-3col">
+          <div class="section-label reveal">
+            <p class="layer-digit">01</p>
+            <p class="section-eyebrow">Layer 1</p>
+            <h2>Strategy</h2>
+            <p class="sub">Business intent, principles, and architectural boundaries that govern every decision below.</p>
+          </div>
+          <div class="two">
+            <div class="panel reveal">
+              <h3>The role</h3>
+              <p>Architecture starts where strategy meets structure. The EA function translates business intent — goals, priorities, constraints — into architectural boundaries that make those intentions legible at every layer below.</p>
+              <p>Without this connection, architecture becomes decoration: technically correct but organisationally irrelevant. With it, every downstream decision can be traced back to a reason.</p>
+              <ul class="list">
+                <li><span class="bullet accent" aria-hidden="true"></span><span>Strategic principles that set real boundaries</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>Business goals translated into architectural intent</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>Guardrails that outlast individual projects</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>North Star: one-pager + scope + explicit non-goals</span></li>
+              </ul>
+            </div>
+            <div class="ai-callout reveal">
+              <p class="ai-callout-label">In an agent-first world</p>
+              <p>Agentic systems do not just execute decisions — they make them. Architecture principles must now govern not only how systems are designed, but under what conditions autonomous action is sanctioned.</p>
+              <p>If your strategy does not specify where AI can act independently and where human oversight is required, your architecture has no principled answer for the systems being built on it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Layer 2: Business Capabilities ── -->
+    <section>
+      <div class="wrap">
+        <div class="section-3col">
+          <div class="section-label reveal">
+            <p class="layer-digit">02</p>
+            <p class="section-eyebrow">Layer 2</p>
+            <h2>Business Capabilities</h2>
+            <p class="sub">What the organisation does — independent of how it does it. The most stable layer in the architecture.</p>
+          </div>
+          <div class="two">
+            <div class="panel reveal">
+              <h3>The role</h3>
+              <p>A capability describes what your organisation does, not how. It is the most durable artefact in EA — a capability map built today will still be accurate in five years, even if every system behind it has changed.</p>
+              <p>The capability map is the Rosetta Stone of enterprise architecture: it translates between business intent above and application reality below. It exposes where investment is concentrated, where ownership is unclear, and where the organisation is building the same thing twice.</p>
+              <ul class="list">
+                <li><span class="bullet accent" aria-hidden="true"></span><span>Capability model (L1/L2) with ownership per domain</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>Heat maps: maturity, investment, pain, strategic alignment</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>System of record per capability</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>Change prioritisation anchored to capability gaps</span></li>
+              </ul>
+            </div>
+            <div class="ai-callout reveal">
+              <p class="ai-callout-label">In an agent-first world</p>
+              <p>Every capability is a candidate for AI augmentation — or full agent execution. The capability map becomes the blueprint for where to deploy intelligence: which capabilities benefit from continuous optimisation or pattern recognition, and which require human judgement to stay in the loop.</p>
+              <p>Without a capability map, AI deployment is ungoverned. With one, it becomes a deliberate architectural choice.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Layer 3: Data & Information ── -->
+    <section>
+      <div class="wrap">
+        <div class="section-3col">
+          <div class="section-label reveal">
+            <p class="layer-digit">03</p>
+            <p class="section-eyebrow">Layer 3</p>
+            <h2>Data &amp; Information</h2>
+            <p class="sub">Ownership, systems of record, and the semantic clarity that makes integration trustworthy.</p>
+          </div>
+          <div class="two">
+            <div class="panel reveal">
+              <h3>The role</h3>
+              <p>Data is the currency of integration. Without clarity on who owns which data, which system is the system of record, and what quality thresholds are acceptable, integration becomes guesswork and reporting becomes politics.</p>
+              <p>Data architecture is not about databases. It is about accountability — and the confidence that when two systems exchange data, they mean the same thing by it.</p>
+              <ul class="list">
+                <li><span class="bullet accent" aria-hidden="true"></span><span>Data ownership model per capability domain</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>Conceptual data model + system-of-record mapping</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>Data quality definitions and acceptance criteria</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>Integration &amp; data ownership in the target state</span></li>
+              </ul>
+            </div>
+            <div class="ai-callout reveal">
+              <p class="ai-callout-label">In an agent-first world</p>
+              <p>Data architecture is AI architecture. The accessibility, quality, and governance of your data determines exactly what agents can do — and what they will get wrong.</p>
+              <p>Agents consume data at machine pace and at scale. A data model that works for human-paced decisions will not scale to continuous autonomous reasoning. Data lineage, access controls, and semantic clarity shift from good practice to foundational requirement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Layer 4: Applications ── -->
+    <section>
+      <div class="wrap">
+        <div class="section-3col">
+          <div class="section-label reveal">
+            <p class="layer-digit">04</p>
+            <p class="section-eyebrow">Layer 4</p>
+            <h2>Applications</h2>
+            <p class="sub">The systems that enable capabilities — and the integration landscape that connects them.</p>
+          </div>
+          <div class="two">
+            <div class="panel reveal">
+              <h3>The role</h3>
+              <p>Applications enable capabilities. The application landscape maps which systems serve which capabilities — and in doing so, surfaces redundancy, gaps, and integration complexity that would otherwise stay invisible until it becomes expensive.</p>
+              <p>This layer is where most legacy debt accumulates. Modernisation decisions made without an application landscape view tend to create new complexity faster than they resolve the old kind.</p>
+              <ul class="list">
+                <li><span class="bullet accent" aria-hidden="true"></span><span>Application landscape + capability-to-application mapping</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>Integration architecture and API inventory</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>Redundancy and gap analysis</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>Modernisation sequencing with dependency mapping</span></li>
+              </ul>
+            </div>
+            <div class="ai-callout reveal">
+              <p class="ai-callout-label">In an agent-first world</p>
+              <p>Applications evolve from execution systems to orchestration surfaces. APIs become interfaces for agents — not just for frontends or integrations. The integration architecture determines what agents can reach, what they can trigger, and how independently systems can coordinate.</p>
+              <p>Systems that are not API-first become bottlenecks in the agentic stack. Application architecture now has to account for autonomous callers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Layer 5: Technology ── -->
+    <section>
+      <div class="wrap">
+        <div class="section-3col">
+          <div class="section-label reveal">
+            <p class="layer-digit">05</p>
+            <p class="section-eyebrow">Layer 5</p>
+            <h2>Technology &amp; Infrastructure</h2>
+            <p class="sub">The foundation. Platform choices constrain everything above them — and most technology debt lives here.</p>
+          </div>
+          <div class="two">
+            <div class="panel reveal">
+              <h3>The role</h3>
+              <p>Technology is the foundation. Platform choices, cloud strategy, and infrastructure decisions constrain everything above them. Debt accumulated here travels upward into every layer that depends on it — and it rarely stays localised.</p>
+              <p>Technology architecture is not infrastructure management. It is about making the right platform bets at the right moment — knowing which choices are reversible and which are not.</p>
+              <ul class="list">
+                <li><span class="bullet accent" aria-hidden="true"></span><span>Technology radar + platform decision log</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>Build vs buy principles with rationale</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>Infrastructure standards and cloud strategy</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>Technology debt mapping and remediation sequencing</span></li>
+              </ul>
+            </div>
+            <div class="ai-callout reveal">
+              <p class="ai-callout-label">In an agent-first world</p>
+              <p>New primitives enter the stack: GPU infrastructure, model hosting, vector databases, agent runtimes, and observability tooling designed for non-deterministic systems.</p>
+              <p>These are not optional extensions to existing infrastructure — they represent foundational choices about what kinds of intelligence your architecture can support. An organisation that treats AI infrastructure as an afterthought will find it constrains every layer above it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── AI synthesis ── -->
+    <section>
+      <div class="wrap">
+        <div class="section-3col">
+          <div class="section-label reveal">
+            <p class="section-eyebrow">The thread</p>
+            <h2>Architecture in an agent-first world</h2>
+            <p class="sub">How the layers hold — and what fundamentally changes.</p>
+          </div>
+          <div class="two">
+            <div class="panel reveal">
+              <h3>The layers do not disappear</h3>
+              <p>In an AI-first world, the five layers become more important, not less. Agents need clarity that humans can work around. Ambiguous ownership, undocumented integration, and ungoverned data become active liabilities when autonomous systems act on them at scale.</p>
+              <p>Strategy must specify where autonomous action is sanctioned. Capabilities define what agents are responsible for. Data architecture governs what agents can access. Applications determine what agents can trigger. Technology provides the substrate they run on.</p>
+              <ul class="list">
+                <li><span class="bullet accent" aria-hidden="true"></span><span>Each layer becomes a governance surface for AI</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>Architecture principles need to address autonomous action</span></li>
+                <li><span class="bullet" aria-hidden="true"></span><span>Data quality and lineage become AI enablers or blockers</span></li>
+              </ul>
+            </div>
+            <div class="panel reveal">
+              <h3>What changes is the direction of flow</h3>
+              <p>Traditional EA thinks top-down: strategy informs capability, capability guides application, application rests on technology. Governance moves at the speed of human decision-making.</p>
+              <p>In an agentic world, execution flows bottom-up at machine speed — and the architecture must be coherent enough to contain it. Agents do not wait for governance cycles. They act within whatever boundaries the architecture has — or has not — established.</p>
+              <p>The layered model is not a constraint on AI. It is the structure that makes AI safe to deploy at scale.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section id="contact-track">
+      <div class="wrap">
+        <p class="section-eyebrow">Ready to start</p>
+        <h2>Start with the QuickScan</h2>
+        <p class="sub">A 2–4 week rapid diagnosis: where the complexity sits, what is blocking progress, which choices are urgent.</p>
+        <a class="btn" href="index.html#contact">
+          <span>Schedule a call</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-row">
+        <span class="mono">© <span id="year"></span> EA Partner</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

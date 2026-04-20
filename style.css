@@ -818,13 +818,53 @@ footer {
     color: var(--text);
   }
 
-  /* Stagger in */
+  /* Stagger in — nth-child counts ALL children, so the sub-links div shifts indices */
   .mobile-overlay.open a:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 60ms; }
   .mobile-overlay.open a:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 110ms; }
-  .mobile-overlay.open a:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 160ms; }
+  /* 3rd child is .overlay-sub-links div — see rule below */
   .mobile-overlay.open a:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 210ms; }
   .mobile-overlay.open a:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 260ms; }
   .mobile-overlay.open a:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 310ms; }
+
+  /* Sub-links container */
+  .overlay-sub-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-left: 0;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .22s ease, transform .22s ease;
+  }
+  .mobile-overlay.open .overlay-sub-links {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 160ms;
+  }
+
+  .overlay-sub-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: "Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
+    letter-spacing: -0.01em;
+    color: var(--brand);
+    padding: 8px 0;
+    opacity: 0.72;
+    transition: opacity .15s ease, color .15s ease;
+  }
+  .overlay-sub-link:hover { opacity: 1; color: var(--text); }
+
+  .overlay-sub-arrow {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--muted);
+    flex-shrink: 0;
+    letter-spacing: 0;
+  }
 }
 
 /* ── Scroll reveal ────────────────────────── */
