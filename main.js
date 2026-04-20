@@ -31,7 +31,6 @@
       'track1-li2':          'A layered target architecture that\'s built to last and executable',
       'track1-li3':          'A sequenced roadmap where every step traces to a decision, not a deadline',
       'track1-li4':          'Embedded guidance until the path forward stays obvious without me',
-      'track1-entry':        'Entry point — QuickScan. 2–4 weeks. Fixed scope, fixed fee.',
       'track2-h3':           'Architecture as a Function',
       'track2-p':            'Your EA function exists but doesn\'t deliver influence, governance, decisions, or value. A concrete plan to make architecture stick by enhancing six capabilities.',
       'track2-fitline':      'Best for: Organisations with an EA function that exists but doesn\'t deliver strategic value',
@@ -39,15 +38,6 @@
       'track2-li2':          'A named diagnosis of where the function loses influence and why',
       'track2-li3':          'A concrete, sequenced improvement plan anchored to impact',
       'track2-li4':          'Coaching support for leads and teams during the build-out',
-      'track2-entry':        'Entry point — EA Function Audit. 2–4 weeks. Fixed scope, fixed fee.',
-      'cap-eyebrow':         'The six capabilities.',
-      'cap1':                'Architecture & Strategy',
-      'cap2':                'Target State Architecture',
-      'cap3':                'Architecture Governance',
-      'cap4':                'Standards & Patterns',
-      'cap5':                'Engagement & Advisory',
-      'cap6':                'Portfolio Intelligence',
-      'divider-motif':       'Decisions over documents.',
       'approach-eyebrow':    'How I work',
       'approach-h2':         'Approach',
       'approach-sub':        'Every engagement follows the same rhythm: a sharp diagnostic, a clear architecture, then close involvement during delivery. The content differs by track. The discipline doesn\'t.',
@@ -62,7 +52,7 @@
       'phase3-body':         '<strong>Architecture doesn\'t survive first contact with delivery unchanged.</strong> Steer is the embedded partner phase: guardrails, course corrections when the landscape shifts, and a thinking partner close enough to the work to catch drift before it becomes debt. Until the path forward stays obvious without me in the room.',
       'about-eyebrow':       'Who I am',
       'about-h2':            'About',
-      'about-sub':           'Close to strategy. Close to delivery. Short feedback loops, long-lived decisions.',
+      'about-sub':           'A sharp and great collaborator. Good listener, effective communicator.',
       'about-role':          'Enterprise Architect',
       'about-bio':           'Most architecture work produces documents that inform, but don\'t decide. I work the other way: artefacts need to be useful at the moment a decision has to be made. Clear output. Fast cycles. No model for its own sake. Keep things minimal, keep the pace up, and stay close enough to business, product, data, and engineering to connect them when it matters, until the path forward is obvious.<br><br>TOGAF and ArchiMate certified. MSc in Enterprise IT Architecture. Academic rigour in service of practical reality.',
       'about-fitlabel':      'Where I typically work',
@@ -87,7 +77,7 @@
       'ph-message':          'What\'s on your mind?',
       'form-submit':         'Send message',
       'form-sending':        'Sending…',
-      'form-success':        'Got it. I\'ll reply within a day.',
+      'form-success':        'Message sent. I\'ll be in touch within a day.',
       'form-error':          'Something went wrong — try calling or emailing directly.',
       'contact-call-title':  'Call',
       'contact-avail':       'Available Monday – Friday, 09:00 – 18:00 CET',
@@ -118,7 +108,6 @@
       'track1-li2':          'Een gelaagde doelarchitectuur die duurzaam en uitvoerbaar is',
       'track1-li3':          'Een gesequenced roadmap waarbij elke stap terugleidt naar een beslissing, niet een deadline',
       'track1-li4':          'Ingebedde begeleiding totdat de weg vooruit vanzelfsprekend is zonder mij',
-      'track1-entry':        'Instappunt — QuickScan. 2–4 weken. Vaste scope, vaste prijs.',
       'track2-h3':           'Architectuur als Functie',
       'track2-p':            'Uw EA-functie bestaat maar levert geen invloed, governance, beslissingen of waarde. Een concreet plan om architectuur te laten beklijven door zes capabilities te versterken.',
       'track2-fitline':      'Geschikt voor: Organisaties met een EA-functie die bestaat maar geen strategische waarde levert',
@@ -126,15 +115,6 @@
       'track2-li2':          'Een benoemde diagnose van waar de functie invloed verliest en waarom',
       'track2-li3':          'Een concreet, gesequenced verbeterplan verankerd aan impact',
       'track2-li4':          'Coachingondersteuning voor leads en teams tijdens de opbouw',
-      'track2-entry':        'Instappunt — EA Functie Audit. 2–4 weken. Vaste scope, vaste prijs.',
-      'cap-eyebrow':         'De zes capabilities.',
-      'cap1':                'Architectuur & Strategie',
-      'cap2':                'Doelstaat Architectuur',
-      'cap3':                'Architectuur Governance',
-      'cap4':                'Standaarden & Patronen',
-      'cap5':                'Betrokkenheid & Advies',
-      'cap6':                'Portfolio Intelligence',
-      'divider-motif':       'Beslissingen boven documenten.',
       'approach-eyebrow':    'Hoe ik werk',
       'approach-h2':         'Aanpak',
       'approach-sub':        'Elke opdracht volgt hetzelfde ritme: een scherpe diagnose, een heldere architectuur, dan nauwe betrokkenheid tijdens de uitvoering. De inhoud verschilt per track. De discipline niet.',
@@ -149,7 +129,7 @@
       'phase3-body':         '<strong>Architectuur overleeft het eerste contact met de uitvoering niet onveranderd.</strong> Sturen is de ingebedde partnerfase: vangrails, bijsturing wanneer het landschap verschuift, en een denkpartner dichtbij genoeg bij het werk om afdrijven te signaleren voordat het schuld wordt. Totdat de weg vooruit vanzelfsprekend blijft zonder mij in de kamer.',
       'about-eyebrow':       'Wie ik ben',
       'about-h2':            'Over',
-      'about-sub':           'Dicht bij de strategie. Dicht bij de uitvoering. Korte feedbacklussen, langdurige beslissingen.',
+      'about-sub':           'Scherp en een fijne samenwerkingspartner. Goede luisteraar, effectieve communicator.',
       'about-role':          'Enterprise Architect',
       'about-bio':           'De meeste architectuurwerkzaamheden produceren documenten die informeren, maar niet beslissen. Ik werk andersom: artefacten moeten nuttig zijn op het moment dat een beslissing genomen moet worden. Heldere output. Snelle cycli. Geen model om het model. Houdt het minimaal, houdt het tempo hoog, en blijf dicht genoeg bij business, product, data en engineering om ze te verbinden wanneer het ertoe doet, totdat de weg vooruit vanzelfsprekend is.<br><br>TOGAF en ArchiMate gecertificeerd. MSc in Enterprise IT Architecture. Academische strengheid in dienst van praktische realiteit.',
       'about-fitlabel':      'Waar ik doorgaans werk',
@@ -174,7 +154,7 @@
       'ph-message':          'Wat speelt er?',
       'form-submit':         'Verstuur bericht',
       'form-sending':        'Verzenden…',
-      'form-success':        'Ontvangen. Ik reageer binnen een dag.',
+      'form-success':        'Bericht verzonden. Ik neem binnen een dag contact op.',
       'form-error':          'Er is iets misgegaan — probeer te bellen of direct te mailen.',
       'contact-call-title':  'Bellen',
       'contact-avail':       'Bereikbaar maandag – vrijdag, 09:00 – 18:00 CET',
@@ -371,22 +351,19 @@
           }),
         });
         if (!res.ok) throw new Error();
-        // Replace the form inline — no toast, no modal
-        const successLine = document.createElement('p');
-        successLine.textContent = t('form-success');
-        successLine.style.cssText = 'margin:0; color:var(--text); font-size:0.8125rem; line-height:1.5;';
-        contactForm.replaceWith(successLine);
-        return;
+        contactForm.reset();
+        if (formStatus) {
+          formStatus.textContent = t('form-success');
+          formStatus.className   = 'form-status success';
+        }
       } catch {
         if (formStatus) {
           formStatus.textContent = t('form-error');
           formStatus.className   = 'form-status error';
         }
       } finally {
-        if (formSubmitBtn.isConnected) {
-          formSubmitBtn.disabled = false;
-          textSpan.textContent   = t('form-submit');
-        }
+        formSubmitBtn.disabled = false;
+        textSpan.textContent   = t('form-submit');
       }
     });
   }
