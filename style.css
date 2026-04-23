@@ -209,6 +209,15 @@ nav a.active {
   align-items: center;
   z-index: 2;
 }
+/* Invisible bridge fills the gap so the cursor doesn't slip off */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: -12px;
+  right: -12px;
+  height: 14px;
+}
 
 /* Chevron icon inside dropdown trigger */
 .nav-chevron {
@@ -237,18 +246,21 @@ nav a.active {
   padding: 5px;
   box-shadow: 0 16px 40px rgb(var(--base-rgb) / .11), 0 2px 8px rgb(var(--base-rgb) / .06);
 
-  /* Hidden state */
+  /* Hidden state — 120ms delay before closing so cursor can reach the panel */
   opacity: 0;
   transform: translateY(-5px) scale(0.97);
   pointer-events: none;
-  transition: opacity 200ms cubic-bezier(.2,.9,.2,1),
-              transform 200ms cubic-bezier(.2,.9,.2,1);
+  transition: opacity 180ms cubic-bezier(.2,.9,.2,1) 120ms,
+              transform 180ms cubic-bezier(.2,.9,.2,1) 120ms;
 }
 .nav-item:hover .nav-dropdown,
 .nav-item:focus-within .nav-dropdown {
   opacity: 1;
   transform: translateY(0) scale(1);
   pointer-events: auto;
+  /* No delay when opening */
+  transition: opacity 180ms cubic-bezier(.2,.9,.2,1),
+              transform 180ms cubic-bezier(.2,.9,.2,1);
 }
 
 /* Items inside dropdown */
@@ -267,16 +279,7 @@ nav a.active {
   border-color: var(--line-soft);
   color: var(--text);
 }
-.dd-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--ink);
-  flex: 0 0 auto;
-  transition: background .12s ease;
-}
-.nav-dropdown a:hover .dd-dot {
-  background: var(--accent);
-}
+.dd-dot { display: none; }
 
 /* Section label inside dropdown */
 .dd-label {

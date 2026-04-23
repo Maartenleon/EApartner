@@ -39,7 +39,19 @@
         <nav aria-label="Primary navigation" id="mainnav">
           <div class="nav-indicator" id="navIndicator" aria-hidden="true"></div>
           <a href="#waarde"  data-section="waarde"   data-i18n="nav-value">Value</a>
-          <a href="#diensten" data-section="diensten" data-i18n="nav-services">Services</a>
+          <!-- ── Services dropdown ── -->
+          <div class="nav-item">
+            <a href="#diensten" data-section="diensten">
+              <span data-i18n="nav-services">Services</span>
+              <svg class="nav-chevron" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="nav-dropdown" role="menu">
+              <a href="track-1.html" role="menuitem"><span class="dd-dot"></span><span data-i18n="nav-track1">Architecture for Transformation</span></a>
+              <a href="track-2.html" role="menuitem"><span class="dd-dot"></span><span data-i18n="nav-track2">Architecture as a Function</span></a>
+            </div>
+          </div>
           <a href="#aanpak"  data-section="aanpak"   data-i18n="nav-approach">Approach</a>
           <a href="#over"    data-section="over"      data-i18n="nav-about">About</a>
           <a href="#contact" data-section="contact"   data-i18n="nav-contact">Contact</a>
