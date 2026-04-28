@@ -7,39 +7,7 @@
   <meta name="description" content="Architecture that gives complex change a spine. How strategy connects to capabilities, data, applications, and technology — with AI as a cross-cutting concern." />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── Page intro ────────────────────────────────── */
-    .page-intro {
-      padding: calc(var(--topbar-h) + 48px) 0 48px;
-      border-bottom: 1px solid var(--line-soft);
-      background: var(--bg);
-    }
-    .page-intro h1 { margin: 10px 0 16px; }
-    .page-back {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 24px;
-    }
-    .page-back:hover { color: var(--text); }
-
-    /* Override global section padding for compact track pages */
-    section { min-height: auto; padding: 80px 0; }
-
-    /* ── Diagram section ──────────────────────────── */
-    .viz-section { padding: 40px 0; border-bottom: 1px solid var(--line-soft); }
-    .viz-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 56px;
-      align-items: center;
-    }
-    @media (max-width: 900px) { .viz-grid { grid-template-columns: 1fr; gap: 32px; } }
-
+    /* ── Alignment diagram (track-1 specific) ────────── */
     .align-viz { width: 100%; display: block; overflow: visible; }
     .align-viz text {
       font-family: var(--mono), monospace;
@@ -51,7 +19,7 @@
     .viz-axis-label { fill: rgba(0,0,0,.20); font-size: 8px; letter-spacing: .05em; }
     .align-viz .da { animation-play-state: running; }
 
-    /* ── AI nodes ─────────────────────────────────── */
+    /* ── AI row nodes ────────────────────────────────── */
     .ai-node {
       transform-box: fill-box;
       transform-origin: center;
@@ -61,60 +29,10 @@
     .ai-node-1 { animation: ai-in .3s ease 1.8s forwards, ai-pulse 3.2s ease-in-out 2.1s infinite; }
     .ai-node-2 { animation: ai-in .3s ease 2.0s forwards, ai-pulse 3.2s ease-in-out 2.3s infinite; }
     .ai-node-3 { animation: ai-in .3s ease 2.2s forwards, ai-pulse 3.2s ease-in-out 2.5s infinite; }
-    .ai-node-4 { animation: ai-in .3s ease 2.4s forwards, ai-pulse 3.2s ease-in-out 2.7s infinite; }
-    .ai-node-5 { animation: ai-in .3s ease 2.6s forwards, ai-pulse 3.2s ease-in-out 2.9s infinite; }
     @keyframes ai-in  { to { opacity: 1; } }
     @keyframes ai-pulse {
       0%, 100% { transform: scale(1);   opacity: 1; }
       50%      { transform: scale(1.9); opacity: .35; }
-    }
-
-    /* ── AI callout panel ──────────────────────────── */
-    .ai-callout {
-      background: rgb(var(--accent-rgb) / .025);
-      border: 1px solid rgb(var(--accent-rgb) / .14);
-      border-left: 2px solid var(--accent);
-      border-radius: var(--radius);
-      padding: 20px 22px;
-      margin-top: 24px;
-    }
-    .ai-callout p { margin: 0; }
-    .ai-callout p + p { margin-top: 10px; }
-    .ai-callout-label {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin: 0 0 10px;
-    }
-
-    /* ── Compact layer list ───────────────────────── */
-    .layer-list { display: flex; flex-direction: column; gap: 40px; }
-    .layer-row {
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 0 24px;
-    }
-    .layer-head { padding-top: 2px; }
-    .layer-digit {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: .06em;
-      color: rgba(0,0,0,.22);
-      margin: 0 0 4px;
-    }
-    .layer-name { font-size: .95rem; font-weight: 600; margin: 0 0 3px; color: var(--text); }
-    .layer-eyebrow {
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: .07em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .layer-body { font-size: .88rem; color: var(--muted); margin: 0 0 10px; line-height: 1.55; }
-    @media (max-width: 600px) {
-      .layer-row { grid-template-columns: 1fr; gap: 6px 0; }
     }
   </style>
 </head>
@@ -298,52 +216,48 @@
             <h2>Strategy<br>to AI</h2>
             <p class="sub" style="margin-top:16px;">Each layer informs the next. Architecture makes the connections explicit — and keeps them coherent as the organisation changes.</p>
           </div>
-          <div class="two">
-            <div class="layer-list reveal">
-              <div class="layer-row">
-                <div class="layer-head">
-                  <p class="layer-digit">01</p>
-                  <p class="layer-name">Strategy</p>
-                </div>
-                <p class="layer-body">Business intent, principles, and architectural boundaries that govern every decision below. Strategic principles that set real constraints — and a North Star that outlasts individual projects.</p>
+          <div class="layer-grid reveal">
+            <div class="layer-row">
+              <div class="layer-head">
+                <p class="layer-digit">01</p>
+                <p class="layer-name">Strategy</p>
               </div>
-              <div class="layer-row">
-                <div class="layer-head">
-                  <p class="layer-digit">02</p>
-                  <p class="layer-name">Capabilities</p>
-                </div>
-                <p class="layer-body">What the organisation does, independent of how it does it. A capability map with domain ownership, maturity heat maps, and change prioritisation anchored to capability gaps.</p>
-              </div>
-              <div class="layer-row">
-                <div class="layer-head">
-                  <p class="layer-digit">03</p>
-                  <p class="layer-name">Data</p>
-                </div>
-                <p class="layer-body">Ownership, systems of record, and semantic clarity that makes integration trustworthy — and AI reliable. A conceptual data model with quality definitions and acceptance criteria.</p>
-              </div>
+              <p class="layer-body">Business intent, principles, and architectural boundaries that govern every decision below. Strategic principles that set real constraints — and a North Star that outlasts individual projects.</p>
             </div>
-            <div class="layer-list reveal">
-              <div class="layer-row">
-                <div class="layer-head">
-                  <p class="layer-digit">04</p>
-                  <p class="layer-name">Applications</p>
-                </div>
-                <p class="layer-body">The systems that enable capabilities. An application landscape that surfaces redundancy, integration complexity, and the right modernisation sequence before the wrong one gets funded.</p>
+            <div class="layer-row">
+              <div class="layer-head">
+                <p class="layer-digit">02</p>
+                <p class="layer-name">Capabilities</p>
               </div>
-              <div class="layer-row">
-                <div class="layer-head">
-                  <p class="layer-digit">05</p>
-                  <p class="layer-name">Technology</p>
-                </div>
-                <p class="layer-body">The foundation. Platform choices constrain everything above. A technology radar, build-vs-buy principles, and debt mapping that makes the right bets visible before they become irreversible.</p>
+              <p class="layer-body">What the organisation does, independent of how it does it. A capability map with domain ownership, maturity heat maps, and change prioritisation anchored to capability gaps.</p>
+            </div>
+            <div class="layer-row">
+              <div class="layer-head">
+                <p class="layer-digit">03</p>
+                <p class="layer-name">Data</p>
               </div>
-              <div class="layer-row">
-                <div class="layer-head">
-                  <p class="layer-digit">06</p>
-                  <p class="layer-name">AI / Agents</p>
-                </div>
-                <p class="layer-body">Agentic systems operate across all five layers as a cross-cutting concern. Architecture must specify where autonomous action is sanctioned — what agents can access, trigger, and decide, and where oversight is required.</p>
+              <p class="layer-body">Ownership, systems of record, and semantic clarity that makes integration trustworthy — and AI reliable. A conceptual data model with quality definitions and acceptance criteria.</p>
+            </div>
+            <div class="layer-row">
+              <div class="layer-head">
+                <p class="layer-digit">04</p>
+                <p class="layer-name">Applications</p>
               </div>
+              <p class="layer-body">The systems that enable capabilities. An application landscape that surfaces redundancy, integration complexity, and the right modernisation sequence before the wrong one gets funded.</p>
+            </div>
+            <div class="layer-row">
+              <div class="layer-head">
+                <p class="layer-digit">05</p>
+                <p class="layer-name">Technology</p>
+              </div>
+              <p class="layer-body">The foundation. Platform choices constrain everything above. A technology radar, build-vs-buy principles, and debt mapping that makes the right bets visible before they become irreversible.</p>
+            </div>
+            <div class="layer-row">
+              <div class="layer-head">
+                <p class="layer-digit">06</p>
+                <p class="layer-name">AI / Agents</p>
+              </div>
+              <p class="layer-body">Agentic systems operate across all five layers as a cross-cutting concern. Architecture must specify where autonomous action is sanctioned — what agents can access, trigger, and decide, and where oversight is required.</p>
             </div>
           </div>
         </div>

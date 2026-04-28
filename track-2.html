@@ -7,38 +7,7 @@
   <meta name="description" content="The EA function as a set of auditable capabilities. Assess maturity, identify gaps, and build a concrete improvement plan — capability by capability." />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── Page intro ────────────────────────────────── */
-    .page-intro {
-      padding: calc(var(--topbar-h) + 48px) 0 48px;
-      border-bottom: 1px solid var(--line-soft);
-      background: var(--bg);
-    }
-    .page-intro h1 { margin: 10px 0 16px; }
-    .page-back {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 24px;
-    }
-    .page-back:hover { color: var(--text); }
-
-    /* Override global section padding */
-    section { min-height: auto; padding: 80px 0; }
-
-    /* ── Maturity visualisation ─────────────────────── */
-    .viz-section { padding: 40px 0; border-bottom: 1px solid var(--line-soft); }
-    .viz-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 56px;
-      align-items: start;
-    }
-    @media (max-width: 900px) { .viz-grid { grid-template-columns: 1fr; gap: 32px; } }
+    /* ── Maturity visualisation (track-2 specific) ────── */
     .maturity-viz { width: 100%; display: block; overflow: visible; }
     .maturity-viz text {
       font-family: var(--mono), monospace;
@@ -82,35 +51,6 @@
     .viz-section.in-view .target-5 { transition-delay: 1.33s; }
     .viz-section.in-view .target-6 { transition-delay: 1.45s; }
 
-    /* ── Assessment callout ─────────────────────────── */
-    .assess-callout {
-      background: var(--panel);
-      border: 1px solid rgb(var(--base-rgb) / .07);
-      border-left: 2px solid var(--ink);
-      border-radius: var(--radius);
-      padding: 20px 22px;
-      height: 100%;
-    }
-    .assess-callout p { margin: 0; }
-    .assess-callout p + p { margin-top: 14px; }
-    .assess-callout-label {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 0 0 10px;
-    }
-
-    /* ── Capability digit ───────────────────────────── */
-    .cap-digit {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: .06em;
-      color: rgba(0,0,0,.22);
-      margin: 0 0 6px;
-    }
-
     /* ── Maturity legend ────────────────────────────── */
     .maturity-legend {
       display: flex;
@@ -136,46 +76,6 @@
     .legend-swatch.current { background: rgba(0,0,0,.35); }
     .legend-swatch.target  { background: transparent; border: 1.5px dashed rgb(var(--accent-rgb) / .55); }
 
-    /* ── Compact capability list ────────────────────── */
-    .cap-list { display: flex; flex-direction: column; gap: 40px; }
-    .cap-row {
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 0 24px;
-    }
-    .cap-head { padding-top: 2px; }
-    .cap-digit {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: .06em;
-      color: rgba(0,0,0,.22);
-      margin: 0 0 4px;
-    }
-    .cap-name { font-size: .95rem; font-weight: 600; margin: 0 0 3px; color: var(--text); }
-    .cap-body { font-size: .88rem; color: var(--muted); margin: 0 0 10px; line-height: 1.55; }
-    @media (max-width: 600px) {
-      .cap-row { grid-template-columns: 1fr; gap: 6px 0; }
-    }
-
-    /* ── Assessment callout (compact) ───────────────── */
-    .assess-callout {
-      background: var(--panel);
-      border: 1px solid rgb(var(--base-rgb) / .07);
-      border-left: 2px solid var(--ink);
-      border-radius: var(--radius);
-      padding: 20px 22px;
-      margin-top: 24px;
-    }
-    .assess-callout p { margin: 0; }
-    .assess-callout p + p { margin-top: 10px; }
-    .assess-callout-label {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 0 0 10px;
-    }
   </style>
 </head>
 
@@ -406,52 +306,48 @@
             <h2>Assess, prioritise,<br>improve</h2>
             <p class="sub" style="margin-top:16px;">Each capability is independently improvable. Maturity is a direction, not a destination — every step is a deliberate choice about where the function needs to go next.</p>
           </div>
-          <div class="two">
-            <div class="cap-list reveal">
-              <div class="cap-row">
-                <div class="cap-head">
-                  <p class="cap-digit">01</p>
-                  <p class="cap-name">Direction</p>
-                </div>
-                <p class="cap-body">The mandate, vision, and principles that give the EA function its own north star — a defined scope, architecture vision aligned to business strategy, and principles that set real boundaries on design decisions.</p>
+          <div class="cap-grid reveal">
+            <div class="cap-row">
+              <div class="cap-head">
+                <p class="cap-digit">01</p>
+                <p class="cap-name">Direction</p>
               </div>
-              <div class="cap-row">
-                <div class="cap-head">
-                  <p class="cap-digit">02</p>
-                  <p class="cap-name">Governance</p>
-                </div>
-                <p class="cap-body">Decision rights, review triggers, and the accountability that keeps architecture authoritative. Architecture Decision Records with rationale — governance that adds clarity rather than process.</p>
-              </div>
-              <div class="cap-row">
-                <div class="cap-head">
-                  <p class="cap-digit">03</p>
-                  <p class="cap-name">Landscape</p>
-                </div>
-                <p class="cap-body">Visibility of the current and target state across all architecture layers — maintained as a living asset with domain ownership, versioning, and a dependency map that sequences and de-risks change.</p>
-              </div>
+              <p class="cap-body">The mandate, vision, and principles that give the EA function its own north star — a defined scope, architecture vision aligned to business strategy, and principles that set real boundaries on design decisions.</p>
             </div>
-            <div class="cap-list reveal">
-              <div class="cap-row">
-                <div class="cap-head">
-                  <p class="cap-digit">04</p>
-                  <p class="cap-name">Standards</p>
-                </div>
-                <p class="cap-body">Reusable decisions that prevent reinvention. Technology standards vetted with rationale, patterns for common architectural problems, and an exception process that feeds learning back into the library.</p>
+            <div class="cap-row">
+              <div class="cap-head">
+                <p class="cap-digit">02</p>
+                <p class="cap-name">Governance</p>
               </div>
-              <div class="cap-row">
-                <div class="cap-head">
-                  <p class="cap-digit">05</p>
-                  <p class="cap-name">Engagement</p>
-                </div>
-                <p class="cap-body">How the architecture function stays connected to the work — present in initiatives early, useful in real time, never just a checkpoint. A clear support model for who gets involvement, and when.</p>
+              <p class="cap-body">Decision rights, review triggers, and the accountability that keeps architecture authoritative. Architecture Decision Records with rationale — governance that adds clarity rather than process.</p>
+            </div>
+            <div class="cap-row">
+              <div class="cap-head">
+                <p class="cap-digit">03</p>
+                <p class="cap-name">Landscape</p>
               </div>
-              <div class="cap-row">
-                <div class="cap-head">
-                  <p class="cap-digit">06</p>
-                  <p class="cap-name">Portfolio</p>
-                </div>
-                <p class="cap-body">Architecture connected to investment decisions. Technical debt quantified and tracked, investment sequencing based on architecture dependencies — where the function becomes accountable for the return on technology spend.</p>
+              <p class="cap-body">Visibility of the current and target state across all architecture layers — maintained as a living asset with domain ownership, versioning, and a dependency map that sequences and de-risks change.</p>
+            </div>
+            <div class="cap-row">
+              <div class="cap-head">
+                <p class="cap-digit">04</p>
+                <p class="cap-name">Standards</p>
               </div>
+              <p class="cap-body">Reusable decisions that prevent reinvention. Technology standards vetted with rationale, patterns for common architectural problems, and an exception process that feeds learning back into the library.</p>
+            </div>
+            <div class="cap-row">
+              <div class="cap-head">
+                <p class="cap-digit">05</p>
+                <p class="cap-name">Engagement</p>
+              </div>
+              <p class="cap-body">How the architecture function stays connected to the work — present in initiatives early, useful in real time, never just a checkpoint. A clear support model for who gets involvement, and when.</p>
+            </div>
+            <div class="cap-row">
+              <div class="cap-head">
+                <p class="cap-digit">06</p>
+                <p class="cap-name">Portfolio</p>
+              </div>
+              <p class="cap-body">Architecture connected to investment decisions. Technical debt quantified and tracked, investment sequencing based on architecture dependencies — where the function becomes accountable for the return on technology spend.</p>
             </div>
           </div>
         </div>
