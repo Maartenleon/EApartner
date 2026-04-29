@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Insights — EA Partner</title>
+  <meta name="description" content="Thinking on enterprise architecture, organisational complexity, and the agentic era." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body data-page="insights">
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <div class="topbar" id="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <a class="logo" href="index.html" aria-label="EA Partner">
+          <svg class="logo__icon" viewBox="0 0 28 28" width="28" height="28" fill="none" aria-hidden="true" overflow="visible">
+            <line x1="14" y1="14" x2="14" y2="4"  stroke="currentColor" stroke-opacity=".3" stroke-width="1.2"/>
+            <line x1="14" y1="14" x2="24" y2="14" stroke="currentColor" stroke-opacity=".3" stroke-width="1.2"/>
+            <line x1="14" y1="14" x2="14" y2="24" stroke="currentColor" stroke-opacity=".3" stroke-width="1.2"/>
+            <line x1="14" y1="14" x2="4"  y2="14" stroke="currentColor" stroke-opacity=".3" stroke-width="1.2"/>
+            <circle cx="14" cy="4"  r="3" fill="currentColor" fill-opacity=".3"/>
+            <circle cx="24" cy="14" r="3" fill="currentColor" fill-opacity=".3"/>
+            <circle cx="14" cy="24" r="3" fill="currentColor" fill-opacity=".3"/>
+            <circle cx="4"  cy="14" r="3" fill="currentColor" fill-opacity=".3"/>
+            <circle cx="14" cy="14" r="3" fill="currentColor"/>
+          </svg>
+          <span class="logo__wordmark">EA Partner</span>
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav aria-label="Primary navigation" id="mainnav">
+          <div class="nav-indicator" id="navIndicator" aria-hidden="true"></div>
+          <a href="index.html#waarde"  data-section="waarde"   data-i18n="nav-value">Value</a>
+          <div class="nav-item">
+            <a href="index.html#diensten" data-section="diensten">
+              <span data-i18n="nav-services">Services</span>
+              <svg class="nav-chevron" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="nav-dropdown" role="menu">
+              <a href="track-1.html" role="menuitem"><span class="dd-dot"></span><span data-i18n="nav-track1">Architecture for Transformation</span></a>
+              <a href="track-2.html" role="menuitem"><span class="dd-dot"></span><span data-i18n="nav-track2">Architecture as a Function</span></a>
+            </div>
+          </div>
+          <a href="approach.html"  data-section="aanpak"   data-i18n="nav-approach">Approach</a>
+          <a href="about.html"     data-section="over"      data-i18n="nav-about">About</a>
+          <a href="insights.html"  data-section="insights"  data-i18n="nav-insights">Insights</a>
+          <a href="contact.html"   data-section="contact"   data-i18n="nav-contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
+    <a href="index.html#waarde"   data-i18n="nav-value">Value</a>
+    <a href="index.html#diensten" data-i18n="nav-services">Services</a>
+    <div class="overlay-sub-links">
+      <a href="track-1.html" class="overlay-sub-link"><span class="overlay-sub-arrow" aria-hidden="true">→</span><span data-i18n="nav-track1">Architecture for Transformation</span></a>
+      <a href="track-2.html" class="overlay-sub-link"><span class="overlay-sub-arrow" aria-hidden="true">→</span><span data-i18n="nav-track2">Architecture as a Function</span></a>
+    </div>
+    <a href="approach.html"  data-i18n="nav-approach">Approach</a>
+    <a href="about.html"     data-i18n="nav-about">About</a>
+    <a href="insights.html"  data-i18n="nav-insights">Insights</a>
+    <a href="contact.html"   data-i18n="nav-contact">Contact</a>
+    <div class="lang-toggle lang-toggle--mobile">
+      <button class="lang-btn active" data-lang-btn="en">EN</button>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <button class="lang-btn" data-lang-btn="nl">NL</button>
+    </div>
+  </div>
+
+  <main>
+
+    <div class="page-intro">
+      <div class="wrap">
+        <a class="page-back" href="index.html">← Back</a>
+        <p class="section-eyebrow" data-i18n="nav-insights">Insights</p>
+        <h1>Insights</h1>
+        <!-- TODO: NL translation for page-intro heading -->
+        <p class="lede">Thinking on enterprise architecture, organisational complexity, and the agentic era.</p>
+        <!-- TODO: NL translation for lede -->
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <p class="sub">Coming soon.</p>
+        <!-- TODO: article list goes here -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-row">
+        <span class="mono">© <span id="year"></span> EA Partner</span>
+        <div class="lang-toggle lang-toggle--desktop">
+          <button class="lang-btn active" data-lang-btn="en">English</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button class="lang-btn" data-lang-btn="nl">Nederlands</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
