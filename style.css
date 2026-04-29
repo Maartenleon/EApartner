@@ -1515,7 +1515,6 @@ footer {
 }
 
 /* ── Problem questions section (track pages) ────────────── */
-.problems-section { border-bottom: 1px solid var(--line-soft); }
 .problems-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
