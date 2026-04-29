@@ -83,11 +83,6 @@
       'form-error':          'Something went wrong — try calling or emailing directly.',
       'contact-call-title':  'Call',
       'contact-avail':       'Available Monday – Friday, 09:00 – 18:00 CET',
-      'nav-insights':        'Insights',
-      'see-approach':        'How I work',
-      'see-about':           'More about Maarten',
-      'see-contact':         'Get in touch',
-      'about-teaser':        'Most architecture work produces documents that inform, but don\'t decide. I work the other way — close to strategy, close to delivery, until the path forward is obvious.',
     },
     nl: {
       'page-title':          'Enterprise Architecture Consultancy | Focus & Helderheid',
@@ -167,11 +162,6 @@
       'form-error':          'Er is iets misgegaan — probeer te bellen of direct te mailen.',
       'contact-call-title':  'Bellen',
       'contact-avail':       'Bereikbaar maandag – vrijdag, 09:00 – 18:00 CET',
-      'nav-insights':        'Inzichten',
-      'see-approach':        'Hoe ik werk',
-      'see-about':           'Meer over Maarten',
-      'see-contact':         'Neem contact op',
-      'about-teaser':        'De meeste architectuurwerkzaamheden produceren documenten die informeren, maar niet beslissen. Ik werk andersom — dicht bij de strategie, dicht bij de uitvoering, totdat de weg vooruit vanzelfsprekend is.',
     },
   };
 
@@ -403,6 +393,10 @@
   /* ── Sliding nav indicator ────────────────────────────── */
   const links = Array.from(nav.querySelectorAll('a[data-section]'));
 
+  let isProgrammaticScroll = false;
+  let programmaticTimer    = null;
+  let pendingTargetId      = null;
+
   const moveIndicatorTo = (link, immediate = false) => {
     if (!link || !indicator) return;
 
@@ -455,6 +449,20 @@
 
       ev.preventDefault();
 
+      if (a.matches('nav a[data-section]')) {
+        isProgrammaticScroll = true;
+        pendingTargetId      = a.dataset.section;
+
+        clearTimeout(programmaticTimer);
+        const settleMs = prefersReducedMotion ? 0 : 700;
+
+        programmaticTimer = setTimeout(() => {
+          if (pendingTargetId) setActive(pendingTargetId);
+          pendingTargetId      = null;
+          isProgrammaticScroll = false;
+        }, settleMs);
+      }
+
       const topbarH = topbar ? topbar.offsetHeight : 64;
       const top = el.getBoundingClientRect().top + window.scrollY - topbarH + 2;
       window.scrollTo({
@@ -465,20 +473,25 @@
     });
   });
 
-  /* ── Page-based nav pill ─────────────────────────────── */
-  // On subpages: body carries data-page="approach|about|contact|insights|track1|track2"
-  // → pill snaps to the matching nav item once on load, no scroll-spy.
-  // On the homepage: no data-page → pill stays hidden, no scroll-spy.
-  const pageId = document.body.dataset.page;
+  /* ── Active section tracking via IntersectionObserver ── */
+  const sections = links
+    .map(l => document.getElementById(l.dataset.section))
+    .filter(Boolean);
 
-  const pageNavMap = {
-    'approach': 'aanpak',
-    'about':    'over',
-    'contact':  'contact',
-    'insights': 'insights',
-    'track1':   'diensten',
-    'track2':   'diensten',
-  };
+  const obs = new IntersectionObserver((entries) => {
+    if (isProgrammaticScroll) return;
+
+    const visible = entries
+      .filter(en => en.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+    if (visible?.target?.id) setActive(visible.target.id);
+  }, {
+    threshold: [0.2, 0.35, 0.5, 0.65],
+    rootMargin: '-20% 0px -60% 0px',
+  });
+
+  sections.forEach(s => obs.observe(s));
 
   /* ── Scroll reveal ───────────────────────────────────── */
   document.querySelectorAll('.panel, .card, .section-head').forEach(el => {
@@ -549,15 +562,16 @@
   });
 
   /* ── Init ─────────────────────────────────────────────── */
+  const hash = (location.hash || '').replace('#', '');
   setTopbarHeight();
 
   const init = () => {
-    if (pageId) {
-      // Subpage: activate the pill for the current page, no scroll-spy
-      const navId = pageNavMap[pageId];
-      if (navId) setActive(navId, { immediate: true, moveIndicator: true });
+    const initial = (hash && document.getElementById(hash)) ? hash : null;
+    if (initial) {
+      setActive(initial, { immediate: true, moveIndicator: true });
+    } else {
+      moveIndicatorTo(links[0], true);
     }
-    // Homepage: pill stays hidden, no action
   };
 
   const onResize = () => {
