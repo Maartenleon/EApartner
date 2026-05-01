@@ -201,6 +201,80 @@
     }, 180);
   };
 
+  /* ── Shared contact section ──────────────────────────── */
+  // Injected into any element with data-inject-contact before translations
+  // run, so data-i18n attributes are picked up automatically.
+  // Edit this template to update the contact section on ALL pages at once.
+  const CONTACT_SECTION_HTML = `
+    <div class="wrap">
+      <div id="contact-content">
+        <h2 class="reveal" style="--reveal-delay: 0ms" data-i18n="contact-h2">
+          Ready to talk enterprise architecture?
+        </h2>
+        <p class="sub reveal" style="--reveal-delay: 120ms" data-i18n="contact-sub">
+          Whether it's steering a transformation or building an EA function that delivers — one focused conversation is often enough to find the way forward.
+        </p>
+        <button class="btn reveal" id="lets-talk-btn" style="--reveal-delay: 240ms">
+          <span data-i18n="contact-cta">Let's talk</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+      <div id="contact-options">
+        <div class="section-3col">
+          <div class="section-label">
+            <p class="section-eyebrow" data-i18n="contact-opts-eyebrow">Get in touch</p>
+            <h2 data-i18n="contact-opts-h2">Contact</h2>
+            <p class="sub" data-i18n="contact-opts-sub">No preparation needed. Pick what works best for you.</p>
+          </div>
+          <div class="contact-choice-row">
+            <div class="contact-choice contact-choice--static">
+              <div class="contact-choice-header">
+                <span class="contact-choice-title" data-i18n="contact-msg-title">Message</span>
+                <span class="contact-choice-desc" data-i18n="contact-msg-desc">Write it down, I'll reply within a day</span>
+              </div>
+              <form id="contact-form" novalidate class="contact-form-inline">
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="f-name" data-i18n="form-namelabel">Name</label>
+                    <input type="text" id="f-name" name="name" autocomplete="name" required data-i18n-ph="ph-name">
+                  </div>
+                  <div class="form-field">
+                    <label for="f-email" data-i18n="form-emaillabel">Email</label>
+                    <input type="email" id="f-email" name="email" placeholder="your@email.com" autocomplete="email" required>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="f-company" data-i18n="form-companylabel">Company</label>
+                  <input type="text" id="f-company" name="company" autocomplete="organization" data-i18n-ph="ph-company">
+                </div>
+                <div class="form-field">
+                  <label for="f-message" data-i18n="form-msglabel">Message</label>
+                  <textarea id="f-message" name="message" rows="4" required data-i18n-ph="ph-message"></textarea>
+                </div>
+                <div class="form-submit-row">
+                  <button type="submit" class="btn" id="form-submit-btn">
+                    <span data-i18n="form-submit">Send message</span><span aria-hidden="true">→</span>
+                  </button>
+                  <span class="form-status" id="form-status" aria-live="polite"></span>
+                </div>
+              </form>
+            </div>
+            <div class="contact-choice contact-choice--static">
+              <div class="contact-choice-header">
+                <span class="contact-choice-title" data-i18n="contact-call-title">Call</span>
+              </div>
+              <a href="tel:+31646281246" class="contact-phone">+31 (0)6 46281246</a>
+              <p class="contact-availability" data-i18n="contact-avail">Available Monday – Friday, 09:00 – 18:00 CET</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+  document.querySelectorAll('[data-inject-contact]').forEach(el => {
+    el.innerHTML = CONTACT_SECTION_HTML;
+  });
+
   // Apply on load (no fade)
   setLangContent(currentLang);
 

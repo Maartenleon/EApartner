@@ -845,29 +845,24 @@ footer {
     transition-delay: 160ms;
   }
 
+  .overlay-sub-links { padding-left: 20px; }
+
   .overlay-sub-link {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 300;
     font-family: "Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
     letter-spacing: -0.01em;
     color: var(--brand);
-    padding: 8px 0;
-    opacity: 0.72;
+    padding: 7px 0;
+    opacity: 0.6;
     transition: opacity .15s ease, color .15s ease;
   }
   .overlay-sub-link:hover { opacity: 1; color: var(--text); }
 
-  .overlay-sub-arrow {
-    font-family: var(--sans);
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--muted);
-    flex-shrink: 0;
-    letter-spacing: 0;
-  }
+  .overlay-sub-arrow { display: none; }
 }
 
 /* ── Scroll reveal ────────────────────────── */
@@ -1546,21 +1541,6 @@ footer {
   margin: 0;
 }
 
-/* ── CTA section (track pages) ──────────────────────────── */
-#contact-track .wrap {
-  text-align: center;
-}
-#contact-track .section-eyebrow {
-  justify-content: center;
-  display: flex;
-}
-#contact-track h2 {
-  margin: 12px 0 18px;
-}
-#contact-track .sub {
-  margin: 0 auto 32px;
-  text-align: center;
-}
 
 /* ============================================================
    TRACK PAGES — shared template
