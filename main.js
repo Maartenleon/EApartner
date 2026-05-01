@@ -279,6 +279,24 @@
     el.innerHTML = CONTACT_SECTION_HTML;
   });
 
+  /* ── Shared footer ───────────────────────────────────── */
+  // Edit this template to update the footer on ALL pages at once.
+  const FOOTER_HTML = `
+    <div class="wrap">
+      <div class="footer-row">
+        <span class="mono">© <span id="year"></span> EA Partner</span>
+        <div class="lang-toggle lang-toggle--desktop">
+          <button class="lang-btn active" data-lang-btn="en">English</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button class="lang-btn" data-lang-btn="nl">Nederlands</button>
+        </div>
+      </div>
+    </div>`;
+
+  document.querySelectorAll('[data-inject-footer]').forEach(el => {
+    el.innerHTML = FOOTER_HTML;
+  });
+
   // Apply on load (no fade)
   setLangContent(currentLang);
 
