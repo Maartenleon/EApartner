@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Architecture for Change — EA Partner</title>
+  <title>Architecture for Change — Ensemble</title>
   <meta name="description" content="Architecture that gives complex change a spine. How strategy connects to capabilities, data, applications, and technology — with AI as a cross-cutting concern." />
   <link rel="stylesheet" href="style.css" />
   <style>
@@ -43,7 +43,7 @@
   <div class="topbar" id="topbar">
     <div class="wrap">
       <div class="topbar-inner">
-        <a class="logo" href="index.html" aria-label="EA Partner">
+        <a class="logo" href="index.html" aria-label="Ensemble">
           <svg class="logo__icon" viewBox="0 0 28 28" width="28" height="28" fill="none" aria-hidden="true" overflow="visible">
             <line x1="14" y1="14" x2="14" y2="4"  stroke="currentColor" stroke-opacity=".3" stroke-width="1.2"/>
             <line x1="14" y1="14" x2="24" y2="14" stroke="currentColor" stroke-opacity=".3" stroke-width="1.2"/>
@@ -55,7 +55,7 @@
             <circle cx="4"  cy="14" r="3" fill="currentColor" fill-opacity=".3"/>
             <circle cx="14" cy="14" r="3" fill="currentColor"/>
           </svg>
-          <span class="logo__wordmark">EA Partner</span>
+          <span class="logo__wordmark">Ensemble</span>
         </a>
 
         <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -112,35 +112,45 @@
         <a class="page-back" href="index.html#diensten">← Back to services</a>
         <p class="section-eyebrow">Track 1</p>
         <h1>Architecture<br>for Transformation</h1>
-        <p class="lede">This is enterprise architecture, done inside your transformation. It bridges direction and execution — and stays close to delivery so the bridge doesn't drift. Strategy, capabilities, data, applications, and technology, held coherent enough that decisions compound and modular enough that change doesn't ripple. The output isn't a model. It's the decisions your transformation needs next.</p>
+        <p class="lede" data-i18n="t1-hero-lede">This is enterprise architecture, done inside your transformation. It bridges direction and execution — and stays close to delivery so the bridge doesn't drift. Strategy, capabilities, data, applications, and technology, held coherent enough that decisions compound and modular enough that change doesn't ripple. The output isn't a model. It's the decisions your transformation needs next.</p>
       </div>
     </div>
 
-    <!-- ── Problems ── -->
+    <!-- ── The Problem ── -->
+    <section>
+      <div class="wrap">
+        <p class="lede reveal" data-i18n="t1-problem-p1"><strong>Most transformations don't fail for lack of effort.</strong> They fail because reasonable decisions, made in different layers and different domains, stop adding up. Strategy doesn't reach delivery. Delivery drifts from strategy. Initiatives multiply, focus thins, and the landscape gets harder to change exactly when it most needs to.</p>
+        <p class="lede reveal" data-i18n="t1-problem-p2">These are the moments enterprise architecture is for.</p>
+      </div>
+    </section>
+
+    <!-- ── Sound familiar? ── -->
     <section class="problems-section">
       <div class="wrap">
-        <p class="lede"><strong>Most transformations don't fail for lack of effort.</strong> They fail because reasonable decisions in different layers and domains stop adding up.</p>
         <p class="section-eyebrow">Sound familiar?</p>
         <div class="problems-grid">
           <div class="problem-card reveal">
-            <p class="problem-q">How do I add new systems without creating an integration spaghetti down the line?</p>
-            <p class="problem-a">Without architecture guardrails, every new system becomes a new integration point. I define integration principles, a canonical data model, and a target architecture that new systems slot into — before they're built, not after the damage is done.</p>
+            <p class="problem-q" data-i18n="t1-q1-q">How do I add new systems without creating an integration spaghetti down the line?</p>
+            <p class="problem-a" data-i18n="t1-q1-a">Without architecture guardrails, every new system becomes a new integration point. I define integration principles, a canonical data model, and a target architecture that new systems slot into — before they're built, not after the damage is done.</p>
           </div>
           <div class="problem-card reveal">
-            <p class="problem-q">How do I decide which tech initiatives to prioritise when everything feels urgent?</p>
-            <p class="problem-a">Most organisations have more initiatives than focus. I map your capability gaps to strategic goals and use that as the basis for sequencing — so every initiative you fund has a clear architectural reason for coming before the others.</p>
+            <p class="problem-q" data-i18n="t1-q2-q">How do I decide which tech initiatives to prioritise when everything feels urgent?</p>
+            <p class="problem-a" data-i18n="t1-q2-a">Most organisations have more initiatives than focus. I map your capability gaps to strategic goals and use that as the basis for sequencing — so every initiative you fund has a clear architectural reason for coming before the others.</p>
           </div>
           <div class="problem-card reveal">
-            <p class="problem-q">Which of our processes are actually suitable for AI, and which ones aren't ready yet?</p>
-            <p class="problem-a">AI readiness is architectural: it depends on data quality, capability ownership, and integration maturity. I assess your landscape layer by layer and give you a clear picture of where agents can deliver value today — and where the foundational work comes first.</p>
+            <p class="problem-q" data-i18n="t1-q3-q">Which of our processes are actually suitable for AI, and which ones aren't ready yet?</p>
+            <p class="problem-a" data-i18n="t1-q3-a">AI readiness is architectural: it depends on data quality, capability ownership, and integration maturity. I assess your landscape layer by layer and give you a clear picture of where agents can deliver value today — and where the foundational work comes first.</p>
           </div>
           <div class="problem-card reveal">
-            <p class="problem-q">Every programme creates its own architecture — how do we get coherence without a central bottleneck?</p>
-            <p class="problem-a">When architecture decisions are made programme by programme, coherence only comes from luck or conflict. I establish shared principles and a reference architecture that programmes inherit — so alignment happens by design, not constant negotiation.</p>
+            <p class="problem-q" data-i18n="t1-q4-q">Every programme creates its own architecture — how do we get coherence without a central bottleneck?</p>
+            <p class="problem-a" data-i18n="t1-q4-a">When architecture decisions are made programme by programme, coherence only comes from luck or conflict. I establish shared principles and a reference architecture that programmes inherit — so alignment happens by design, not constant negotiation.</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ── Approach ── -->
+    <section data-inject-approach="track1"></section>
 
     <!-- ── Alignment diagram ── -->
     <div class="viz-section">
@@ -149,40 +159,30 @@
           <div>
             <p class="section-eyebrow">The model</p>
             <h2>Enterprise architecture,<br>in one picture</h2>
-            <p class="sub" style="margin-top:16px;">Coherence has two axes. <strong>Vertically</strong>, each layer constrains and enables the one above and below — strategy that doesn't reach technology is wishful thinking; technology disconnected from strategy is debt waiting to happen. <strong>Horizontally</strong>, every domain fits the same model, or integration becomes the work instead of the outcome. AI and agents cut across all of it.</p>
-            <p class="sub" style="margin-top:12px;">But coherence alone makes an organisation rigid. <strong>Modularity is the second discipline</strong> — parts designed to be replaced, repriced, or reorganised without rebuilding the whole. Architecture's job is to hold both: tight enough that decisions compound, loose enough that change doesn't cascade.</p>
+            <p class="sub" style="margin-top:16px;" data-i18n="t1-model-p1">Coherence has two axes. <strong>Vertically</strong>, each layer constrains and enables the one above and below — strategy that doesn't reach technology is wishful thinking; technology disconnected from strategy is debt waiting to happen. <strong>Horizontally</strong>, every domain fits the same model, or integration becomes the work instead of the outcome. AI and agents cut across all of it.</p>
+            <p class="sub" style="margin-top:12px;" data-i18n="t1-model-p2">But coherence alone makes an organisation rigid. <strong>Modularity is the second discipline</strong> — parts designed to be replaced, repriced, or reorganised without rebuilding the whole. Architecture's job is to hold both: tight enough that decisions compound, loose enough that change doesn't cascade.</p>
           </div>
 
-          <!-- Alignment matrix diagram: 6 rows × 3 domain columns -->
+          <!-- Alignment matrix diagram: 6 rows × 3 domain columns — DO NOT EDIT -->
           <svg class="align-viz" viewBox="0 0 440 238" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Architecture alignment matrix">
-
-            <!-- Domain column labels -->
             <text x="196" y="20" class="viz-label" text-anchor="middle">Finance</text>
             <text x="278" y="20" class="viz-label" text-anchor="middle">Operations</text>
             <text x="360" y="20" class="viz-label" text-anchor="middle">Customer</text>
-
-            <!-- Layer row labels -->
             <text x="8" y="38"  class="viz-label">Strategy</text>
             <text x="8" y="72"  class="viz-label">Capabilities</text>
             <text x="8" y="106" class="viz-label">Data</text>
             <text x="8" y="140" class="viz-label">Applications</text>
             <text x="8" y="174" class="viz-label">Platforms</text>
             <text x="8" y="208" class="viz-label" fill="rgba(139,26,10,.55)">AI / Agents</text>
-
-            <!-- Horizontal lines -->
             <line x1="196" y1="34"  x2="360" y2="34"  stroke="currentColor" stroke-opacity=".16" stroke-width="0.6" style="stroke-dasharray:164; stroke-dashoffset:164; animation: anim-draw .45s ease forwards .08s"/>
             <line x1="196" y1="68"  x2="360" y2="68"  stroke="currentColor" stroke-opacity=".16" stroke-width="0.6" style="stroke-dasharray:164; stroke-dashoffset:164; animation: anim-draw .45s ease forwards .20s"/>
             <line x1="196" y1="102" x2="360" y2="102" stroke="currentColor" stroke-opacity=".16" stroke-width="0.6" style="stroke-dasharray:164; stroke-dashoffset:164; animation: anim-draw .45s ease forwards .32s"/>
             <line x1="196" y1="136" x2="360" y2="136" stroke="currentColor" stroke-opacity=".16" stroke-width="0.6" style="stroke-dasharray:164; stroke-dashoffset:164; animation: anim-draw .45s ease forwards .44s"/>
             <line x1="196" y1="170" x2="360" y2="170" stroke="currentColor" stroke-opacity=".16" stroke-width="0.6" style="stroke-dasharray:164; stroke-dashoffset:164; animation: anim-draw .45s ease forwards .56s"/>
             <line x1="196" y1="204" x2="360" y2="204" stroke="rgba(139,26,10,.18)" stroke-width="0.6" style="stroke-dasharray:164; stroke-dashoffset:164; animation: anim-draw .45s ease forwards .68s"/>
-
-            <!-- Vertical lines -->
             <line x1="196" y1="34" x2="196" y2="204" stroke="currentColor" stroke-opacity=".16" stroke-width="0.6" style="stroke-dasharray:170; stroke-dashoffset:170; animation: anim-draw .6s ease forwards .76s"/>
             <line x1="278" y1="34" x2="278" y2="204" stroke="currentColor" stroke-opacity=".16" stroke-width="0.6" style="stroke-dasharray:170; stroke-dashoffset:170; animation: anim-draw .6s ease forwards .90s"/>
             <line x1="360" y1="34" x2="360" y2="204" stroke="currentColor" stroke-opacity=".16" stroke-width="0.6" style="stroke-dasharray:170; stroke-dashoffset:170; animation: anim-draw .6s ease forwards 1.04s"/>
-
-            <!-- Nodes rows 1–5 -->
             <circle cx="196" cy="34"  r="2" class="da" fill="currentColor" fill-opacity=".38" style="animation-delay:.50s"/>
             <circle cx="278" cy="34"  r="2" class="da" fill="currentColor" fill-opacity=".38" style="animation-delay:.58s"/>
             <circle cx="360" cy="34"  r="2" class="da" fill="currentColor" fill-opacity=".38" style="animation-delay:.66s"/>
@@ -198,69 +198,75 @@
             <circle cx="196" cy="170" r="2" class="da" fill="currentColor" fill-opacity=".38" style="animation-delay:1.46s"/>
             <circle cx="278" cy="170" r="2" class="da" fill="currentColor" fill-opacity=".38" style="animation-delay:1.54s"/>
             <circle cx="360" cy="170" r="2" class="da" fill="currentColor" fill-opacity=".38" style="animation-delay:1.62s"/>
-
-            <!-- Row 6: AI nodes (accent, pulsing) -->
             <circle cx="196" cy="204" r="2.5" class="ai-node ai-node-1"/>
             <circle cx="278" cy="204" r="2.5" class="ai-node ai-node-2"/>
             <circle cx="360" cy="204" r="2.5" class="ai-node ai-node-3"/>
-
           </svg>
         </div>
       </div>
     </div>
 
-    <!-- ── Architecture layers ── -->
+    <!-- ── Six layers ── -->
     <section>
       <div class="wrap">
         <div class="section-3col">
           <div class="section-label reveal">
             <p class="section-eyebrow">Six layers</p>
             <h2>Strategy<br>to AI</h2>
-            <p class="sub" style="margin-top:16px;">Each layer carries a decision the organisation can't afford to leave implicit. The artefacts below are what carry those decisions — small, sharp, useful at the moment someone has to act.</p>
+            <p class="sub" style="margin-top:16px;" data-i18n="t1-layers-intro">Each layer carries a decision the organisation can't afford to leave implicit. The artefacts below are what carry those decisions — small, sharp, useful at the moment someone has to act.</p>
           </div>
           <div class="layer-grid reveal">
             <div class="layer-row">
-              <div class="layer-head">
-                <p class="layer-digit">01</p>
-                <p class="layer-name">Strategy</p>
-              </div>
-              <p class="layer-body"><em>The decision:</em> what this organisation will and won't do, structurally — including the principles that govern security, risk, and compliance before they become someone else's emergency.<br><em>The artefact:</em> architectural principles with real teeth, and a North Star that survives reorganisation.</p>
+              <div class="layer-head"><p class="layer-digit">01</p><p class="layer-name">Strategy</p></div>
+              <p class="layer-body" data-i18n="t1-layer1"><em>The decision:</em> what this organisation will and won't do, structurally — including the principles that govern security, risk, and compliance before they become someone else's emergency.<br><em>The artefact:</em> architectural principles with real teeth, and a North Star that survives reorganisation.</p>
             </div>
             <div class="layer-row">
-              <div class="layer-head">
-                <p class="layer-digit">02</p>
-                <p class="layer-name">Capabilities</p>
-              </div>
-              <p class="layer-body"><em>The decision:</em> where to invest, where to consolidate, where to leave alone — and which value streams each capability serves.<br><em>The artefact:</em> a capability map with domain ownership, honest maturity scoring, and change prioritised by capability gaps rather than initiative momentum.</p>
+              <div class="layer-head"><p class="layer-digit">02</p><p class="layer-name">Capabilities</p></div>
+              <p class="layer-body" data-i18n="t1-layer2"><em>The decision:</em> where to invest, where to consolidate, where to leave alone — and which value streams each capability serves.<br><em>The artefact:</em> a capability map with domain ownership, honest maturity scoring, and change prioritised by capability gaps rather than initiative momentum.</p>
             </div>
             <div class="layer-row">
-              <div class="layer-head">
-                <p class="layer-digit">03</p>
-                <p class="layer-name">Data</p>
-              </div>
-              <p class="layer-body"><em>The decision:</em> who owns what, which system is the source of truth, and what "the customer" actually means across the organisation.<br><em>The artefact:</em> a conceptual data model with quality definitions, ownership, and the acceptance criteria AI needs to be reliable rather than confident-sounding.</p>
+              <div class="layer-head"><p class="layer-digit">03</p><p class="layer-name">Data</p></div>
+              <p class="layer-body" data-i18n="t1-layer3"><em>The decision:</em> who owns what, which system is the source of truth, and what "the customer" actually means across the organisation.<br><em>The artefact:</em> a conceptual data model with ownership, quality definitions, and the acceptance criteria AI needs to be reliable rather than confident-sounding.</p>
             </div>
             <div class="layer-row">
-              <div class="layer-head">
-                <p class="layer-digit">04</p>
-                <p class="layer-name">Applications</p>
-              </div>
-              <p class="layer-body"><em>The decision:</em> which systems stay, which go, which get rebuilt, and in what order — before the wrong sequence gets funded.<br><em>The artefact:</em> an application landscape that surfaces redundancy, integration complexity, and the right modernisation sequence.</p>
+              <div class="layer-head"><p class="layer-digit">04</p><p class="layer-name">Applications</p></div>
+              <p class="layer-body" data-i18n="t1-layer4"><em>The decision:</em> which systems stay, which go, which get rebuilt, and in what order — before the wrong sequence gets funded.<br><em>The artefact:</em> an application landscape that surfaces redundancy, integration complexity, and the right modernisation sequence.</p>
             </div>
             <div class="layer-row">
-              <div class="layer-head">
-                <p class="layer-digit">05</p>
-                <p class="layer-name">Platforms &amp; Infrastructure</p>
-              </div>
-              <p class="layer-body"><em>The decision:</em> the foundational bets — cloud, data platform, integration layer — that constrain everything above for years.<br><em>The artefact:</em> a technology radar, build-vs-buy principles, and debt mapping that makes the right bets visible before they're irreversible.</p>
+              <div class="layer-head"><p class="layer-digit">05</p><p class="layer-name">Platforms &amp; Infrastructure</p></div>
+              <p class="layer-body" data-i18n="t1-layer5"><em>The decision:</em> the foundational bets — cloud, data platform, integration layer — that constrain everything above for years.<br><em>The artefact:</em> a technology radar, build-vs-buy principles, and debt mapping that makes the right bets visible before they're irreversible.</p>
             </div>
             <div class="layer-row">
-              <div class="layer-head">
-                <p class="layer-digit">06</p>
-                <p class="layer-name">AI / Agents</p>
-              </div>
-              <p class="layer-body"><em>The decision:</em> where autonomous action is sanctioned, what agents can access, trigger, and decide, and where human oversight is required.<br><em>The artefact:</em> an agentic operating model that runs across all five layers — making clear where AI compounds value and where it compounds risk.</p>
+              <div class="layer-head"><p class="layer-digit">06</p><p class="layer-name">AI / Agents</p></div>
+              <p class="layer-body" data-i18n="t1-layer6"><em>The decision:</em> where autonomous action is sanctioned, what agents can access, trigger, and decide, and where human oversight is required.<br><em>The artefact:</em> an agentic operating model that runs across all five layers — making clear where AI compounds value and where it compounds risk.</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Why work with me ── -->
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="reveal" data-i18n="t1-why-h2">Why work with me</h2>
+        </div>
+        <div class="cards">
+          <div class="card reveal">
+            <h3 data-i18n="t1-card1-title">Decision-focused</h3>
+            <p data-i18n="t1-card1-body">Every artefact earns its place because it changes what someone does next. No model for its own sake.</p>
+          </div>
+          <div class="card reveal">
+            <h3 data-i18n="t1-card2-title">Fast cycles</h3>
+            <p data-i18n="t1-card2-body">Diagnostic in four weeks. Target architecture in four more. Ongoing involvement only as long as it's useful.</p>
+          </div>
+          <div class="card reveal">
+            <h3 data-i18n="t1-card3-title">Close to delivery</h3>
+            <p data-i18n="t1-card3-body">Architecture that walks away from the work it set in motion is just expensive advice. I stay until the path forward is obvious without me in the room.</p>
+          </div>
+          <div class="card reveal">
+            <h3 data-i18n="t1-card4-title">Independent</h3>
+            <p data-i18n="t1-card4-body">No vendor partnerships, no platform incentives, no team to upsell into the engagement. The advice serves the architecture, not the next sale.</p>
           </div>
         </div>
       </div>
@@ -275,8 +281,41 @@
             <h2>A working spine,<br>not a binder</h2>
           </div>
           <div class="panel reveal">
-            <p>A target architecture tying strategy to technology through capabilities, data, and applications — coherent enough that decisions compound, modular enough that the next change doesn't require a rebuild. A sequenced roadmap where each step traces to a decision. Principles and guardrails that hold when no one is watching.</p>
-            <p><strong>And what stays.</strong> Architecture that sets direction and walks away is just expensive advice. The work continues close to delivery — catching drift before it becomes debt, adjusting the target when the landscape genuinely shifts (and refusing to when it hasn't), and staying in the room until the path forward is obvious without me. Direction without presence is how transformations quietly lose their spine.</p>
+            <p data-i18n="t1-walkaway-p1">A target architecture tying strategy to technology through capabilities, data, and applications — coherent enough that decisions compound, modular enough that the next change doesn't require a rebuild. A sequenced roadmap where each step traces to a decision. Principles and guardrails that hold when no one is watching.</p>
+            <p data-i18n="t1-walkaway-p2"><strong>And what stays.</strong> Architecture that sets direction and walks away is just expensive advice. The work continues close to delivery — catching drift before it becomes debt, adjusting the target when the landscape genuinely shifts and refusing to when it hasn't, staying in the room until the path forward is obvious without me. Direction without presence is how transformations quietly lose their spine.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section>
+      <div class="wrap">
+        <div class="section-3col">
+          <div class="section-label reveal">
+            <h2 data-i18n="t1-faq-h2">Frequently asked questions</h2>
+          </div>
+          <div class="reveal">
+            <div class="panel">
+              <h3 data-i18n="t1-faq1-q">Why a solo architect rather than a firm?</h3>
+              <p data-i18n="t1-faq1-a">Speed and continuity. A firm sells you a partner and delivers you a team that rotates. I show up myself, every meeting, and the conversation in week 12 builds on the conversation in week 1. For a transformation that needs architecture to steer, that continuity matters more than scale.</p>
+            </div>
+            <div class="panel">
+              <h3 data-i18n="t1-faq2-q">What if our transformation already has architects?</h3>
+              <p data-i18n="t1-faq2-a">Good — most of my work is alongside existing architects rather than replacing them. The question is usually whether they have the time, the seniority, or the distance from delivery to make the decisions that need to be made. If they do, you don't need me. If they don't, I work with them, not over them.</p>
+            </div>
+            <div class="panel">
+              <h3 data-i18n="t1-faq3-q">How long does an engagement typically last?</h3>
+              <p data-i18n="t1-faq3-a">Diagnostic: four weeks. Target architecture and roadmap: four to eight weeks more. Embedded involvement during delivery: as long as it's useful, never longer. Most engagements run three to nine months total. The goal is making myself unnecessary, not indispensable.</p>
+            </div>
+            <div class="panel">
+              <h3 data-i18n="t1-faq4-q">What do you actually deliver?</h3>
+              <p data-i18n="t1-faq4-a">Decisions, carried by small artefacts: a target architecture, a roadmap traced to decisions, principles with real teeth, and ongoing course corrections during delivery. Not a binder. The deliverable is what the organisation can do after, not what it has on the shelf.</p>
+            </div>
+            <div class="panel">
+              <h3 data-i18n="t1-faq5-q">How do we start?</h3>
+              <p data-i18n="t1-faq5-a">One conversation. No preparation needed. If there's a fit, we'd typically begin with a four-week QuickScan: a structured diagnostic that gives you a prioritised map of what needs to happen, whether or not we work together afterwards.</p>
+            </div>
           </div>
         </div>
       </div>
