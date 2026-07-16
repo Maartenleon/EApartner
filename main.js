@@ -17,7 +17,7 @@
       'hero-h1':             'Clear direction<br>for organisations<br>in transformation.',
       'hero-lede':           'We bring coherence to complex organisations,<br>so your strategy becomes something you can build and deliver.',
       'hero-cta':            'View services',
-      'value-eyebrow':       'Why enterprise architecture',
+      'value-eyebrow':       'Why The Collective',
       'value-h2':            'Every coherent organisation is held together by architecture most people never see. Most struggling ones show what happens when it isn\'t there.',
       'value-text1':         'Too many initiatives, too little focus. An IT landscape that tangles as the organisation grows. Strategy that doesn\'t reach delivery. Delivery that drifts without strategy. Reasonable local decisions that don\'t add up globally.',
       'value-text2':         'The need isn\'t more technology, talent, or effort. It\'s <strong>coherence</strong> — decisions that add up instead of cancelling out. That\'s the work of enterprise architecture.',
@@ -44,13 +44,13 @@
       'track2-li4':          'Coaching support for leads and teams during the build-out',
       'approach-eyebrow':    'How we work',
       'approach-h2':         'Approach',
-      'approach-sub':        'Every engagement follows the same rhythm: a sharp diagnostic, a clear architecture, then close involvement during delivery. The content differs by track. The discipline doesn\'t.',
+      'approach-sub':        'Every engagement follows the same rhythm: a sharp diagnostic, a clear blueprint, then close involvement during delivery. The content differs by track. The discipline doesn\'t.',
       'phase1-title':        'Diagnose — 4 weeks',
       'phase1-subtitle':     'QuickScan · Maturity Audit',
       'phase1-body':         '<strong>No assumptions, no predefined answers.</strong> For transformation programmes: what is the goal, where does complexity sit, what is blocking progress, which architectural decisions are urgent? For EA functions: what is the current maturity? The output is a prioritised map of what needs to happen.',
-      'phase2-title':        'Architect — 4 weeks',
+      'phase2-title':        'Compose — 4 weeks',
       'phase2-subtitle':     'Target State · Roadmap · Decisions',
-      'phase2-body':         '<strong>Translate the diagnosis into a clear architecture and executable strategy.</strong> Trade-offs get made, options get documented, a roadmap gets set, with guardrails not just milestones. Every artefact earns its place because it changes what someone does next. Decisions over documents.',
+      'phase2-body':         '<strong>Translate the diagnosis into a clear blueprint and executable strategy.</strong> Trade-offs get made, options get documented, a roadmap gets set, with guardrails not just milestones. Every artefact earns its place because it changes what someone does next. Decisions over documents.',
       'phase3-title':        'Steer — ongoing',
       'phase3-subtitle':     'Embedded Partner · Delivery Support',
       'phase3-body':         '<strong>Architecture doesn\'t survive first contact with delivery unchanged.</strong> Steer is the embedded partner phase: guardrails, course corrections when the landscape shifts, and a thinking partner close enough to the work to catch drift before it becomes debt. Until the path forward stays obvious without us in the room.',
@@ -98,13 +98,13 @@
       't1-q3-a':             'AI readiness is architectural: it depends on data quality, capability ownership, and integration maturity. We assess your landscape layer by layer and give you a clear picture of where agents can deliver value today — and where the foundational work comes first.',
       't1-q4-q':             'Every programme creates its own architecture — how do we get coherence without a central bottleneck?',
       't1-q4-a':             'When architecture decisions are made programme by programme, coherence only comes from luck or conflict. We establish shared principles and a reference architecture that programmes inherit — so alignment happens by design, not constant negotiation.',
-      't1-approach-intro':   'Every engagement follows the same rhythm. Sharp diagnostic, clear architecture, close involvement during delivery.',
+      't1-approach-intro':   'Every engagement follows the same rhythm. Sharp diagnostic, clear blueprint, close involvement during delivery.',
       't1-phase1-title':     'Diagnose — 4 weeks',
       't1-phase1-sub':       'QuickScan',
       't1-phase1-body':      'No assumptions, no predefined answers. What is the goal of the transformation, where does complexity sit, what is blocking progress, which architectural decisions are urgent? The output is a prioritised map of what needs to happen.',
-      't1-phase2-title':     'Architect — 4 weeks',
+      't1-phase2-title':     'Compose — 4 weeks',
       't1-phase2-sub':       'Target State · Roadmap · Decisions',
-      't1-phase2-body':      'Translate the diagnosis into a clear architecture and executable strategy. Trade-offs get made, options get documented, a roadmap gets set with guardrails not just milestones. Every artefact earns its place because it changes what someone does next. Decisions over documents.',
+      't1-phase2-body':      'Translate the diagnosis into a clear blueprint and executable strategy. Trade-offs get made, options get documented, a roadmap gets set with guardrails not just milestones. Every artefact earns its place because it changes what someone does next. Decisions over documents.',
       't1-phase3-title':     'Steer — ongoing',
       't1-phase3-sub':       'Embedded Partner · Delivery Support',
       't1-phase3-body':      'Architecture doesn\'t survive first contact with delivery unchanged. Steer is the embedded partner phase: guardrails, course corrections when the landscape shifts, and a thinking partner close enough to the work to catch drift before it becomes debt. Until the path forward stays obvious without us in the room.',
@@ -152,7 +152,7 @@
       'hero-h1':             'Heldere richting<br>voor organisaties<br>in verandering.',
       'hero-lede':           'Wij brengen samenhang in complexe organisaties,<br>zodat uw strategie iets wordt wat u kunt bouwen en uitvoeren.',
       'hero-cta':            'Bekijk diensten',
-      'value-eyebrow':       'Waarom enterprise architecture',
+      'value-eyebrow':       'Waarom The Collective',
       'value-h2':            'Elke coherente organisatie wordt bijeengehouden door architectuur die de meeste mensen nooit zien. Bij de meeste organisaties die worstelen zie je wat er gebeurt als die er niet is.',
       'value-text1':         'Te veel initiatieven, te weinig focus. Een IT-landschap dat verstrikt raakt naarmate de organisatie groeit. Strategie die de uitvoering niet bereikt. Uitvoering die afdrijft zonder strategie. Redelijke lokale beslissingen die globaal niet optellen.',
       'value-text2':         'De behoefte is niet meer technologie, talent of inspanning. Het is <strong>samenhang</strong> — beslissingen die optellen in plaats van elkaar opheffen. Dat is het werk van enterprise architectuur.',
@@ -179,13 +179,13 @@
       'track2-li4':          'Coachingondersteuning voor leads en teams tijdens de opbouw',
       'approach-eyebrow':    'Hoe wij werken',
       'approach-h2':         'Aanpak',
-      'approach-sub':        'Elke opdracht volgt hetzelfde ritme: een scherpe diagnose, een heldere architectuur, dan nauwe betrokkenheid tijdens de uitvoering. De inhoud verschilt per track. De discipline niet.',
+      'approach-sub':        'Elke opdracht volgt hetzelfde ritme: een scherpe diagnose, een heldere blauwdruk, dan nauwe betrokkenheid tijdens de uitvoering. De inhoud verschilt per track. De discipline niet.',
       'phase1-title':        'Diagnose — 4 weken',
       'phase1-subtitle':     'QuickScan · Volwassenheidsaudit',
       'phase1-body':         '<strong>Geen aannames, geen vooraf bepaalde antwoorden.</strong> Voor transformatieprogramma\'s: wat is het doel, waar zit de complexiteit, wat blokkeert de voortgang, welke architectuurbeslissingen zijn urgent? Voor EA-functies: wat is de huidige volwassenheid? De uitkomst is een geprioriteerde kaart van wat er moet gebeuren.',
-      'phase2-title':        'Architectuur — 4 weken',
+      'phase2-title':        'Componeer — 4 weken',
       'phase2-subtitle':     'Doelstaat · Roadmap · Beslissingen',
-      'phase2-body':         '<strong>Vertaal de diagnose naar een heldere architectuur en uitvoerbare strategie.</strong> Afwegingen worden gemaakt, opties gedocumenteerd, een roadmap wordt vastgesteld, met vangrails en niet alleen mijlpalen. Elk artefact verdient zijn plek omdat het verandert wat iemand als volgende doet. Beslissingen boven documenten.',
+      'phase2-body':         '<strong>Vertaal de diagnose naar een heldere blauwdruk en uitvoerbare strategie.</strong> Afwegingen worden gemaakt, opties gedocumenteerd, een roadmap wordt vastgesteld, met vangrails en niet alleen mijlpalen. Elk artefact verdient zijn plek omdat het verandert wat iemand als volgende doet. Beslissingen boven documenten.',
       'phase3-title':        'Sturen — doorlopend',
       'phase3-subtitle':     'Ingebed Partner · Delivery Ondersteuning',
       'phase3-body':         '<strong>Architectuur overleeft het eerste contact met de uitvoering niet onveranderd.</strong> Sturen is de ingebedde partnerfase: vangrails, bijsturing wanneer het landschap verschuift, en een denkpartner dichtbij genoeg bij het werk om afdrijven te signaleren voordat het schuld wordt. Totdat de weg vooruit vanzelfsprekend blijft zonder ons in de kamer.',
@@ -233,13 +233,13 @@
       't1-q3-a':             'AI-gereedheid is architecturaal: het hangt af van datakwaliteit, eigenaarschap van capabilities en integratievolwassenheid. Wij beoordelen uw landschap laag voor laag en geven u een helder beeld van waar agents vandaag waarde kunnen leveren — en waar het fundamentele werk eerst komt.',
       't1-q4-q':             'Elk programma creëert zijn eigen architectuur — hoe krijgen we samenhang zonder centraal knelpunt?',
       't1-q4-a':             'Wanneer architectuurbeslissingen programma voor programma worden genomen, komt samenhang alleen door geluk of conflict. Wij stellen gedeelde principes en een referentiearchitectuur vast die programma\'s overnemen — zodat afstemming door ontwerp plaatsvindt, niet door constante onderhandeling.',
-      't1-approach-intro':   'Elke opdracht volgt hetzelfde ritme. Scherpe diagnose, heldere architectuur, nauwe betrokkenheid tijdens de uitvoering.',
+      't1-approach-intro':   'Elke opdracht volgt hetzelfde ritme. Scherpe diagnose, heldere blauwdruk, nauwe betrokkenheid tijdens de uitvoering.',
       't1-phase1-title':     'Diagnose — 4 weken',
       't1-phase1-sub':       'QuickScan',
       't1-phase1-body':      'Geen aannames, geen vooraf bepaalde antwoorden. Wat is het doel van de transformatie, waar zit de complexiteit, wat blokkeert de voortgang, welke architectuurbeslissingen zijn urgent? De uitkomst is een geprioriteerde kaart van wat er moet gebeuren.',
-      't1-phase2-title':     'Architectuur — 4 weken',
+      't1-phase2-title':     'Componeer — 4 weken',
       't1-phase2-sub':       'Doelstaat · Roadmap · Beslissingen',
-      't1-phase2-body':      'Vertaal de diagnose naar een heldere architectuur en uitvoerbare strategie. Afwegingen worden gemaakt, opties gedocumenteerd, een roadmap vastgesteld met vangrails niet alleen mijlpalen. Elk artefact verdient zijn plek omdat het verandert wat iemand als volgende doet. Beslissingen boven documenten.',
+      't1-phase2-body':      'Vertaal de diagnose naar een heldere blauwdruk en uitvoerbare strategie. Afwegingen worden gemaakt, opties gedocumenteerd, een roadmap vastgesteld met vangrails niet alleen mijlpalen. Elk artefact verdient zijn plek omdat het verandert wat iemand als volgende doet. Beslissingen boven documenten.',
       't1-phase3-title':     'Sturen — doorlopend',
       't1-phase3-sub':       'Ingebed Partner · Delivery Ondersteuning',
       't1-phase3-body':      'Architectuur overleeft het eerste contact met de uitvoering niet onveranderd. Sturen is de ingebedde partnerfase: vangrails, bijsturing wanneer het landschap verschuift, en een denkpartner dichtbij genoeg bij het werk om afdrijving te signaleren voordat het schuld wordt. Totdat de weg vooruit vanzelfsprekend blijft zonder ons in de kamer.',
@@ -396,7 +396,7 @@
         <div class="section-label reveal">
           <p class="section-eyebrow" data-i18n="approach-eyebrow">How we work</p>
           <h2 data-i18n="approach-h2">Approach</h2>
-          <p class="sub" style="margin-top:16px;" data-i18n="t1-approach-intro">Every engagement follows the same rhythm. Sharp diagnostic, clear architecture, close involvement during delivery.</p>
+          <p class="sub" style="margin-top:16px;" data-i18n="t1-approach-intro">Every engagement follows the same rhythm. Sharp diagnostic, clear blueprint, close involvement during delivery.</p>
         </div>
         <div class="phases-row">
           <div class="phase-block reveal" data-phase-num="01">
@@ -407,9 +407,9 @@
           </div>
           <div class="phase-block reveal" data-phase-num="02">
             <p class="phase-label">02</p>
-            <h3 class="phase-title" data-i18n="t1-phase2-title">Architect — 4 weeks</h3>
+            <h3 class="phase-title" data-i18n="t1-phase2-title">Compose — 4 weeks</h3>
             <p class="phase-subtitle" data-i18n="t1-phase2-sub">Target State · Roadmap · Decisions</p>
-            <p class="phase-body" data-i18n="t1-phase2-body">Translate the diagnosis into a clear architecture and executable strategy. Trade-offs get made, options get documented, a roadmap gets set with guardrails not just milestones. Every artefact earns its place because it changes what someone does next. Decisions over documents.</p>
+            <p class="phase-body" data-i18n="t1-phase2-body">Translate the diagnosis into a clear blueprint and executable strategy. Trade-offs get made, options get documented, a roadmap gets set with guardrails not just milestones. Every artefact earns its place because it changes what someone does next. Decisions over documents.</p>
           </div>
           <div class="phase-block reveal" data-phase-num="03">
             <p class="phase-label">03</p>
