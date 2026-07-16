@@ -1,5 +1,5 @@
 /* ============================================================
-   main.js — Ensemble site
+   main.js — The Collective site
    ============================================================ */
 (function () {
 
@@ -430,7 +430,7 @@
   const FOOTER_HTML = `
     <div class="wrap">
       <div class="footer-row">
-        <span class="mono">© <span id="year"></span> Ensemble</span>
+        <span class="mono">© <span id="year"></span> The Collective</span>
         <div class="lang-toggle lang-toggle--desktop">
           <button class="lang-btn active" data-lang-btn="en">English</button>
           <span class="lang-sep" aria-hidden="true">|</span>
@@ -593,7 +593,7 @@
             email:    contactForm.querySelector('[name="email"]').value,
             company:  contactForm.querySelector('[name="company"]').value,
             message:  contactForm.querySelector('[name="message"]').value,
-            _subject: 'Ensemble — website inquiry',
+            _subject: 'The Collective — website inquiry',
           }),
         });
         if (!res.ok) throw new Error();
