@@ -5,11 +5,12 @@
   // Too busy behind text  → raise trailFade to 0.45, drop particleAlphaSettled to 0.7
   // Janky on old phones   → raise density to 160
   // Changes too often     → raise autoInterval to 12000
+  // Pattern forms too slowly → raise baseForce
   const CONFIG = {
     density:              115,    // px² per particle
     minParticles:        3000,
     maxParticles:       15000,
-    trailFade:           0.32,   // bg fill alpha per frame (trail persistence)
+    trailFade:           0.28,   // bg fill alpha per frame (higher = shorter trails)
     particleAlphaSettled: 0.85,
     particleAlphaMoving:  0.5,
     particleSize:         1.5,   // px, desktop
@@ -17,11 +18,10 @@
     pointerRadius:        130,   // px; set 0 to disable repulsion
     autoInterval:        8000,   // ms between auto mode changes
     minStrikeInterval:   2500,   // ms minimum between any two strikes
-    strikeDuration:      1500,   // ms for temperature to decay after strike
-    strikeTemperature:    3.4,   // velocity burst magnitude
+    strikeTemperature:    3.4,   // random velocity burst magnitude on strike
     dprCap:               2,
-    baseForce:            2,     // gradient force multiplier toward nodal lines
-    damping:              0.94,  // per-frame velocity multiplier
+    baseForce:            25,    // gradient force toward nodal lines (was 2 — too weak)
+    damping:              0.95,  // per-frame velocity multiplier (< 1)
   };
 
   const MODES = [
@@ -54,16 +54,25 @@
     const v = cs.getPropertyValue(prop).trim();
     return parseHex(v || fallback);
   }
-  const [bgR, bgG, bgB]     = readProp('--hero-bg', '#8b1a0a');
-  const [warmR, warmG, warmB] = readProp('--warm',   '#F5E0C3');
-  const [acR, acG, acB]     = readProp('--accent',  '#f1400b');
+  const [bgR, bgG, bgB]       = readProp('--hero-bg', '#8b1a0a');
+  const [warmR, warmG, warmB] = readProp('--warm',    '#F5E0C3');
+  const [acR, acG, acB]       = readProp('--accent',  '#f1400b');
+
+  // Pre-compute 64-step color table: avoids template-string allocation per particle per frame
+  const N_COLORS = 64;
+  const COLOR_TABLE = [];
+  const trailFillStyle = `rgba(${bgR},${bgG},${bgB},${CONFIG.trailFade})`;
+  for (let i = 0; i <= N_COLORS; i++) {
+    const tc = i / N_COLORS;
+    const a  = (CONFIG.particleAlphaSettled + (CONFIG.particleAlphaMoving - CONFIG.particleAlphaSettled) * tc).toFixed(3);
+    COLOR_TABLE.push(`rgba(${acR},${acG},${acB},${a})`);
+  }
 
   let W = 0, H = 0, dpr = 1;
   let particles = [];
   let modeIndex = 0;
   let currentMode = MODES[0];
   let pointerX = -9999, pointerY = -9999;
-  let strikeEndTime = 0;
   let lastStrikeTime = -(CONFIG.minStrikeInterval);
   let lastAutoTime = 0;
   let running = false, rafId = null;
@@ -78,6 +87,9 @@
     canvas.style.width  = W + 'px';
     canvas.style.height = H + 'px';
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    // Fill opaque background immediately so trail-fade works from frame 1
+    ctx.fillStyle = `rgb(${bgR},${bgG},${bgB})`;
+    ctx.fillRect(0, 0, W, H);
     initParticles();
   }
 
@@ -93,7 +105,7 @@
 
   // ── Chladni physics ───────────────────────────────────────────────────────
   // φ(u,v) = cos(nπu)cos(mπv) − cos(mπu)cos(nπv)
-  // Particles follow −φ∇φ toward nodal lines (zero crossings of φ).
+  // Force: −φ∇φ drives particles toward nodal lines (φ = 0).
   function chladni(x, y, n, m) {
     const u = x / W, v = y / H, pi = Math.PI;
     const npu = n * pi * u, mpv = m * pi * v;
@@ -108,7 +120,6 @@
   function strike(now) {
     if (now - lastStrikeTime < CONFIG.minStrikeInterval) return;
     lastStrikeTime = now;
-    strikeEndTime  = now + CONFIG.strikeDuration;
 
     modeIndex   = (modeIndex + 1) % MODES.length;
     currentMode = MODES[modeIndex];
@@ -124,25 +135,23 @@
   }
 
   // ── Draw loop ─────────────────────────────────────────────────────────────
-  function draw(now) {
+  function draw() {
     const { n, m } = currentMode;
-    const temperature = Math.max(0, (strikeEndTime - now) / CONFIG.strikeDuration);
-    const pSize = W < 720 ? CONFIG.particleSizeMobile : CONFIG.particleSize;
-    const force = CONFIG.baseForce * (1 + temperature * 3);
+    const pSize    = W < 720 ? CONFIG.particleSizeMobile : CONFIG.particleSize;
 
-    // Trail fade — semi-transparent bg fill lets old frames bleed through
-    ctx.fillStyle = `rgba(${bgR},${bgG},${bgB},${CONFIG.trailFade})`;
+    // Trail fade — semi-transparent bg fill lets prior frames linger
+    ctx.fillStyle = trailFillStyle;
     ctx.fillRect(0, 0, W, H);
 
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
       const { phi, gu, gv } = chladni(p.x, p.y, n, m);
 
-      // Gradient descent in pixel space: dφ/dx = gu/W, dφ/dy = gv/H
-      p.vx -= phi * gu / W * force;
-      p.vy -= phi * gv / H * force;
+      // dφ/dx = gu/W, dφ/dy = gv/H  →  force = −φ·∇φ in pixel space
+      p.vx -= phi * gu / W * CONFIG.baseForce;
+      p.vy -= phi * gv / H * CONFIG.baseForce;
 
-      // Pointer repulsion
+      // Pointer repulsion (listeners on hero, not canvas)
       if (CONFIG.pointerRadius > 0) {
         const dx = p.x - pointerX, dy = p.y - pointerY;
         const d2 = dx * dx + dy * dy;
@@ -164,22 +173,17 @@
       if (p.x < 0) p.x += W; else if (p.x > W) p.x -= W;
       if (p.y < 0) p.y += H; else if (p.y > H) p.y -= H;
 
-      // Color: warm cream (settled) → accent orange-red (moving)
+      // Look up pre-computed color by speed bucket (avoids per-particle string alloc)
       const speed = Math.hypot(p.vx, p.vy);
-      const tc    = Math.min(1, speed / 2);
-      const alpha = CONFIG.particleAlphaSettled + (CONFIG.particleAlphaMoving - CONFIG.particleAlphaSettled) * tc;
-      const r = Math.round(warmR + (acR - warmR) * tc);
-      const g = Math.round(warmG + (acG - warmG) * tc);
-      const b = Math.round(warmB + (acB - warmB) * tc);
-
-      ctx.fillStyle = `rgba(${r},${g},${b},${alpha})`;
+      const ci    = Math.min(N_COLORS, Math.floor(speed / 3 * N_COLORS));
+      ctx.fillStyle = COLOR_TABLE[ci];
       ctx.fillRect(p.x - pSize * 0.5, p.y - pSize * 0.5, pSize, pSize);
     }
   }
 
   function loop(now) {
     if (!running) return;
-    draw(now);
+    draw();
     if (now - lastAutoTime > CONFIG.autoInterval) {
       strike(now);
       lastAutoTime = now;
@@ -192,11 +196,11 @@
     const { n, m } = currentMode;
     ctx.fillStyle = `rgb(${bgR},${bgG},${bgB})`;
     ctx.fillRect(0, 0, W, H);
-    const pSize = W < 720 ? CONFIG.particleSizeMobile : CONFIG.particleSize;
-    ctx.fillStyle = `rgba(${warmR},${warmG},${warmB},${CONFIG.particleAlphaSettled})`;
-    const pi = Math.PI;
+    const pSize    = W < 720 ? CONFIG.particleSizeMobile : CONFIG.particleSize;
+    const pi       = Math.PI;
     const target   = Math.min(CONFIG.maxParticles, Math.max(CONFIG.minParticles, Math.floor(W * H / CONFIG.density)));
     const maxTries = target * 30;
+    ctx.fillStyle  = COLOR_TABLE[0]; // settled color
     let drawn = 0, tries = 0;
     while (drawn < target && tries < maxTries) {
       tries++;
