@@ -1149,8 +1149,6 @@ footer {
 .panel > p + p  { margin-top: 16px; }
 .panel .list    { margin-top: 16px; }
 
-.page-intro .lede { max-width: 52ch; }
-
 /* ============================================================
    VALUE OF EA SECTION
    ============================================================ */
@@ -1499,114 +1497,43 @@ footer {
   }
 }
 
-/* ── Problem questions section (track pages) ────────────── */
-.problems-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-top: 36px;
-}
-@media (max-width: 640px) {
-  .problems-grid { grid-template-columns: 1fr; }
-}
-.problem-card {
-  background: var(--bg);
-  border: 1px solid var(--line-mid);
-  border-radius: var(--radius);
-  padding: 22px 20px 20px;
-}
-.problem-q {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.45;
-  margin: 0 0 12px;
-  color: var(--text);
-}
-.problem-a {
-  font-size: .82rem;
-  color: var(--muted);
-  line-height: 1.65;
-  margin: 0;
-}
-
-
 /* ============================================================
-   TRACK PAGES — shared template
-   Both track pages inherit these rules. Only diagram-specific
-   CSS lives in the page's own <style> block.
+   EXPLODED AXONOMETRIC — "The stack" (homepage)
    ============================================================ */
+.axo-section { padding: 120px 0; border-top: 1px solid var(--line-soft); }
+.axo-grid { display: grid; grid-template-columns: 0.55fr 1fr; gap: 88px; align-items: start; }
+@media (max-width: 900px) { .axo-grid { grid-template-columns: 1fr; gap: 40px; } }
 
-/* ── Page intro ─────────────────────────────────────────── */
-.page-intro {
-  padding: calc(var(--topbar-h) + 48px) 0 48px;
-  background: var(--bg);
-  /* No border-bottom: the next <section> provides its border-top */
+.axo-index { margin-top: 40px; border-top: 1px solid var(--line-soft); }
+.axo-row {
+  display: block; width: 100%; text-align: left;
+  background: none; border: none; border-bottom: 1px solid var(--line-soft);
+  cursor: pointer; padding: 22px 0; font: inherit; color: inherit;
 }
-.page-intro h1 { margin: 10px 0 16px; }
-.page-back {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 24px;
+.axo-row-top { display: flex; align-items: baseline; gap: 12px; }
+.axo-num {
+  font-family: var(--mono); font-size: 11px;
+  font-variant-numeric: tabular-nums; color: rgb(var(--base-rgb) / .28);
 }
-.page-back:hover { color: var(--text); }
+.axo-title { font-size: .95rem; color: var(--muted); transition: color .2s ease, font-weight .2s ease; }
+.axo-row.is-active .axo-title { color: var(--text); font-weight: 560; }
 
-/* ── Diagram section ────────────────────────────────────── */
-.viz-section {
-  padding: 40px 0;
-  border-top: 1px solid var(--line-soft);   /* single line, matches section border-top */
+.axo-desc { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .25s ease, opacity .2s ease; }
+.axo-row.is-active .axo-desc { grid-template-rows: 1fr; opacity: 1; }
+.axo-desc-inner { overflow: hidden; min-height: 0; }
+.axo-subtitle {
+  display: block; margin: 16px 0 6px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase;
+  color: rgb(var(--base-rgb) / .38);
 }
-.viz-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 56px;
-  align-items: center;
-}
-@media (max-width: 900px) { .viz-grid { grid-template-columns: 1fr; gap: 32px; } }
+.axo-text { display: block; font-size: .85rem; color: var(--muted); line-height: 1.6; padding-bottom: 10px; }
 
-/* ── Item grids (layers on track-1 / capabilities on track-2) */
-.layer-grid, .cap-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px 72px;
-}
-@media (max-width: 900px) {
-  .layer-grid, .cap-grid { grid-template-columns: 1fr; }
-}
-.layer-row, .cap-row {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 0 20px;
-}
-@media (max-width: 600px) {
-  .layer-row, .cap-row { grid-template-columns: 1fr; gap: 6px 0; }
-}
-.layer-head, .cap-head { padding-top: 2px; }
-.layer-digit, .cap-digit {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: .06em;
-  color: rgba(0,0,0,.22);
-  margin: 0 0 4px;
-}
-.layer-name, .cap-name {
-  font-size: .95rem;
-  font-weight: 600;
-  margin: 0 0 3px;
-  color: var(--text);
-}
-.layer-body, .cap-body {
-  font-size: .88rem;
-  color: var(--muted);
-  margin: 0;
-  line-height: 1.55;
+.axo-drawing { width: 100%; }
+.axo-svg { width: 100%; height: auto; display: block; overflow: visible; color: var(--text); }
+.axo-svg [data-layer] { opacity: .35; transition: opacity .25s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  .axo-svg [data-layer], .axo-desc { transition: none; }
 }
 
 /* ============================================================
