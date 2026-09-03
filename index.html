@@ -39,19 +39,7 @@
         <nav aria-label="Primary navigation" id="mainnav">
           <div class="nav-indicator" id="navIndicator" aria-hidden="true"></div>
           <a href="#waarde"  data-section="waarde"   data-i18n="nav-value">Value</a>
-          <!-- ── Services dropdown ── -->
-          <div class="nav-item">
-            <a href="#diensten" data-section="diensten">
-              <span data-i18n="nav-services">Services</span>
-              <svg class="nav-chevron" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <div class="nav-dropdown" role="menu">
-              <a href="track-1.html" role="menuitem"><span class="dd-dot"></span><span data-i18n="nav-track1">Architecture for Transformation</span></a>
-              <a href="track-2.html" role="menuitem"><span class="dd-dot"></span><span data-i18n="nav-track2">Architecture as a Function</span></a>
-            </div>
-          </div>
+          <a href="#diensten" data-section="diensten" data-i18n="nav-services">Services</a>
           <a href="#aanpak"  data-section="aanpak"   data-i18n="nav-approach">Approach</a>
           <a href="#over"    data-section="over"      data-i18n="nav-about">About</a>
           <a href="#contact" data-section="contact"   data-i18n="nav-contact">Contact</a>
@@ -64,10 +52,6 @@
   <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
     <a href="#waarde"   data-i18n="nav-value">Value</a>
     <a href="#diensten" data-i18n="nav-services">Services</a>
-    <div class="overlay-sub-links">
-      <a href="track-1.html" class="overlay-sub-link"><span class="overlay-sub-arrow" aria-hidden="true">→</span><span data-i18n="nav-track1">Architecture for Transformation</span></a>
-      <a href="track-2.html" class="overlay-sub-link"><span class="overlay-sub-arrow" aria-hidden="true">→</span><span data-i18n="nav-track2">Architecture as a Function</span></a>
-    </div>
     <a href="#aanpak"   data-i18n="nav-approach">Approach</a>
     <a href="#over"     data-i18n="nav-about">About</a>
     <a href="#contact"  data-i18n="nav-contact">Contact</a>
@@ -123,7 +107,7 @@
           <div class="section-label reveal" style="--reveal-delay: 0ms">
             <p class="section-eyebrow" data-i18n="services-eyebrow">What I offer</p>
             <h2 data-i18n="services-h2">Services</h2>
-            <p class="sub" data-i18n="services-sub">Two tracks. One for organisations with complex transformations. One for organisations who want to improve their architecture function.</p>
+            <p class="sub" data-i18n="services-sub">Architecture for organisations with complex transformations.</p>
           </div>
 
           <div class="two">
@@ -152,7 +136,6 @@
               </div>
               <div class="track-body">
                 <div class="track-main">
-                  <p class="track-label">Track 1</p>
                   <h3 data-i18n="track1-h3">Architecture for Transformation</h3>
                   <p data-i18n="track1-p">Your transformation needs a spine: from strategy through capabilities, data, applications, and technology. Architecture that connects layers and enables decisions.</p>
                   <button class="track-show-more" aria-expanded="false" data-i18n="track-showmore">Show more</button>
@@ -165,75 +148,6 @@
                       <li><span class="bullet" aria-hidden="true"></span><span data-i18n="track1-li2">A layered target architecture that's built to last and executable</span></li>
                       <li><span class="bullet" aria-hidden="true"></span><span data-i18n="track1-li3">A sequenced roadmap where every step traces to a decision, not a deadline</span></li>
                       <li><span class="bullet" aria-hidden="true"></span><span data-i18n="track1-li4">Embedded guidance until the path forward stays obvious without me</span></li>
-                    </ul>
-
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Track 2 -->
-            <a class="track-card reveal" href="track-2.html" style="--reveal-delay: 240ms">
-              <div class="track-svg">
-                <svg viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg">
-                  <g class="t2r" style="animation-delay:.3s">
-                    <circle cx="268" cy="184" r="3" fill="currentColor" fill-opacity=".3"/>
-                    <circle cx="304" cy="184" r="3" fill="currentColor" fill-opacity=".3"/>
-                    <circle cx="340" cy="184" r="3" fill="currentColor" fill-opacity=".3"/>
-                    <circle cx="376" cy="184" r="3" fill="currentColor" fill-opacity=".3"/>
-                    <circle cx="412" cy="184" r="3" fill="currentColor" fill-opacity=".3"/>
-                  </g>
-                  <g class="t2r" style="animation-delay:.9s">
-                    <circle cx="268" cy="148" r="3" fill="currentColor" fill-opacity=".45"/>
-                    <circle cx="304" cy="148" r="3" fill="currentColor" fill-opacity=".45"/>
-                    <circle cx="340" cy="148" r="3" fill="currentColor" fill-opacity=".45"/>
-                    <circle cx="376" cy="148" r="3" fill="currentColor" fill-opacity=".45"/>
-                    <circle cx="412" cy="148" r="3" fill="currentColor" fill-opacity=".45"/>
-                  </g>
-                  <g class="t2r" style="animation-delay:1.5s">
-                    <circle cx="268" cy="112" r="3" fill="currentColor" fill-opacity=".62"/>
-                    <circle cx="304" cy="112" r="3" fill="currentColor" fill-opacity=".62"/>
-                    <circle cx="340" cy="112" r="3" fill="currentColor" fill-opacity=".62"/>
-                    <circle cx="376" cy="112" r="3" fill="currentColor" fill-opacity=".62"/>
-                    <circle cx="412" cy="112" r="3" fill="currentColor" fill-opacity=".62"/>
-                  </g>
-                  <g class="t2r" style="animation-delay:2.1s">
-                    <circle cx="268" cy="76"  r="3" fill="currentColor" fill-opacity=".8"/>
-                    <circle cx="304" cy="76"  r="3" fill="currentColor" fill-opacity=".8"/>
-                    <circle cx="340" cy="76"  r="3" fill="currentColor" fill-opacity=".8"/>
-                    <circle cx="376" cy="76"  r="3" fill="currentColor" fill-opacity=".8"/>
-                    <circle cx="412" cy="76"  r="3" fill="currentColor" fill-opacity=".8"/>
-                  </g>
-                  <line x1="340" y1="184" x2="412" y2="184" class="gh" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none" style="animation-delay:2.8s"/>
-                  <line x1="340" y1="184" x2="268" y2="184" class="gh" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none" style="animation-delay:2.8s"/>
-                  <line x1="268" y1="184" x2="268" y2="76"  class="gv" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none" style="animation-delay:3.3s"/>
-                  <line x1="304" y1="184" x2="304" y2="76"  class="gv" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none" style="animation-delay:3.3s"/>
-                  <line x1="340" y1="184" x2="340" y2="76"  class="gv" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none" style="animation-delay:3.3s"/>
-                  <line x1="376" y1="184" x2="376" y2="76"  class="gv" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none" style="animation-delay:3.3s"/>
-                  <line x1="412" y1="184" x2="412" y2="76"  class="gv" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none" style="animation-delay:3.3s"/>
-                  <line x1="340" y1="148" x2="412" y2="148" class="gh" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none" style="animation-delay:3.3s;animation-duration:.3s"/>
-                  <line x1="340" y1="148" x2="268" y2="148" class="gh" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none" style="animation-delay:3.3s;animation-duration:.3s"/>
-                  <line x1="340" y1="112" x2="412" y2="112" class="gh" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none" style="animation-delay:3.55s;animation-duration:.3s"/>
-                  <line x1="340" y1="112" x2="268" y2="112" class="gh" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none" style="animation-delay:3.55s;animation-duration:.3s"/>
-                  <line x1="340" y1="76"  x2="412" y2="76"  class="gh" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none" style="animation-delay:3.6s;animation-duration:.3s"/>
-                  <line x1="340" y1="76"  x2="268" y2="76"  class="gh" stroke="currentColor" stroke-opacity=".22" stroke-width="1.2" fill="none" style="animation-delay:3.6s;animation-duration:.3s"/>
-                </svg>
-              </div>
-              <div class="track-body">
-                <div class="track-main">
-                  <p class="track-label">Track 2</p>
-                  <h3 data-i18n="track2-h3">Architecture as a Function</h3>
-                  <p data-i18n="track2-p">Your EA function exists but doesn't deliver influence, governance, decisions, or value. A concrete plan to make architecture stick by enhancing six capabilities.</p>
-                  <button class="track-show-more" aria-expanded="false" data-i18n="track-showmore">Show more</button>
-                  <p class="track-fit-line" data-i18n="track2-fitline">Best for: Organisations with an EA function that exists but doesn't deliver strategic value</p>
-                </div>
-                <div class="track-expand-wrap">
-                  <div class="track-expand">
-                    <ul class="track-deliver">
-                      <li><span class="bullet" aria-hidden="true"></span><span data-i18n="track2-li1">An honest baseline across all six EA capabilities, scored and compared</span></li>
-                      <li><span class="bullet" aria-hidden="true"></span><span data-i18n="track2-li2">A named diagnosis of where the function loses influence and why</span></li>
-                      <li><span class="bullet" aria-hidden="true"></span><span data-i18n="track2-li3">A concrete, sequenced improvement plan anchored to impact</span></li>
-                      <li><span class="bullet" aria-hidden="true"></span><span data-i18n="track2-li4">Coaching support for leads and teams during the build-out</span></li>
                     </ul>
 
                   </div>
