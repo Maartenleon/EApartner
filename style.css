@@ -1308,17 +1308,22 @@ footer {
    EXPLODED AXONOMETRIC — "The stack" (homepage)
    ============================================================ */
 .axo-section { padding: 120px 0; border-top: 1px solid var(--line-soft); }
-/* Only the text/nav column centers — the drawing stays pinned to the
-   row's top edge (align-items: start, the .section-3col default) so
-   it never shifts when a layer's accordion text expands/collapses. */
+/* Both columns are visually centered against the row's resting (no
+   layer expanded) height — but neither uses align-items/self:center,
+   because that recalculates live against whichever column is
+   currently tallest, and a layer's accordion text expanding would
+   then shift the drawing. Centering with a fixed offset instead keeps
+   both columns exactly where they are regardless of accordion state. */
 #stack .section-label { align-self: center; }
+.axo-drawing { align-self: start; }
 
-.axo-index { margin-top: 40px; border-top: 1px solid var(--line-soft); }
+.axo-index { margin-top: 40px; }
 .axo-row {
   display: block; width: 100%; text-align: left;
   background: none; border: none; border-bottom: 1px solid var(--line-soft);
-  cursor: pointer; padding: 22px 0; font: inherit; color: inherit;
+  cursor: pointer; padding: 16px 0; font: inherit; color: inherit;
 }
+.axo-row:last-child { border-bottom: none; }
 .axo-row-top { display: flex; align-items: baseline; gap: 12px; }
 .axo-num {
   font-family: var(--mono); font-size: 11px;
@@ -1337,7 +1342,14 @@ footer {
 }
 .axo-text { display: block; font-size: .85rem; color: var(--muted); line-height: 1.6; padding-bottom: 10px; }
 
-.axo-drawing { width: 100%; max-width: 420px; }
+/* The negative margin only centers the drawing against the text
+   column when they sit side by side (desktop). On mobile the two
+   stack, so the drawing just needs normal breathing room below the
+   nav instead. */
+.axo-drawing { width: 100%; max-width: 680px; margin: 48px auto 0; }
+@media (min-width: 901px) {
+  .axo-drawing { margin: -66px auto 0; }
+}
 .axo-svg { width: 100%; height: auto; display: block; overflow: visible; color: var(--text); }
 .axo-svg [data-layer] { opacity: .35; transition: opacity .25s ease; }
 

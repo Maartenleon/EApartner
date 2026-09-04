@@ -50,8 +50,8 @@
      face outline, stacked close together on the z axis and sized to
      fit all three in the viewport at once. Means sits at the base
      (z=0); Blueprint and Plan float just above it. ── */
-  const SIZE = 12;  // square footprint (w = d)
-  const GAP  = 3;   // vertical gap between squares
+  const SIZE = 28;  // square footprint (w = d)
+  const GAP  = 8;   // vertical gap between squares
 
   const MEANS_Z     = 0;
   const BLUEPRINT_Z = MEANS_Z + GAP;
