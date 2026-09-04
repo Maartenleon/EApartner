@@ -50,7 +50,11 @@
    ============================================================ */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
+html { scroll-behavior: smooth; }
 :root { scroll-padding-top: calc(var(--topbar-h) - 2px); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 body {
   margin: 0;
   font-family: var(--sans);
@@ -143,6 +147,12 @@ header.hero .btn {
   background: rgb(var(--warm-rgb) / .08);
 }
 header.hero .btn:hover { background: rgb(var(--warm-rgb) / .16); border-color: rgb(var(--warm-rgb) / .60); }
+header.hero .btn-ghost { color: rgb(var(--warm-rgb) / .75); }
+header.hero .btn-ghost:hover { color: var(--warm); }
+
+.topbar.over-hero .lang-toggle--header .lang-btn { color: rgb(var(--warm-rgb) / .75); }
+.topbar.over-hero .lang-toggle--header .lang-btn.active { color: var(--warm); }
+.topbar.over-hero .lang-toggle--header .lang-sep { color: rgb(var(--warm-rgb) / .3); }
 
 /* ============================================================
    NAV + SLIDING INDICATOR
@@ -412,6 +422,20 @@ h1 {
   background: var(--accent);
 }
 
+/* Secondary CTA — plain text + arrow, no pill */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 4px;
+  color: var(--muted);
+  font-size: 14px;
+  transition: color .12s ease;
+}
+.btn-ghost:hover { color: var(--text); }
+.btn-ghost span:last-child { display: inline-block; transition: transform .18s ease; }
+.btn-ghost:hover span:last-child { transform: translateY(2px); }
+
 /* ============================================================
    SECTIONS
    Each section = full viewport height. To add a new section:
@@ -425,6 +449,7 @@ section {
   padding: 120px 0;
   border-top: 1px solid var(--line-soft);
 }
+#problem { border-top: none; }
 @media (max-width: 900px) {
   section { padding: 80px 0; min-height: 100dvh; }
   .wrap { padding: 0 18px; }
@@ -486,6 +511,30 @@ h2 {
   line-height: 1.6;
 }
 
+/* ── Wide single-column editorial layout (e.g. Problem section) ── */
+.waarde-layout { grid-template-columns: 1fr 2fr; }
+@media (max-width: 900px) {
+  .waarde-layout { grid-template-columns: 1fr; }
+  .waarde-layout > div:first-child { display: none; }
+}
+.waarde-body { display: flex; flex-direction: column; gap: 32px; }
+.waarde-heading {
+  font-family: "Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 3vw, 46px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--brand);
+  margin: 0;
+}
+.waarde-text {
+  font-size: 0.8125rem;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0;
+  max-width: 72ch;
+}
+
 /* ============================================================
    CARDS GRID
    ============================================================ */
@@ -515,7 +564,82 @@ h2 {
   transform: translateY(-2px);
   border-color: var(--line-strong);
   background: var(--bg);
-  box-shadow: 0 12px 26px var(--line-soft);
+}
+
+/* ── Service cards: flagship + shared bits ───────────────── */
+.card .phase-label { margin: 0 0 10px; }
+.services-sub-label {
+  margin: 4px 0 12px;
+  font-size: 15px;
+  font-weight: 620;
+  letter-spacing: -0.01em;
+  color: var(--brand);
+}
+.card .card-tagline { margin: 4px 0 28px; color: var(--text); font-style: italic; }
+.card .card-bestfor { margin: 0 0 28px; font-size: .8125rem; }
+.card .list { margin: 0; }
+
+
+/* ============================================================
+   PROOF SECTION
+   ============================================================ */
+/* Stacked horizontal cards — one full-width row per proof point */
+.proof-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.proof-block {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  border: 1px solid var(--line-mid);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+}
+.proof-logo {
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+.proof-main { flex: 1.6; min-width: 260px; }
+.proof-metrics {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.proof-disclaimer {
+  margin: 0 0 10px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: .75;
+}
+.proof-situation { margin: 0; color: var(--muted); line-height: 1.6; font-size: .8125rem; }
+.proof-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 0;
+  font-size: .8125rem;
+}
+.proof-metric-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.proof-number { font-weight: 620; color: var(--brand); }
+
+@media (max-width: 640px) {
+  .proof-block { flex-direction: column; align-items: flex-start; gap: 16px; }
 }
 
 /* ============================================================
@@ -574,10 +698,10 @@ h2 {
   color: var(--muted);
 }
 .bullet {
-  width: 8px; height: 8px;
+  width: 5px; height: 5px;
   border-radius: 50%;
   background: var(--ink);
-  margin-top: 6px;
+  margin-top: 7px;
   flex: 0 0 auto;
 }
 .bullet.accent { background: var(--accent); }
@@ -587,7 +711,6 @@ h2 {
    ============================================================ */
 footer {
   padding: 34px 0 54px;
-  border-top: 1px solid var(--line-soft);
   color: var(--muted);
 }
 .footer-row {
@@ -598,6 +721,29 @@ footer {
   flex-wrap: wrap;
 }
 .mono { font-family: var(--mono); }
+
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+.footer-meta a { color: var(--muted); transition: color .15s ease; }
+.footer-meta a:hover { color: var(--text); }
+.footer-sep { color: var(--line-strong); }
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.footer-links > a {
+  font-size: 12px;
+  color: var(--muted);
+  transition: color .15s ease;
+}
+.footer-links > a:hover { color: var(--text); }
 
 /* ============================================================
    LANGUAGE TOGGLE
@@ -641,6 +787,20 @@ footer {
   font-size: 11px;
   letter-spacing: 0.04em;
 }
+
+/* Header instance — repeats the footer switcher up top */
+.lang-toggle--header { margin-left: 8px; }
+@media (max-width: 720px) { .lang-toggle--header { display: none; } }
+
+/* Match the rest of the nav bar: same colours, same transition */
+.lang-toggle--header .lang-btn {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 400;
+  transition: color .12s ease;
+}
+.lang-toggle--header .lang-btn:hover { color: var(--text); }
+.lang-toggle--header .lang-btn.active { color: var(--brand); font-weight: 400; }
 
 /* Mobile: positioned at bottom-left of overlay */
 .lang-toggle--mobile {
@@ -811,384 +971,38 @@ footer {
     color: var(--text);
   }
 
-  /* Stagger in — nth-child counts ALL children, so the sub-links div shifts indices */
-  .mobile-overlay.open a:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 60ms; }
-  .mobile-overlay.open a:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 110ms; }
-  /* 3rd child is .overlay-sub-links div — see rule below */
-  .mobile-overlay.open a:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 210ms; }
-  .mobile-overlay.open a:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 260ms; }
-  .mobile-overlay.open a:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 310ms; }
-
-  /* Sub-links container */
-  .overlay-sub-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding-left: 0;
-    opacity: 0;
-    transform: translateY(12px);
-    transition: opacity .22s ease, transform .22s ease;
-  }
-  .mobile-overlay.open .overlay-sub-links {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 160ms;
-  }
-
-  .overlay-sub-links { padding-left: 20px; }
-
-  .overlay-sub-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 17px;
-    font-weight: 300;
-    font-family: "Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
-    letter-spacing: -0.01em;
-    color: var(--brand);
-    padding: 7px 0;
-    opacity: 0.6;
-    transition: opacity .15s ease, color .15s ease;
-  }
-  .overlay-sub-link:hover { opacity: 1; color: var(--text); }
-
-  .overlay-sub-arrow { display: none; }
+  /* Stagger in — one rule per nav link, in document order */
+  .mobile-overlay.open a { opacity: 1; transform: translateY(0); }
+  .mobile-overlay.open a:nth-child(1) { transition-delay: 60ms; }
+  .mobile-overlay.open a:nth-child(2) { transition-delay: 100ms; }
+  .mobile-overlay.open a:nth-child(3) { transition-delay: 140ms; }
+  .mobile-overlay.open a:nth-child(4) { transition-delay: 180ms; }
+  .mobile-overlay.open a:nth-child(5) { transition-delay: 220ms; }
+  .mobile-overlay.open a:nth-child(6) { transition-delay: 260ms; }
+  .mobile-overlay.open a:nth-child(7) { transition-delay: 300ms; }
 }
 
 /* ── Scroll reveal ────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1.1s cubic-bezier(.2,.9,.2,1),
-              transform 1.1s cubic-bezier(.2,.9,.2,1);
+  transform: translateY(12px);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
 }
 .reveal.in {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ── Track cards ──────────────────────────── */
-#diensten .two {
-  display: flex;
-  align-items: stretch;
-  gap: 20px;
-}
-
-.track-card {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  color: inherit;
-  text-decoration: none;
-  background: var(--bg);
-  border: 1px solid var(--line-mid);
-  border-radius: var(--radius);
-  transition: flex 520ms cubic-bezier(.4, 0, .2, 1),
-              border-color 220ms ease;
-}
-.track-card:hover { border-color: var(--line-strong); }
-
-/* Expand hovered card, compress sibling */
-#diensten .two:has(.track-card:hover) .track-card:hover     { flex: 1.75; }
-#diensten .two:has(.track-card:hover) .track-card:not(:hover) { flex: 0.45; }
-
-.track-svg {
-  position: relative;
-  height: 160px;
-  overflow: hidden;
-  background: none;
-  border-bottom: 1px solid var(--line-soft);
-  flex-shrink: 0;
-}
-.track-svg svg {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 680px;
-  height: 260px;
-  transform: translate(-50%, -50%);
-}
-
-/* ── Mobile-first track body layout ─────── */
-.track-body {
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-width: 0;
-}
-
-.track-main {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* Expand wrap — mobile: grid reveal, collapsed by default */
-.track-expand-wrap {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 380ms ease;
-}
-.track-expand-wrap.open { grid-template-rows: 1fr; }
-
-.track-expand {
-  overflow: hidden;
-  opacity: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 16px 0 0 0;
-}
-
-/* Show more button — visible on mobile */
-.track-show-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding: 12px 0 0;
-}
-.track-show-more::after {
-  content: '↓';
-  font-size: 11px;
-  transition: transform 300ms ease;
-}
-.track-show-more[aria-expanded="true"]::after { transform: rotate(180deg); }
-.track-show-more[aria-expanded="true"] { color: var(--text); }
-
-/* ── Desktop overrides (≥ 901px) ─────────── */
-@media (min-width: 901px) {
-  .track-card {
-    height: 440px;
-    overflow: hidden;
-  }
-
-  .track-body {
-    position: relative;
-    padding: 28px 0 32px;
-    flex-direction: row;
-    overflow: hidden;
-  }
-
-  /* Left column — fills card naturally */
-  .track-main {
-    flex: 1;
-    min-width: 0;
-    box-sizing: border-box;
-    padding: 0 24px 0 32px;
-  }
-
-  /* Expand wrap — absolutely positioned, never affects card height */
-  .track-expand-wrap {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 50%;
-    display: block;
-    grid-template-rows: unset;
-    pointer-events: none;
-    transition: none;
-  }
-  .track-card:hover .track-expand-wrap { pointer-events: auto; }
-
-  /*
-   * max(50%, 300px) ensures the cap never drops below 300px, which is wider than
-   * the compressed card (~172px). So entering the compressed card never crushes
-   * the text — max-width is inert at entry, then ramps up as the card expands.
-   */
-  .track-card:hover .track-main {
-    max-width: max(50%, 300px);
-  }
-
-  /* Expand content — fades in on hover, no divider */
-  .track-expand {
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 28px 32px 32px 24px;
-    background: var(--bg);
-    opacity: 0;
-    overflow: visible;
-    transition: opacity 380ms ease;
-  }
-  .track-card:hover .track-expand { opacity: 1; transition: opacity 300ms ease 520ms; }
-
-  .track-show-more { display: none; }
-}
-
-.track-deliver {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 20px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-@media (max-width: 900px) {
-  .track-deliver {
-    gap: 16px;
-    margin-bottom: 0;
-  }
-}
-.track-deliver li {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  font-size: 0.8125rem;
-  color: var(--muted);
-  line-height: 1.65;
-}
-.track-deliver .bullet { margin-top: 6px; flex-shrink: 0; }
-.track-fit-line {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 0;
-  opacity: 0;
-  transition: opacity 0ms; /* instant out by default */
-}
-
-@media (min-width: 901px) {
-  .track-fit-line {
-    position: absolute;
-    top: 196px;
-    left: 32px;
-    right: 50%;
-  }
-}
-
-/* Mobile: reveal when expand wrap is open */
-@media (max-width: 900px) {
-  .track-body:has(.track-expand-wrap.open) .track-fit-line {
-    opacity: 1;
-    transition: opacity 300ms ease;
-  }
-}
-
-/* Desktop: fade in on hover, delayed until card is fully open */
-@media (min-width: 901px) {
-  .track-card:hover .track-fit-line {
-    opacity: 1;
-    transition: opacity 300ms ease 520ms;
-  }
-}
-
-.track-entry {
-  background: var(--surface-hover);
-  border-radius: var(--radius-sm);
-  border-left: 2px solid var(--ink);
-  padding: 12px 14px;
-  margin-bottom: 24px;
-}
-
-@media (max-width: 900px) {
-  #diensten .two {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  /*
-   * Mobile track card spacing — 8px grid hierarchy
-   * Replace the uniform gap: 12px with explicit spacing per element
-   * so semantically related items sit closer than unrelated ones.
-   *
-   *  label → h3          :  4px  (same semantic unit)
-   *  h3 → description    : 16px  (section break)
-   *  description → button: 24px  (before interactive element)
-   *  button → fit-line   : 32px  (secondary info, after action)
-   *  fit-line → bullets  : 20px  (transition to list)
-   *  between bullets     : 16px  (consistent with body rhythm)
-   *  last bullet → edge  : 24px  (= card padding)
-   */
-  .track-main                                               { gap: 0; }
-  .track-main h3                                            { margin-top: 4px; }
-  .track-main > p:not(.track-label):not(.track-fit-line)   { margin-top: 16px; }
-  .track-show-more                                          { padding-top: 0; margin-top: 24px; }
-  .track-main .track-fit-line                               { margin-top: 32px; }
-  .track-expand                                             { padding-top: 20px; }
-}
-
-/* ── Track SVG animations (paused until in-view) ─────── */
-.ld      { stroke-dasharray: 140; stroke-dashoffset: 140; animation: anim-draw .55s ease forwards; animation-play-state: paused; }
-.ld-ring { stroke-dasharray: 840; stroke-dashoffset: 840; animation: anim-draw .9s ease forwards;  animation-play-state: paused; }
-@keyframes anim-draw { to { stroke-dashoffset: 0; } }
-.da  { opacity: 0; animation: anim-fi .3s ease forwards; animation-play-state: paused; }
-@keyframes anim-fi { to { opacity: 1; } }
-
-.t2r { opacity: 0; animation: anim-ri .5s ease forwards; animation-play-state: paused; }
-@keyframes anim-ri { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-.gv  { stroke-dasharray: 240; stroke-dashoffset: 240; animation: anim-draw .6s ease forwards; animation-play-state: paused; }
-.gh  { stroke-dasharray: 180; stroke-dashoffset: 180; animation: anim-draw .4s ease forwards; animation-play-state: paused; }
-
-#diensten.in-view .ld,
-#diensten.in-view .ld-ring,
-#diensten.in-view .da,
-#diensten.in-view .t2r,
-#diensten.in-view .gv,
-#diensten.in-view .gh { animation-play-state: running; }
-
 /* ============================================================
-   TRACK BODY / PANEL SPACING HELPERS
+   PANEL SPACING HELPERS
    ============================================================ */
-
 .panel > p + p  { margin-top: 16px; }
 .panel .list    { margin-top: 16px; }
 
 /* ============================================================
-   VALUE OF EA SECTION
+   TEXT ACCENT — colours a phrase inside body copy
    ============================================================ */
-/* waarde section: exact 1/3 empty + 2/3 content */
-.waarde-layout {
-  grid-template-columns: 1fr 2fr;
-}
-
-@media (max-width: 900px) {
-  .waarde-layout {
-    grid-template-columns: 1fr;
-  }
-  .waarde-layout > div:first-child {
-    display: none;
-  }
-}
-
-.waarde-body {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.waarde-heading {
-  font-family: "Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
-  font-size: clamp(28px, 3vw, 46px);
-  font-weight: 300;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--brand);
-  margin: 0;
-}
-
-.waarde-text {
-  font-size: 0.8125rem;
-  line-height: 1.75;
-  color: var(--muted);
-  margin: 0;
-  max-width: 72ch;
-}
+.accent { font-style: normal; font-weight: 500; color: var(--accent); }
 
 /* ── Contact section ────────────────────────────────────── */
 #contact-content {
@@ -1219,8 +1033,6 @@ footer {
   display: none;
   transition: opacity .4s ease;
 }
-
-
 
 /* Two choice cards */
 .contact-choice-row {
@@ -1266,7 +1078,6 @@ footer {
   display: block;
 }
 
-
 /* Call panel layout inside card */
 .contact-call-panel { display: contents; }
 
@@ -1277,6 +1088,17 @@ footer {
   text-transform: uppercase;
   color: var(--muted);
   margin: 0;
+}
+
+/* Static cards — no expand, no hover interaction */
+.contact-choice--static { cursor: default; }
+.contact-choice--static:hover { border-color: var(--line-mid); }
+
+/* Inline form inside message card */
+.contact-form-inline { margin-top: 20px; }
+
+@media (max-width: 600px) {
+  .contact-choice-row { grid-template-columns: 1fr; }
 }
 
 .contact-phone {
@@ -1384,34 +1206,32 @@ footer {
   .form-row            { grid-template-columns: 1fr; }
 }
 
-/* ── About redesign ─────────────────────────────────────── */
-.about-layout {
+/* ── About: two founders side by side ────────────────────── */
+.founders-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
-  align-items: stretch;
+  grid-template-columns: 1fr 1fr;
+  gap: 160px;
+}
+@media (max-width: 900px) {
+  .founders-grid { grid-template-columns: 1fr; gap: 64px; }
 }
 
-.about-photo-col {
-  display: flex;
-}
+.founder-card { display: flex; flex-direction: column; }
 
-.about-photo {
-  width: 100%;
-  height: 100%;
-  min-height: 360px;
+.founder-photo {
+  width: 240px;
+  height: auto;
+  max-width: 100%;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: top;
   border-radius: var(--radius);
   display: block;
+  margin-bottom: 20px;
+  background: var(--surface-hover);
 }
 
-.about-text-col {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  padding: 28px 24px 32px 32px;
-}
+.founder-photo--bw { filter: grayscale(1); }
 
 .about-name {
   font-family: "Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
@@ -1484,25 +1304,14 @@ footer {
 
 .about-fit-grid span:last-child { border-bottom: none; }
 
-@media (max-width: 900px) {
-  .about-layout {
-    grid-template-columns: 1fr;
-  }
-  .about-photo {
-    aspect-ratio: 4 / 3;
-    max-height: 360px;
-  }
-  .about-text-col {
-    padding: 0;
-  }
-}
-
 /* ============================================================
    EXPLODED AXONOMETRIC — "The stack" (homepage)
    ============================================================ */
 .axo-section { padding: 120px 0; border-top: 1px solid var(--line-soft); }
-.axo-grid { display: grid; grid-template-columns: 0.55fr 1fr; gap: 88px; align-items: start; }
-@media (max-width: 900px) { .axo-grid { grid-template-columns: 1fr; gap: 40px; } }
+/* Only the text/nav column centers — the drawing stays pinned to the
+   row's top edge (align-items: start, the .section-3col default) so
+   it never shifts when a layer's accordion text expands/collapses. */
+#stack .section-label { align-self: center; }
 
 .axo-index { margin-top: 40px; border-top: 1px solid var(--line-soft); }
 .axo-row {
@@ -1528,7 +1337,7 @@ footer {
 }
 .axo-text { display: block; font-size: .85rem; color: var(--muted); line-height: 1.6; padding-bottom: 10px; }
 
-.axo-drawing { width: 100%; }
+.axo-drawing { width: 100%; max-width: 420px; }
 .axo-svg { width: 100%; height: auto; display: block; overflow: visible; color: var(--text); }
 .axo-svg [data-layer] { opacity: .35; transition: opacity .25s ease; }
 
@@ -1542,6 +1351,7 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   nav a, .btn, .card, .nav-indicator, .nav-dropdown { transition: none; }
   .ripple span { animation: none; opacity: 0; }
+  .reveal, .phase-block { transition: none !important; opacity: 1 !important; transform: none !important; }
 }
 :focus-visible {
   outline: 2px solid rgb(var(--accent-rgb) / .55);

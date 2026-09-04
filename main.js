@@ -6,33 +6,96 @@
   /* ── Translations ─────────────────────────────────────── */
   const translations = {
     en: {
-      'page-title':          'Enterprise Architecture Consultancy | Focus & Clarity',
-      'nav-value':           'Value',
+      'page-title':          'The Collective | Strategy that reaches the shop floor',
+      'nav-problem':         'Problem',
+      'nav-howwethink':      'How we think',
       'nav-services':        'Services',
+      'nav-proof':           'Proof',
       'nav-approach':        'Approach',
-      'nav-about':           'About',
+      'nav-about':            'About',
       'nav-contact':         'Contact',
-      'hero-h1':             'Clear direction<br>for organisations<br>in transformation.',
-      'hero-lede':           'We bring coherence to complex organisations,<br>so your strategy becomes something you can build and deliver.',
-      'hero-cta':            'View services',
-      'value-eyebrow':       'Why The Collective',
-      'value-h2':            'Every coherent organisation is held together by architecture most people never see. Most struggling ones show what happens when it isn\'t there.',
-      'value-text1':         'Too many initiatives, too little focus. An IT landscape that tangles as the organisation grows. Strategy that doesn\'t reach delivery. Delivery that drifts without strategy. Reasonable local decisions that don\'t add up globally.',
-      'value-text2':         'The need isn\'t more technology, talent, or effort. It\'s <strong>coherence</strong> — decisions that add up instead of cancelling out. That\'s the work of enterprise architecture.',
-      'value-text3':         'Architecture sits close enough to strategy to shape decisions, and close enough to delivery to govern what gets built. Its job is to keep dependencies between strategy, capabilities, data, applications, and technology visible enough that the organisation can change deliberately, not discover its constraints too late. A discipline, not a document.',
-      'value-text4':         'It shows up in two ways. <strong>Transformations need architecture to steer them.</strong> <strong>An architecture function needs to deliver decisions, not artefacts.</strong> Where you start depends on where you are.',
+
+      'hero-h1':             'Your strategy is clear.<br>Your organisation moves<br>like loose sand.',
+      'hero-lede':           'We work with retail and consumer organizations where the plan, the blueprint and the people who fund and own the work have come apart. We put them back together, and we stay until it holds.',
+      'hero-cta-secondary':  'How we think',
+
+      /* ── Problem ──────────────────────────────────────── */
+      'problem-eyebrow':     'You\'ll recognise it',
+      'problem-h2':          'Four seats, one cause.',
+      'problem-p1':          'Whether you sit in the CEO, COO, CFO or transformation seat, the symptoms rhyme. Forty funded initiatives and no way to say which three move the strategy. Returns, replenishment and launches that nobody owns end to end. Shared platforms that never get capacity because every programme pulls for itself. A roadmap that is set, funded, and still stalls at every decision.',
+      'problem-p2':          'The cause is the same in each seat: the <em class="accent">plan</em>, the <em class="accent">blueprint</em> and the <em class="accent">means</em> are held by different people who never see the whole. Objectives don\'t land anywhere they can be measured. The work that many initiatives depend on has no owner. Run and change compete for the same people, and nobody decides who wins.',
+      'problem-p3':          'This isn\'t an IT question and it isn\'t a modelling exercise. It\'s how the organisation as a whole decides, changes and runs. We deliver no tool, no platform and no document. We deliver the movement on the result the objective was meant to move, and the proof that it moved.',
+
+      /* ── How we think (static illustration) ──────────── */
+      'stack-eyebrow':       'How we think',
+      'stack-h2':            'Plan to means,<br>in one motion',
+      'stack-sub':           'Three layers. A decision at the top has to land as owned, funded work at the bottom, and the result has to travel back up. Most organisations lose it somewhere in the middle.',
+      'stack-01-title':      'Plan',
+      'stack-01-subtitle':   'Why',
+      'stack-01-line':       'Five to eight objectives, each with a result it must move and an owner who is measured on it. An objective that can\'t land anywhere it can be measured doesn\'t belong in the portfolio.',
+      'stack-02-title':      'Blueprint',
+      'stack-02-subtitle':   'Where and with what',
+      'stack-02-line':       'The end-to-end flows where results are measured, and what those flows depend on together. Where many objectives lean on the same shared work, that is where the pressure is.',
+      'stack-03-title':      'Means',
+      'stack-03-subtitle':   'Who, how much, in what rhythm',
+      'stack-03-line':       'Run and change compete for the same people. Persistent teams funded as capacity, owners on two axes, and one table where capacity is allocated by objective and by what\'s shared, on the retail calendar.',
+      'stack-04-title':      'The full picture, harmonized',
+      'stack-04-subtitle':   'All three, together',
+      'stack-04-line':       'The plan, the blueprint and the means, seen as one system. This is what "in one motion" looks like: nothing moves without the other two moving with it.',
+
+      /* ── Services ─────────────────────────────────────── */
       'services-eyebrow':    'What we offer',
       'services-h2':         'Services',
-      'services-sub':        'Architecture for organisations with complex transformations.',
-      'track1-h3':           'Architecture for Transformation',
-      'track1-p':            'Your transformation needs a spine: from strategy through capabilities, data, applications, and technology. Architecture that connects layers and enables decisions.',
-      'track-showmore':      'Show more',
-      'track-showless':      'Show less',
-      'track1-fitline':      'Best for: Organisations mid-transformation where decisions are stuck, unclear, or drifting',
-      'track1-li1':          'A clear map of where complexity sits and which decisions are urgent',
-      'track1-li2':          'A layered target architecture that\'s built to last and executable',
-      'track1-li3':          'A sequenced roadmap where every step traces to a decision, not a deadline',
-      'track1-li4':          'Embedded guidance until the path forward stays obvious without us',
+      'card-bestfor-label':  'Best for',
+
+      'card1-title':         'Run and change, orchestrated',
+      'card1-tagline':       'Stop the programme from becoming a second company.',
+      'card1-bestfor':       'COOs and CIOs of retail and consumer organisations whose transformation builds what the line can\'t run, and whose shared platforms never get capacity.',
+      'card1-li1':           'Who owns what, on two axes: temporary owners on the objectives that are live, permanent owners for the work everyone shares',
+      'card1-li2':           'Funding that follows priorities: from projects to persistent capacity, allocated by objective and by what\'s shared across them',
+      'card1-li3':           'One table that decides, on the retail calendar: peak, range cycles and budget round built in',
+
+      'card2-title':         'Portfolio reset',
+      'card2-tagline':       'Your portfolio, shortened to what moves the strategy.',
+      'card2-bestfor':       'CFOs and CIOs at retail and consumer organisations heading into a budget round with too many initiatives and no defensible order.',
+      'card2-li1':           'Every objective tied to the result it will be measured on, with that result measured before we start',
+      'card2-li2':           'One view of which capabilities your initiatives are all quietly competing for',
+      'card2-li3':           'A shorter list, sequenced, that you can defend to the board',
+
+      'card3-title':         'Transformation architect, in the line',
+      'card3-tagline':       'When it helps, one of us steps in to make the change stick.',
+      'card3-bestfor':       'Transformation directors and CIOs at retail and consumer organisations with a programme where decisions are stuck, unclear or drifting.',
+      'card3-li1':           'Diagnosis and delivery kept separate: we scope with you first, then decide together whether one of us steps in',
+      'card3-li2':           'Every roadmap step traced to a decision, not a deadline',
+      'card3-li3':           'A defined end date and a clean handover to your own people',
+
+      'card4-title':         'Bringing two retail organisations into one',
+      'card4-tagline':       'After the deal, one blueprint instead of two.',
+      'card4-bestfor':       'CEOs, COOs and integration leads after a merger, acquisition or formula consolidation in retail or consumer.',
+      'card4-li1':           'Two sets of flows and shared work mapped against each other: what merges, what stays, what stops',
+      'card4-li2':           'Owners and funding for the combined organisation before the systems are touched',
+      'card4-li3':           'The portfolio of integration work sequenced on the trading calendar, not the deal timeline',
+
+      'landing-text':        'Depending on where you stand, we think along in connecting your plan to the blueprint of tomorrow — facilitating the right decisions, identifying the correct portfolio, the organisation\'s blueprint and orchestration to run and transform side-by-side, or guiding your current transformation programme.',
+
+      /* ── Proof ────────────────────────────────────────── */
+      'proof-eyebrow':       'Proof',
+      'proof-h2':            'What a result looks like',
+      'proof-intro':         'We measure the result before we start and after we leave. Until client results can be shown here, these are illustrative examples of what that measurement looks like.',
+      'proof-disclaimer':    'Illustrative example, not a client engagement',
+      'proof-measured-label':'What was measured',
+      'proof-moved-label':   'What moved',
+      'proof1-situation':    'A returns process split across three systems and two teams, with no single owner. Customers waited while responsibility passed between them.',
+      'proof1-measured':     'Average days from return received to refund issued',
+      'proof1-moved':        '11 days → 4 days',
+      'proof2-situation':    'A range decision that had to clear five committees before it reached the shop floor, each one adding its own delay. The calendar moved faster than the decision did.',
+      'proof2-measured':     'Weeks from range decision to product on shelf',
+      'proof2-moved':        '14 weeks → 9 weeks',
+      'proof3-situation':    'A portfolio of 38 funded initiatives where most had a budget but no result anyone could point to. The board couldn\'t say which ones mattered.',
+      'proof3-measured':     'Initiatives with a result, an owner and a measurement point defined',
+      'proof3-moved':        '6 of 38 → 14 of 14',
+
+      /* ── Approach ─────────────────────────────────────── */
       'approach-eyebrow':    'How we work',
       'approach-h2':         'Approach',
       'approach-sub':        'Every engagement follows the same rhythm: a sharp diagnostic, a clear blueprint, then close involvement during delivery. The content differs by track. The discipline doesn\'t.',
@@ -45,24 +108,31 @@
       'phase3-title':        'Steer — ongoing',
       'phase3-subtitle':     'Embedded Partner · Delivery Support',
       'phase3-body':         '<strong>Architecture doesn\'t survive first contact with delivery unchanged.</strong> Steer is the embedded partner phase: guardrails, course corrections when the landscape shifts, and a thinking partner close enough to the work to catch drift before it becomes debt. Until the path forward stays obvious without us in the room.',
+
+      /* ── About ────────────────────────────────────────── */
       'about-eyebrow':       'Who we are',
-      'about-h2':            'About',
-      'about-sub':           'Sharp collaborators, focused on delivery. Good listeners, effective communicators.',
-      'about-role':          'Enterprise Architects',
-      'about-bio':           'Most architecture work produces documents that inform, but don\'t decide. We work the other way: artefacts need to be useful at the moment a decision has to be made. Clear output. Fast cycles. No model for its own sake. Keep things minimal, keep the pace up, and stay close enough to business, product, data, and engineering to connect them when it matters, until the path forward is obvious.<br><br>TOGAF and ArchiMate certified. MSc in Enterprise IT Architecture. Academic rigour in service of practical reality.',
+      'about-h2':            'About us',
+      'founder1-role':       'Founder',
+      'founder1-bio':        'Twenty years in enterprise architecture taught me how organisations actually fit together. The work I do now starts where that discipline stops: at who decides, who pays and who runs it. Everything I make has to be useful at the moment a decision is taken. Clear output, fast cycles, no model for its own sake. Close enough to commerce, supply chain, digital and finance to connect them when it matters.',
+      'founder2-name':       'Kai Jacobse',
+      'founder2-role':       'Founder',
+      'founder2-bio':        'Experienced Transformation and Product & Technology leader with a record in driving change that strengthens business value, operational performance, and organisational agility. I specialise in leading complex transformation initiatives through Programs, Projects, and Adaptive Delivery models that enable faster learning cycles, rapid execution, and continuous improvement in increasingly fast-moving business environments.',
       'about-fitlabel':      'Where we typically work',
-      'about-fit1':          'Mid-to-large organisations in active transformation',
-      'about-fit2':          'Organisations starting or resetting an EA practice',
-      'about-fit3':          'Programme teams that need architecture to move with delivery',
-      'about-fit4':          'CIOs and heads of architecture who need a thinking partner',
-      'contact-h2':          'Ready to talk<br>enterprise architecture?',
-      'contact-sub':         'Whether it\'s steering a transformation or building an EA function that delivers — one focused conversation is often enough to find the way forward.',
+      'about-fit1':          'Retail and consumer organisations in active transformation',
+      'about-fit2':          'Omnichannel, merchandising and supply chain, e-commerce, post-merger integration',
+      'about-fit3':          'CEOs, COOs, CFOs and transformation directors who need a thinking partner, and the CIOs who have to make it work',
+
+      /* ── Contact ──────────────────────────────────────── */
+      'contact-h2':          'Let\'s talk!',
+      'contact-sub':         'Whether it\'s connecting plans to an outcome based blueprint and orchestration mechanisms to orchestrate run and transform - we\'re happy to discuss any problem or idea.',
       'contact-cta':         'Let\'s talk',
       'contact-opts-eyebrow':'Get in touch',
       'contact-opts-h2':     'Contact',
       'contact-opts-sub':    'No preparation needed. Pick what works best for you.',
       'contact-msg-title':   'Message',
       'contact-msg-desc':    'Write it down, I\'ll reply within a day',
+      'contact-call-title':  'Call',
+      'contact-avail':       'Available Monday – Friday, 09:00 – 18:00 CET',
       'form-namelabel':      'Name',
       'form-emaillabel':     'Email',
       'form-companylabel':   'Company',
@@ -74,40 +144,103 @@
       'form-sending':        'Sending…',
       'form-success':        'Message sent. We\'ll be in touch within a day.',
       'form-error':          'Something went wrong — try calling or emailing directly.',
-      'contact-call-title':  'Call',
-      'contact-avail':       'Available Monday – Friday, 09:00 – 18:00 CET',
 
-      /* ── Stack (exploded axonometric) ────────────────── */
-      'stack-sub':           'Four layers, exploded so you can see how a decision at the top lands as capacity at the bottom — and where it\'s meant to come back around.',
+      /* ── Footer ───────────────────────────────────────── */
+      'footer-kvk':          'KvK [KVK]',
+      'footer-city':         'Amsterdam',
+      'footer-privacy':      'Privacy statement',
     },
     nl: {
-      'page-title':          'Enterprise Architecture Consultancy | Focus & Helderheid',
-      'nav-value':           'Waarde',
+      'page-title':          'The Collective | Strategie die de winkelvloer bereikt',
+      'nav-problem':         'Probleem',
+      'nav-howwethink':      'Hoe wij denken',
       'nav-services':        'Diensten',
+      'nav-proof':           'Bewijs',
       'nav-approach':        'Aanpak',
       'nav-about':           'Over',
       'nav-contact':         'Contact',
-      'hero-h1':             'Heldere richting<br>voor organisaties<br>in verandering.',
-      'hero-lede':           'Wij brengen samenhang in complexe organisaties,<br>zodat uw strategie iets wordt wat u kunt bouwen en uitvoeren.',
-      'hero-cta':            'Bekijk diensten',
-      'value-eyebrow':       'Waarom The Collective',
-      'value-h2':            'Elke coherente organisatie wordt bijeengehouden door architectuur die de meeste mensen nooit zien. Bij de meeste organisaties die worstelen zie je wat er gebeurt als die er niet is.',
-      'value-text1':         'Te veel initiatieven, te weinig focus. Een IT-landschap dat verstrikt raakt naarmate de organisatie groeit. Strategie die de uitvoering niet bereikt. Uitvoering die afdrijft zonder strategie. Redelijke lokale beslissingen die globaal niet optellen.',
-      'value-text2':         'De behoefte is niet meer technologie, talent of inspanning. Het is <strong>samenhang</strong> — beslissingen die optellen in plaats van elkaar opheffen. Dat is het werk van enterprise architectuur.',
-      'value-text3':         'Architectuur staat dicht genoeg bij de strategie om beslissingen te vormen, en dicht genoeg bij de uitvoering om te sturen wat er wordt gebouwd. Haar taak is de afhankelijkheden tussen strategie, capabilities, data, applicaties en technologie zichtbaar genoeg te houden zodat de organisatie bewust kan veranderen, niet haar beperkingen te laat ontdekken. Een discipline, niet een document.',
-      'value-text4':         'Het manifesteert zich op twee manieren. <strong>Transformaties hebben architectuur nodig om ze te sturen.</strong> <strong>Een architectuurfunctie moet beslissingen leveren, geen artefacten.</strong> Waar u begint hangt af van waar u staat.',
-      'services-eyebrow':    'Wat wij aanbieden',
+
+      'hero-h1':             'Uw strategie is helder.<br>Uw organisatie beweegt<br>als los zand.',
+      'hero-lede':           'Wij werken met retail- en consumentenorganisaties waar het plan, de blauwdruk en de mensen die het werk financieren en bezitten uit elkaar zijn gegroeid. Wij brengen ze weer samen, en wij blijven totdat het standhoudt.',
+      'hero-cta-secondary':  'Hoe wij denken',
+
+      /* ── Problem ──────────────────────────────────────── */
+      'problem-eyebrow':     'U herkent het',
+      'problem-h2':          'Vier stoelen, één oorzaak.',
+      'problem-p1':          'Of u nu op de stoel van de CEO, COO, CFO of transformatiedirecteur zit, de symptomen rijmen. Veertig gefinancierde initiatieven en geen manier om te zeggen welke drie de strategie bewegen. Retouren, aanvulling en lanceringen die niemand end-to-end bezit. Gedeelde platforms die nooit capaciteit krijgen omdat elk programma voor zichzelf trekt. Een roadmap die vaststaat, gefinancierd is, en toch bij elke beslissing vastloopt.',
+      'problem-p2':          'De oorzaak is in elke stoel hetzelfde: het <em class="accent">plan</em>, de <em class="accent">blauwdruk</em> en de <em class="accent">middelen</em> liggen bij verschillende mensen die nooit het geheel zien. Objectives landen nergens waar ze gemeten kunnen worden. Het werk waarvan veel initiatieven afhangen heeft geen eigenaar. Run en change strijden om dezelfde mensen, en niemand beslist wie wint.',
+      'problem-p3':          'Dit is geen IT-vraagstuk en geen modelleeroefening. Het is hoe de organisatie als geheel beslist, verandert en draait. Wij leveren geen tool, geen platform en geen document. Wij leveren de beweging op het resultaat dat het objective moest bewegen, en het bewijs dat die bewoog.',
+
+      /* ── Hoe wij denken (statische illustratie) ──────── */
+      'stack-eyebrow':       'Hoe wij denken',
+      'stack-h2':            'Van plan naar middelen,<br>in één beweging',
+      'stack-sub':           'Drie lagen. Een beslissing bovenaan moet onderaan landen als werk met een eigenaar en budget, en het resultaat moet weer naar boven reizen. De meeste organisaties verliezen het ergens in het midden.',
+      'stack-01-title':      'Plan',
+      'stack-01-subtitle':   'Waarom',
+      'stack-01-line':       'Vijf tot acht objectives, elk met een resultaat dat het moet bewegen en een eigenaar die erop wordt afgerekend. Een objective die nergens meetbaar landt, hoort niet in de portefeuille.',
+      'stack-02-title':      'Blauwdruk',
+      'stack-02-subtitle':   'Waar en waarmee',
+      'stack-02-line':       'De end-to-end flows waarop resultaten gemeten worden, en wat die flows samen nodig hebben. Waar veel objectives op hetzelfde gedeelde werk leunen, zit de druk.',
+      'stack-03-title':      'Middelen',
+      'stack-03-subtitle':   'Wie, hoeveel, in welk ritme',
+      'stack-03-line':       'Run en change strijden om dezelfde mensen. Vaste teams gefinancierd als capaciteit, eigenaars op twee assen, en één tabel waar capaciteit wordt toegewezen per objective en per gedeeld werk, op de retailkalender.',
+      'stack-04-title':      'Het volledige beeld, samengebracht',
+      'stack-04-subtitle':   'Alle drie, samen',
+      'stack-04-line':       'Het plan, de blauwdruk en de middelen, gezien als één systeem. Dat is wat "in één beweging" betekent: niets beweegt zonder dat de andere twee meebewegen.',
+
+      /* ── Diensten ─────────────────────────────────────── */
+      'services-eyebrow':    'Wat wij bieden',
       'services-h2':         'Diensten',
-      'services-sub':        'Architectuur voor organisaties met complexe transformaties.',
-      'track1-h3':           'Architectuur voor Transformatie',
-      'track1-p':            'Uw transformatie heeft een ruggengraat nodig: van strategie via capabilities, data, applicaties en technologie. Architectuur die lagen verbindt en beslissingen mogelijk maakt.',
-      'track-showmore':      'Meer tonen',
-      'track-showless':      'Minder tonen',
-      'track1-fitline':      'Geschikt voor: Organisaties midden in een transformatie waar beslissingen vastlopen, onduidelijk zijn of afdrijven',
-      'track1-li1':          'Een helder overzicht van waar de complexiteit zit en welke beslissingen urgent zijn',
-      'track1-li2':          'Een gelaagde doelarchitectuur die duurzaam en uitvoerbaar is',
-      'track1-li3':          'Een gesequenced roadmap waarbij elke stap terugleidt naar een beslissing, niet een deadline',
-      'track1-li4':          'Ingebedde begeleiding totdat de weg vooruit vanzelfsprekend is zonder ons',
+      'card-bestfor-label':  'Geschikt voor',
+
+      'card1-title':         'Run en change, op elkaar afgestemd',
+      'card1-tagline':       'Voorkom dat het programma een tweede bedrijf wordt.',
+      'card1-bestfor':       'COO\'s en CIO\'s van retail- en consumentenorganisaties wier transformatie bouwt wat de lijn niet kan draaien, en wier gedeelde platforms nooit capaciteit krijgen.',
+      'card1-li1':           'Eigenaarschap op twee assen: tijdelijke eigenaars op de objectives die lopen, vaste eigenaars voor het werk dat iedereen deelt',
+      'card1-li2':           'Financiering die prioriteiten volgt: van projecten naar vaste capaciteit, toegewezen per objective en per wat ze delen',
+      'card1-li3':           'Eén tabel die beslist, op de retailkalender: piek, assortimentscycli en begrotingsronde ingebouwd',
+
+      'card2-title':         'Portfolioreset',
+      'card2-tagline':       'Uw portfolio, verkort tot wat de strategie beweegt.',
+      'card2-bestfor':       'CFO\'s en CIO\'s bij retail- en consumentenorganisaties op weg naar een begrotingsronde met te veel initiatieven en geen verdedigbare volgorde.',
+      'card2-li1':           'Elk objective gekoppeld aan het resultaat waarop het gemeten wordt, met dat resultaat gemeten voordat we beginnen',
+      'card2-li2':           'Eén overzicht van welke capabilities uw initiatieven allemaal stilletjes beconcurreren',
+      'card2-li3':           'Een korter lijstje, gesequenced, dat u kunt verdedigen bij de raad van bestuur',
+
+      'card3-title':         'Transformatiearchitect, in de lijn',
+      'card3-tagline':       'Als het helpt, stapt een van ons in om de verandering te laten beklijven.',
+      'card3-bestfor':       'Transformatiedirecteuren en CIO\'s bij retail- en consumentenorganisaties met een programma waar beslissingen vastlopen, onduidelijk zijn of afdrijven.',
+      'card3-li1':           'Diagnose en uitvoering gescheiden gehouden: we bepalen eerst samen de scope, dan beslissen we samen of een van ons instapt',
+      'card3-li2':           'Elke roadmapstap herleid tot een beslissing, niet een deadline',
+      'card3-li3':           'Een vaste einddatum en een schone overdracht aan uw eigen mensen',
+
+      'card4-title':         'Twee retailorganisaties tot één maken',
+      'card4-tagline':       'Na de deal, één blauwdruk in plaats van twee.',
+      'card4-bestfor':       'CEO\'s, COO\'s en integratieleads na een fusie, overname of formuleconsolidatie in retail of consumentengoederen.',
+      'card4-li1':           'Twee sets flows en gedeeld werk tegen elkaar afgezet: wat samenvoegt, wat blijft, wat stopt',
+      'card4-li2':           'Eigenaars en financiering voor de gecombineerde organisatie voordat de systemen worden aangeraakt',
+      'card4-li3':           'Het integratieportfolio gesequenced op de handelskalender, niet op de dealtijdlijn',
+
+      'landing-text':        'Afhankelijk van waar u staat, denken wij mee in het verbinden van uw plan met de blauwdruk van morgen — door de juiste beslissingen te faciliteren, de juiste portefeuille te identificeren, de blauwdruk van de organisatie en de orchestratie om run en transform naast elkaar te laten lopen, of door uw huidige transformatieprogramma te begeleiden.',
+
+      /* ── Bewijs ───────────────────────────────────────── */
+      'proof-eyebrow':       'Bewijs',
+      'proof-h2':            'Hoe een resultaat eruitziet',
+      'proof-intro':         'Wij meten het resultaat voordat we beginnen en nadat we vertrekken. Totdat klantresultaten hier getoond kunnen worden, zijn dit illustratieve voorbeelden van hoe die meting eruitziet.',
+      'proof-disclaimer':    'Illustratief voorbeeld, geen klantopdracht',
+      'proof-measured-label':'Wat werd gemeten',
+      'proof-moved-label':   'Wat bewoog',
+      'proof1-situation':    'Een retourproces verspreid over drie systemen en twee teams, zonder één eigenaar. Klanten wachtten terwijl de verantwoordelijkheid heen en weer ging.',
+      'proof1-measured':     'Gemiddeld aantal dagen van ontvangen retour tot uitbetaalde terugbetaling',
+      'proof1-moved':        '11 dagen → 4 dagen',
+      'proof2-situation':    'Een assortimentsbeslissing die vijf comités moest passeren voordat die de winkelvloer bereikte, elk met zijn eigen vertraging. De kalender bewoog sneller dan de beslissing.',
+      'proof2-measured':     'Weken van assortimentsbeslissing tot product in het schap',
+      'proof2-moved':        '14 weken → 9 weken',
+      'proof3-situation':    'Een portfolio van 38 gefinancierde initiatieven waarvan de meeste een budget hadden maar geen resultaat waar iemand naar kon wijzen. De raad van bestuur kon niet zeggen welke ertoe deden.',
+      'proof3-measured':     'Initiatieven met een resultaat, een eigenaar en een meetpunt gedefinieerd',
+      'proof3-moved':        '6 van 38 → 14 van 14',
+
+      /* ── Aanpak ───────────────────────────────────────── */
       'approach-eyebrow':    'Hoe wij werken',
       'approach-h2':         'Aanpak',
       'approach-sub':        'Elke opdracht volgt hetzelfde ritme: een scherpe diagnose, een heldere blauwdruk, dan nauwe betrokkenheid tijdens de uitvoering. De inhoud verschilt per track. De discipline niet.',
@@ -120,24 +253,31 @@
       'phase3-title':        'Sturen — doorlopend',
       'phase3-subtitle':     'Ingebed Partner · Delivery Ondersteuning',
       'phase3-body':         '<strong>Architectuur overleeft het eerste contact met de uitvoering niet onveranderd.</strong> Sturen is de ingebedde partnerfase: vangrails, bijsturing wanneer het landschap verschuift, en een denkpartner dichtbij genoeg bij het werk om afdrijven te signaleren voordat het schuld wordt. Totdat de weg vooruit vanzelfsprekend blijft zonder ons in de kamer.',
+
+      /* ── Over ─────────────────────────────────────────── */
       'about-eyebrow':       'Wie wij zijn',
-      'about-h2':            'Over',
-      'about-sub':           'Scherpe samenwerkingspartners, gericht op uitvoering. Goede luisteraars, effectieve communicatoren.',
-      'about-role':          'Enterprise Architects',
-      'about-bio':           'De meeste architectuurwerkzaamheden produceren documenten die informeren, maar niet beslissen. Wij werken andersom: artefacten moeten nuttig zijn op het moment dat een beslissing genomen moet worden. Heldere output. Snelle cycli. Geen model om het model. Houdt het minimaal, houdt het tempo hoog, en blijf dicht genoeg bij business, product, data en engineering om ze te verbinden wanneer het ertoe doet, totdat de weg vooruit vanzelfsprekend is.<br><br>TOGAF en ArchiMate gecertificeerd. MSc in Enterprise IT Architecture. Academische strengheid in dienst van praktische realiteit.',
+      'about-h2':            'Over ons',
+      'founder1-role':       'Oprichter',
+      'founder1-bio':        'Twintig jaar in enterprise architectuur leerde mij hoe organisaties werkelijk in elkaar zitten. Het werk dat ik nu doe begint waar die discipline stopt: bij wie beslist, wie betaalt en wie het draait. Alles wat ik maak moet nuttig zijn op het moment dat een beslissing wordt genomen. Heldere output, snelle cycli, geen model om het model. Dicht genoeg bij commercie, supply chain, digitaal en finance om ze te verbinden wanneer het ertoe doet.',
+      'founder2-name':       'Kai Jacobse',
+      'founder2-role':       'Oprichter',
+      'founder2-bio':        'Ervaren leider in Transformatie en Product & Technology met een trackrecord in het aansturen van verandering die bedrijfswaarde, operationele prestaties en organisatorische wendbaarheid versterkt. Ik ben gespecialiseerd in het leiden van complexe transformatietrajecten via Programma\'s, Projecten en Adaptive Delivery-modellen die snellere leercycli, snelle uitvoering en continue verbetering mogelijk maken in steeds sneller bewegende zakelijke omgevingen.',
       'about-fitlabel':      'Waar wij doorgaans werken',
-      'about-fit1':          'Middelgrote tot grote organisaties in actieve transformatie',
-      'about-fit2':          'Organisaties die een EA-praktijk starten of resetten',
-      'about-fit3':          'Programmateams die architectuur nodig hebben die meebeweegt met de uitvoering',
-      'about-fit4':          'CIO\'s en hoofden van architectuur die een denkpartner nodig hebben',
-      'contact-h2':          'Klaar voor een gesprek<br>over enterprise architectuur?',
-      'contact-sub':         'Of het nu gaat om het sturen van een transformatie of het opbouwen van een EA-functie die levert — één gefocust gesprek is vaak genoeg om de weg vooruit te vinden.',
+      'about-fit1':          'Retail- en consumentenorganisaties in actieve transformatie',
+      'about-fit2':          'Omnichannel, merchandising en supply chain, e-commerce, post-merger integratie',
+      'about-fit3':          'CEO\'s, COO\'s, CFO\'s en transformatiedirecteuren die een denkpartner nodig hebben, en de CIO\'s die het moeten laten werken',
+
+      /* ── Contact ──────────────────────────────────────── */
+      'contact-h2':          'Laten we praten!',
+      'contact-sub':         'Of het nu gaat om het verbinden van plannen met een resultaatgerichte blauwdruk en de orchestratiemechanismen om run en transform te orkestreren - we bespreken graag elk vraagstuk of idee.',
       'contact-cta':         'Laten we praten',
       'contact-opts-eyebrow':'Neem contact op',
       'contact-opts-h2':     'Contact',
       'contact-opts-sub':    'Geen voorbereiding nodig. Kies wat het beste voor u werkt.',
       'contact-msg-title':   'Bericht',
       'contact-msg-desc':    'Schrijf het op, wij reageren binnen een dag',
+      'contact-call-title':  'Bellen',
+      'contact-avail':       'Bereikbaar maandag – vrijdag, 09:00 – 18:00 CET',
       'form-namelabel':      'Naam',
       'form-emaillabel':     'E-mail',
       'form-companylabel':   'Bedrijf',
@@ -149,11 +289,11 @@
       'form-sending':        'Verzenden…',
       'form-success':        'Bericht verzonden. Wij nemen binnen een dag contact op.',
       'form-error':          'Er is iets misgegaan — probeer te bellen of direct te mailen.',
-      'contact-call-title':  'Bellen',
-      'contact-avail':       'Bereikbaar maandag – vrijdag, 09:00 – 18:00 CET',
 
-      /* ── Stack (exploded axonometric) ────────────────── */
-      'stack-sub':           'Vier lagen, uit elkaar getrokken zodat u ziet hoe een beslissing bovenaan landt als capaciteit onderaan — en waar die weer terugkomt.',
+      /* ── Footer ───────────────────────────────────────── */
+      'footer-kvk':          'KvK [KVK]',
+      'footer-city':         'Amsterdam',
+      'footer-privacy':      'Privacyverklaring',
     },
   };
 
@@ -198,11 +338,24 @@
   const FOOTER_HTML = `
     <div class="wrap">
       <div class="footer-row">
-        <span class="mono">© <span id="year"></span> The Collective</span>
-        <div class="lang-toggle lang-toggle--desktop">
-          <button class="lang-btn active" data-lang-btn="en">English</button>
-          <span class="lang-sep" aria-hidden="true">|</span>
-          <button class="lang-btn" data-lang-btn="nl">Nederlands</button>
+        <div class="footer-meta mono">
+          <span>© <span id="year"></span> The Collective</span>
+          <span class="footer-sep" aria-hidden="true">·</span>
+          <span data-i18n="footer-kvk">KvK [KVK]</span>
+          <span class="footer-sep" aria-hidden="true">·</span>
+          <span data-i18n="footer-city">Amsterdam</span>
+          <span class="footer-sep" aria-hidden="true">·</span>
+          <a href="mailto:maarten.stienstra@gmail.com">maarten.stienstra@gmail.com</a>
+          <span class="footer-sep" aria-hidden="true">·</span>
+          <a href="tel:+31646281246">+31 (0)6 46281246</a>
+        </div>
+        <div class="footer-links">
+          <a href="privacy/" data-i18n="footer-privacy">Privacy statement</a>
+          <div class="lang-toggle lang-toggle--desktop">
+            <button class="lang-btn active" data-lang-btn="en">English</button>
+            <span class="lang-sep" aria-hidden="true">|</span>
+            <button class="lang-btn" data-lang-btn="nl">Nederlands</button>
+          </div>
         </div>
       </div>
     </div>`;
@@ -497,7 +650,11 @@
 
     if (visible?.target?.id) setActive(visible.target.id);
   }, {
-    threshold: [0.2, 0.35, 0.5, 0.65],
+    // Fine-grained low-end steps so a section taller than the tracking
+    // band (its intersection ratio can never reach 0.2) still crosses a
+    // threshold and gets picked up — without this, tall sections were
+    // skipped entirely and the nav stayed stuck on the previous one.
+    threshold: [0, 0.05, 0.1, 0.15, 0.2, 0.35, 0.5, 0.65],
     rootMargin: '-20% 0px -60% 0px',
   });
 
@@ -521,30 +678,6 @@
 
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-  /* ── SVG scroll-trigger for #diensten ────────────────── */
-  const dienstenSection = document.getElementById('diensten');
-  if (dienstenSection) {
-    const svgObs = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        dienstenSection.classList.add('in-view');
-        svgObs.disconnect();
-      }
-    }, { threshold: 0.1 });
-    svgObs.observe(dienstenSection);
-  }
-
-  /* ── SVG scroll-trigger for #waarde ─────────────────── */
-  const waardeSection = document.getElementById('waarde');
-  if (waardeSection) {
-    const waardeObs = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        waardeSection.classList.add('in-view');
-        waardeObs.disconnect();
-      }
-    }, { threshold: 0.1 });
-    waardeObs.observe(waardeSection);
-  }
-
   /* ── Phase block reveal ──────────────────────────────── */
   const phaseBlocks = document.querySelectorAll('.phase-block');
   if (phaseBlocks.length) {
@@ -558,18 +691,6 @@
     }, { threshold: 0.12 });
     phaseBlocks.forEach(b => phaseObs.observe(b));
   }
-
-  /* ── Mobile "Show more" for track cards ────────────── */
-  document.querySelectorAll('.track-show-more').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const wrap = btn.closest('.track-body').querySelector('.track-expand-wrap');
-      const isOpen = wrap.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(isOpen));
-      btn.textContent = isOpen ? t('track-showless') : t('track-showmore');
-    });
-  });
 
   /* ── Init ─────────────────────────────────────────────── */
   const hash = (location.hash || '').replace('#', '');
