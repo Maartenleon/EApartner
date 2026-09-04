@@ -1323,6 +1323,11 @@ footer {
   background: none; border: none; border-bottom: 1px solid var(--line-soft);
   cursor: pointer; padding: 16px 0; font: inherit; color: inherit;
 }
+/* Tapping a row focuses it (see axonometric.js), which would otherwise
+   trigger the site-wide focus ring — redundant here since is-active
+   (bold title, highlighted square, expanded text) already shows which
+   row is selected. */
+.axo-row:focus-visible { outline: none; }
 .axo-row:last-child { border-bottom: none; }
 .axo-row-top { display: flex; align-items: baseline; gap: 12px; }
 .axo-num {
