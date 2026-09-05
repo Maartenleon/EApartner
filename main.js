@@ -16,13 +16,13 @@
       'nav-contact':         'Contact',
 
       'hero-h1':             'Your strategy is clear.<br>Your organisation moves<br>like loose sand.',
-      'hero-lede':           'We work with retail and consumer organizations where the plan, the blueprint and the people who fund and own the work have come apart. We put them back together, and we stay until it holds.',
+      'hero-lede':           'We work with organizations where the plan, the blueprint and the people who fund and own the work have come apart. We put them back together, and we stay until it holds.',
       'hero-cta-secondary':  'How we think',
 
       /* ── Problem ──────────────────────────────────────── */
       'problem-eyebrow':     'You\'ll recognise it',
-      'problem-h2':          'Four seats, one cause.',
-      'problem-p1':          'Whether you sit in the CEO, COO, CFO or transformation seat, the symptoms rhyme. Forty funded initiatives and no way to say which three move the strategy. Returns, replenishment and launches that nobody owns end to end. Shared platforms that never get capacity because every programme pulls for itself. A roadmap that is set, funded, and still stalls at every decision.',
+      'problem-h2':          'Why organisations stop progressing',
+      'problem-p1':          'Whether you sit in the CEO, COO, CFO, CIO, CTO or transformation seat, the symptoms rhyme. Forty funded initiatives and no way to say which three move the strategy. Returns, replenishment and launches that nobody owns end to end. Shared platforms that never get capacity because every programme pulls for itself. A roadmap that is set, funded, and still stalls at every decision.',
       'problem-p2':          'The cause is the same in each seat: the <em class="accent">plan</em>, the <em class="accent">blueprint</em> and the <em class="accent">means</em> are held by different people who never see the whole. Objectives don\'t land anywhere they can be measured. The work that many initiatives depend on has no owner. Run and change compete for the same people, and nobody decides who wins.',
       'problem-p3':          'This isn\'t an IT question and it isn\'t a modelling exercise. It\'s how the organisation as a whole decides, changes and runs. We deliver no tool, no platform and no document. We deliver the movement on the result the objective was meant to move, and the proof that it moved.',
 
@@ -80,7 +80,7 @@
 
       /* ── Proof ────────────────────────────────────────── */
       'proof-eyebrow':       'Proof',
-      'proof-h2':            'What a result looks like',
+      'proof-h2':            'Use cases we\'re proud of',
       'proof-intro':         'We measure the result before we start and after we leave. Until client results can be shown here, these are illustrative examples of what that measurement looks like.',
       'proof-disclaimer':    'Illustrative example, not a client engagement',
       'proof-measured-label':'What was measured',
@@ -99,13 +99,13 @@
       'approach-eyebrow':    'How we work',
       'approach-h2':         'Approach',
       'approach-sub':        'Every engagement follows the same rhythm: a sharp diagnostic, a clear blueprint, then close involvement during delivery. The content differs by track. The discipline doesn\'t.',
-      'phase1-title':        'Diagnose — 4 weeks',
+      'phase1-title':        'Diagnose',
       'phase1-subtitle':     'QuickScan · Maturity Audit',
       'phase1-body':         '<strong>No assumptions, no predefined answers.</strong> For transformation programmes: what is the goal, where does complexity sit, what is blocking progress, which architectural decisions are urgent? For EA functions: what is the current maturity? The output is a prioritised map of what needs to happen.',
-      'phase2-title':        'Compose — 4 weeks',
+      'phase2-title':        'Compose',
       'phase2-subtitle':     'Target State · Roadmap · Decisions',
       'phase2-body':         '<strong>Translate the diagnosis into a clear blueprint and executable strategy.</strong> Trade-offs get made, options get documented, a roadmap gets set, with guardrails not just milestones. Every artefact earns its place because it changes what someone does next. Decisions over documents.',
-      'phase3-title':        'Steer — ongoing',
+      'phase3-title':        'Steer',
       'phase3-subtitle':     'Embedded Partner · Delivery Support',
       'phase3-body':         '<strong>Architecture doesn\'t survive first contact with delivery unchanged.</strong> Steer is the embedded partner phase: guardrails, course corrections when the landscape shifts, and a thinking partner close enough to the work to catch drift before it becomes debt. Until the path forward stays obvious without us in the room.',
 
@@ -161,13 +161,13 @@
       'nav-contact':         'Contact',
 
       'hero-h1':             'Uw strategie is helder.<br>Uw organisatie beweegt<br>als los zand.',
-      'hero-lede':           'Wij werken met retail- en consumentenorganisaties waar het plan, de blauwdruk en de mensen die het werk financieren en bezitten uit elkaar zijn gegroeid. Wij brengen ze weer samen, en wij blijven totdat het standhoudt.',
+      'hero-lede':           'Wij werken met organisaties waar het plan, de blauwdruk en de mensen die het werk financieren en bezitten uit elkaar zijn gegroeid. Wij brengen ze weer samen, en wij blijven totdat het standhoudt.',
       'hero-cta-secondary':  'Hoe wij denken',
 
       /* ── Problem ──────────────────────────────────────── */
       'problem-eyebrow':     'U herkent het',
-      'problem-h2':          'Vier stoelen, één oorzaak.',
-      'problem-p1':          'Of u nu op de stoel van de CEO, COO, CFO of transformatiedirecteur zit, de symptomen rijmen. Veertig gefinancierde initiatieven en geen manier om te zeggen welke drie de strategie bewegen. Retouren, aanvulling en lanceringen die niemand end-to-end bezit. Gedeelde platforms die nooit capaciteit krijgen omdat elk programma voor zichzelf trekt. Een roadmap die vaststaat, gefinancierd is, en toch bij elke beslissing vastloopt.',
+      'problem-h2':          'Waarom organisaties stoppen met vooruitgaan',
+      'problem-p1':          'Of u nu op de stoel van de CEO, COO, CFO, CIO, CTO of transformatiedirecteur zit, de symptomen rijmen. Veertig gefinancierde initiatieven en geen manier om te zeggen welke drie de strategie bewegen. Retouren, aanvulling en lanceringen die niemand end-to-end bezit. Gedeelde platforms die nooit capaciteit krijgen omdat elk programma voor zichzelf trekt. Een roadmap die vaststaat, gefinancierd is, en toch bij elke beslissing vastloopt.',
       'problem-p2':          'De oorzaak is in elke stoel hetzelfde: het <em class="accent">plan</em>, de <em class="accent">blauwdruk</em> en de <em class="accent">middelen</em> liggen bij verschillende mensen die nooit het geheel zien. Objectives landen nergens waar ze gemeten kunnen worden. Het werk waarvan veel initiatieven afhangen heeft geen eigenaar. Run en change strijden om dezelfde mensen, en niemand beslist wie wint.',
       'problem-p3':          'Dit is geen IT-vraagstuk en geen modelleeroefening. Het is hoe de organisatie als geheel beslist, verandert en draait. Wij leveren geen tool, geen platform en geen document. Wij leveren de beweging op het resultaat dat het objective moest bewegen, en het bewijs dat die bewoog.',
 
@@ -225,7 +225,7 @@
 
       /* ── Bewijs ───────────────────────────────────────── */
       'proof-eyebrow':       'Bewijs',
-      'proof-h2':            'Hoe een resultaat eruitziet',
+      'proof-h2':            'Praktijkvoorbeelden waar we trots op zijn',
       'proof-intro':         'Wij meten het resultaat voordat we beginnen en nadat we vertrekken. Totdat klantresultaten hier getoond kunnen worden, zijn dit illustratieve voorbeelden van hoe die meting eruitziet.',
       'proof-disclaimer':    'Illustratief voorbeeld, geen klantopdracht',
       'proof-measured-label':'Wat werd gemeten',
@@ -244,13 +244,13 @@
       'approach-eyebrow':    'Hoe wij werken',
       'approach-h2':         'Aanpak',
       'approach-sub':        'Elke opdracht volgt hetzelfde ritme: een scherpe diagnose, een heldere blauwdruk, dan nauwe betrokkenheid tijdens de uitvoering. De inhoud verschilt per track. De discipline niet.',
-      'phase1-title':        'Diagnose — 4 weken',
+      'phase1-title':        'Diagnose',
       'phase1-subtitle':     'QuickScan · Volwassenheidsaudit',
       'phase1-body':         '<strong>Geen aannames, geen vooraf bepaalde antwoorden.</strong> Voor transformatieprogramma\'s: wat is het doel, waar zit de complexiteit, wat blokkeert de voortgang, welke architectuurbeslissingen zijn urgent? Voor EA-functies: wat is de huidige volwassenheid? De uitkomst is een geprioriteerde kaart van wat er moet gebeuren.',
-      'phase2-title':        'Componeer — 4 weken',
+      'phase2-title':        'Componeer',
       'phase2-subtitle':     'Doelstaat · Roadmap · Beslissingen',
       'phase2-body':         '<strong>Vertaal de diagnose naar een heldere blauwdruk en uitvoerbare strategie.</strong> Afwegingen worden gemaakt, opties gedocumenteerd, een roadmap wordt vastgesteld, met vangrails en niet alleen mijlpalen. Elk artefact verdient zijn plek omdat het verandert wat iemand als volgende doet. Beslissingen boven documenten.',
-      'phase3-title':        'Sturen — doorlopend',
+      'phase3-title':        'Sturen',
       'phase3-subtitle':     'Ingebed Partner · Delivery Ondersteuning',
       'phase3-body':         '<strong>Architectuur overleeft het eerste contact met de uitvoering niet onveranderd.</strong> Sturen is de ingebedde partnerfase: vangrails, bijsturing wanneer het landschap verschuift, en een denkpartner dichtbij genoeg bij het werk om afdrijven te signaleren voordat het schuld wordt. Totdat de weg vooruit vanzelfsprekend blijft zonder ons in de kamer.',
 

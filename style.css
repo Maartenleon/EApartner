@@ -512,7 +512,7 @@ h2 {
 }
 
 /* ── Wide single-column editorial layout (e.g. Problem section) ── */
-.waarde-layout { grid-template-columns: 1fr 2fr; }
+.waarde-layout { grid-template-columns: 1fr 1fr; }
 @media (max-width: 900px) {
   .waarde-layout { grid-template-columns: 1fr; }
   .waarde-layout > div:first-child { display: none; }
@@ -576,8 +576,11 @@ h2 {
   color: var(--brand);
 }
 .card .card-tagline { margin: 4px 0 28px; color: var(--text); font-style: italic; }
-.card .card-bestfor { margin: 0 0 28px; font-size: .8125rem; }
+.card .card-bestfor { margin: 0; font-size: .8125rem; }
 .card .list { margin: 0; }
+.card .card-audience { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line-soft); }
+.card .card-audience .card-eyebrow { margin: 0 0 6px; }
+.card .card-audience .card-bestfor { font-size: .75rem; }
 
 
 /* ============================================================
