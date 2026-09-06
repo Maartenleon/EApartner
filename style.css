@@ -1005,7 +1005,7 @@ footer {
 /* ============================================================
    TEXT ACCENT — colours a phrase inside body copy
    ============================================================ */
-.accent { font-style: normal; font-weight: 500; color: var(--accent); }
+.accent { font-style: normal; font-weight: 500; color: var(--brand); }
 
 /* ── Contact section ────────────────────────────────────── */
 #contact-content {
@@ -1382,31 +1382,93 @@ footer {
 /* ============================================================
    PHASES ROW (Approach section)
    ============================================================ */
+/* A timeline rather than boxes: a thin rail with one dot per stage,
+   that stage's text sitting below it. Horizontal on desktop, vertical
+   on mobile — the rail and the dots swap axis, the content doesn't. */
 .phases-row {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  align-items: stretch;
+  gap: 48px;
+  align-items: start;
 }
 
-@media (max-width: 720px) {
-  .phases-row {
-    grid-template-columns: 1fr;
-  }
+/* The rail draws itself once, when the section is scrolled to. Linear
+   on purpose: each stage's --stage-delay is the moment the rail's
+   leading edge reaches that dot, which only holds if the rail
+   advances at a constant rate. main.js measures the dot positions and
+   sets the delays, so they stay right at any width. */
+.phases-row::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--line-mid);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.4s linear;
 }
+.phases-row.revealed::before { transform: scaleX(1); }
 
 .phase-block {
-  border: 1px solid var(--line-mid);
-  background: var(--bg);
-  border-radius: var(--radius);
-  padding: 28px;
+  position: relative;
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transition-delay: 0.7s;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition-delay: var(--stage-delay, 0s);
+}
+
+/* The stage's dot, sitting on the rail. Its counter-transform cancels
+   the block's rise, so the text slides up while the dot stays pinned
+   to the rail and simply lights up as the rail arrives. */
+.phase-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--brand);
+  transform: translateY(-16px);
+  transition: transform 0.45s ease;
+  transition-delay: var(--stage-delay, 0s);
+}
+.phase-block.revealed::before { transform: translateY(0); }
+
+@media (max-width: 720px) {
+  .phases-row {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  /* Same rail and same draw, rotated: top to bottom instead */
+  .phases-row::before {
+    top: 4px;
+    bottom: 0;
+    left: 4px;
+    right: auto;
+    width: 1px;
+    height: auto;
+    transform: scaleY(0);
+    transform-origin: center top;
+  }
+  .phases-row.revealed::before { transform: scaleY(1); }
+  .phase-block {
+    padding-top: 0;
+    padding-left: 28px;
+  }
+  .phase-block::before { top: 3px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phases-row::before,
+  .phase-block::before { transform: none; transition: none; }
 }
 
 .phase-block.revealed {
@@ -1414,9 +1476,6 @@ footer {
   transform: translateY(0);
 }
 
-/* Stagger delays — base 0.7s + offset per block */
-.phase-block:nth-child(2) { transition-delay: 1.00s; }
-.phase-block:nth-child(3) { transition-delay: 1.30s; }
 
 .phase-label {
   font-family: var(--mono);
@@ -1449,7 +1508,7 @@ footer {
   font-size: 0.8125rem;
   line-height: 1.6;
   color: var(--muted);
-  margin: 0 0 20px;
+  margin: 0;
 }
 
 .phase-deliverables-label {

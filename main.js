@@ -678,18 +678,56 @@
 
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-  /* ── Phase block reveal ──────────────────────────────── */
-  const phaseBlocks = document.querySelectorAll('.phase-block');
-  if (phaseBlocks.length) {
-    const phaseObs = new IntersectionObserver((entries) => {
-      entries.forEach(en => {
-        if (en.isIntersecting) {
-          en.target.classList.add('revealed');
-          phaseObs.unobserve(en.target);
-        }
+  /* ── Approach timeline ───────────────────────────────── */
+  // The rail is drawn from scroll position, not on a timer. A timed
+  // draw can only ever be right for one scroll speed: start it and the
+  // reader is still on their way, so it finishes below the fold and
+  // they arrive to a rail that is already complete. Tying it to scroll
+  // means the rail advances as the reader does, at any speed, and each
+  // dot lights up exactly when the leading edge reaches it.
+  const phasesRow = document.querySelector('.phases-row');
+  if (phasesRow) {
+    const stages = [...phasesRow.querySelectorAll('.phase-block')];
+    const verticalRail = window.matchMedia('(max-width: 720px)');
+    const RAIL_MS = 1400; // must match the rail's transition in style.css
+
+    // Give each stage the delay at which the rail's leading edge
+    // reaches its dot. Measured rather than hardcoded so it holds at
+    // any width, and in either orientation. offsetLeft/Top rather than
+    // getBoundingClientRect: the stages are transformed while hidden,
+    // which would skew a rect measurement.
+    const timeStagesToRail = () => {
+      stages.forEach(s => {
+        const along = verticalRail.matches
+          ? s.offsetTop  / phasesRow.offsetHeight
+          : s.offsetLeft / phasesRow.offsetWidth;
+        s.style.setProperty('--stage-delay', `${Math.round(along * RAIL_MS)}ms`);
       });
-    }, { threshold: 0.12 });
-    phaseBlocks.forEach(b => phaseObs.observe(b));
+    };
+
+    const run = () => {
+      timeStagesToRail();
+      phasesRow.classList.add('revealed');
+      stages.forEach(s => s.classList.add('revealed'));
+    };
+
+    if (prefersReducedMotion) {
+      run();
+    } else {
+      const railObs = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if (!en.isIntersecting) return;
+          run();
+          railObs.unobserve(en.target);
+        });
+        // Shrink the root's bottom edge so the draw starts once the
+        // timeline is properly on screen. Left at the default it
+        // triggers on a sliver at the very bottom of the viewport, and
+        // the whole sequence plays out below the fold — the reader
+        // then arrives to a rail that has already finished.
+      }, { threshold: 0, rootMargin: '0px 0px -35% 0px' });
+      railObs.observe(phasesRow);
+    }
   }
 
   /* ── Init ─────────────────────────────────────────────── */
@@ -698,10 +736,12 @@
 
   const init = () => {
     const initial = (hash && document.getElementById(hash)) ? hash : null;
+    // Only mark a section active when the page actually opens on one
+    // (a deep link). Landing on the hero leaves the nav unmarked —
+    // parking the indicator on the first link made Problem look
+    // selected before the reader had reached it.
     if (initial) {
       setActive(initial, { immediate: true, moveIndicator: true });
-    } else {
-      moveIndicatorTo(links[0], true);
     }
   };
 
