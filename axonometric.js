@@ -22,8 +22,8 @@
       <div class="section-3col">
         <div class="section-label">
           <p class="section-eyebrow reveal" style="--reveal-delay: 0ms" data-i18n="stack-eyebrow">How we think</p>
-          <h2 class="reveal" style="--reveal-delay: 0ms" data-i18n="stack-h2">Plan to means,<br>in one motion</h2>
-          <p class="sub reveal" style="--reveal-delay: 0ms; margin-top:16px;" data-i18n="stack-sub">Three layers. A decision at the top has to land as owned, funded work at the bottom, and the result has to travel back up. Most organisations lose it somewhere in the middle.</p>
+          <h2 class="reveal" style="--reveal-delay: 0ms" data-i18n="stack-h2">Plan, Blueprint, Means in motion</h2>
+          <p class="sub reveal" style="--reveal-delay: 0ms; margin-top:16px;" data-i18n="stack-sub">A plan needs to translate to the blueprint, the blueprint only works when the means deliver, while today's run and tomorrow's transformations have to be orchestrated side by side. We understand how.</p>
           <div class="axo-index" role="group" aria-label="Layers" id="axoIndex"></div>
         </div>
         <div class="axo-drawing reveal" style="--reveal-delay: 300ms" id="axoDrawing"></div>

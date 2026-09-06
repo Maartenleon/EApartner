@@ -28,8 +28,8 @@
 
       /* ── How we think (static illustration) ──────────── */
       'stack-eyebrow':       'How we think',
-      'stack-h2':            'Plan to means,<br>in one motion',
-      'stack-sub':           'Three layers. A decision at the top has to land as owned, funded work at the bottom, and the result has to travel back up. Most organisations lose it somewhere in the middle.',
+      'stack-h2':            'Plan, Blueprint, Means in motion',
+      'stack-sub':           'A plan needs to translate to the blueprint, the blueprint only works when the means deliver, while today\'s run and tomorrow\'s transformations have to be orchestrated side by side. We understand how.',
       'stack-01-title':      'Plan',
       'stack-01-subtitle':   'Why',
       'stack-01-line':       'Five to eight objectives, each with a result it must move and an owner who is measured on it. An objective that can\'t land anywhere it can be measured doesn\'t belong in the portfolio.',
@@ -173,8 +173,8 @@
 
       /* ── Hoe wij denken (statische illustratie) ──────── */
       'stack-eyebrow':       'Hoe wij denken',
-      'stack-h2':            'Van plan naar middelen,<br>in één beweging',
-      'stack-sub':           'Drie lagen. Een beslissing bovenaan moet onderaan landen als werk met een eigenaar en budget, en het resultaat moet weer naar boven reizen. De meeste organisaties verliezen het ergens in het midden.',
+      'stack-h2':            'Plan, Blauwdruk, Middelen in beweging',
+      'stack-sub':           'Een plan moet zich vertalen naar de blauwdruk, de blauwdruk werkt alleen als de middelen leveren, terwijl de run van vandaag en de transformaties van morgen naast elkaar georkestreerd moeten worden. Wij begrijpen hoe.',
       'stack-01-title':      'Plan',
       'stack-01-subtitle':   'Waarom',
       'stack-01-line':       'Vijf tot acht objectives, elk met een resultaat dat het moet bewegen en een eigenaar die erop wordt afgerekend. Een objective die nergens meetbaar landt, hoort niet in de portefeuille.',
